@@ -14,11 +14,11 @@ The live Worker was not changed as part of this GitHub backup.
 
 1. Read the current Worker source and project notes.
 2. Preserve the existing routing, form handling, responsive layout and D1 binding unless the requested change requires otherwise.
-3. Keep credentials and secrets out of Git.
+3. Keep credentials and secrets out of Git. Configure `ADMIN_SESSION_SECRET` as a stable random value of at least 32 characters in Cloudflare Worker secrets; admin setup, login and dashboard requests return a clear 503 until it is present.
 4. Make edits on a separate Git branch and review the diff before merging.
 
 ## Deploying intentionally
 
-The `wrangler.toml` file records the Worker name, entry point, compatibility date and D1 binding. A deployment should only be made after reviewing and testing the code, confirming the intended Cloudflare account, and checking that the D1 binding points to the existing production database.
+The `wrangler.toml` file records the Worker name, entry point, compatibility date, D1 binding and static asset directory. The root `.assetsignore` allowlists only `public/assets/**` and `src/assets/**`, so application source and configuration files are not published as static assets. A deployment should only be made after reviewing and testing the code, confirming the intended Cloudflare account, and checking that the D1 binding points to the existing production database.
 
 Do not treat a GitHub commit as a deployment. GitHub is the source backup; Cloudflare remains the live host.

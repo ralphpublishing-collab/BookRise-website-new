@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "node --check server.js && node --check worker/worker.js",
-    "lint": "node --check server.js && node --check worker/worker.js"
+    "check": "node --check server.js && node --check worker/worker.js && node --check scripts/check-project.mjs && node --check test/worker.test.js",
+    "build": "npm run check && node scripts/check-project.mjs",
+    "test": "node --test",
+    "lint": "npm run check"
   },
   "engines": {
     "node": ">=20"

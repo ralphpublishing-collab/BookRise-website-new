@@ -1,6 +1,6 @@
 const ASSETS = {
-  monogram: '/assets/aistudio/A880DB7F-19B0-4625-8744-040D94A8435B_e207c5d0.png',
-  crest: '/assets/aistudio/92B26B15-F4AB-4BBD-B068-79601753C31D_bdc8dd35.png',
+  monogram: '/public/assets/aistudio/A880DB7F-19B0-4625-8744-040D94A8435B_e207c5d0.png',
+  crest: '/public/assets/aistudio/92B26B15-F4AB-4BBD-B068-79601753C31D_bdc8dd35.png',
   heroAtelier: '/src/assets/images/hero_publishing_atelier_1795615010303.jpg',
   books: {
     executive: '/src/assets/images/work_executive_edge_1795616446357.jpg',
@@ -8,28 +8,28 @@ const ASSETS = {
     purpose: '/src/assets/images/work_lead_purpose_1795616447765.jpg',
   },
   team: {
-    gracious: '/assets/aistudio/IMG_0010_55a5f7f9.jpeg',
-    rapheal: '/assets/aistudio/IMG_0011_4a7c0b55.jpeg',
-    katherine: '/assets/aistudio/IMG_0012_7f92ff9b.jpeg',
-    benjamin: '/assets/aistudio/IMG_0013_d58db1da.jpeg',
-    stephen: '/assets/aistudio/eebfae47-e2de-44d8-ad66-751de0aa9c64_decfff18.jpeg',
-    moses: '/assets/aistudio/bce90cec-7a51-4abb-9d4d-d7f45bba9217_d8ada729.jpeg',
+    gracious: '/public/assets/aistudio/IMG_0010_55a5f7f9.jpeg',
+    rapheal: '/public/assets/aistudio/IMG_0011_4a7c0b55.jpeg',
+    katherine: '/public/assets/aistudio/IMG_0012_7f92ff9b.jpeg',
+    benjamin: '/public/assets/aistudio/IMG_0013_d58db1da.jpeg',
+    stephen: '/public/assets/aistudio/eebfae47-e2de-44d8-ad66-751de0aa9c64_decfff18.jpeg',
+    moses: '/public/assets/aistudio/bce90cec-7a51-4abb-9d4d-d7f45bba9217_d8ada729.jpeg',
   },
   adrian: {
-    vol1AuthorFeature: '/assets/aistudio/image_f5d7a1f7.jpeg',
-    vol2OceanPoster: '/assets/aistudio/image_5ac19ddd.jpeg',
-    vol2LandscapePromo: '/assets/aistudio/image_b738bcb7.jpeg',
-    vol2Availability: '/assets/aistudio/image_1534ac7e.jpeg',
-    vol2CalloutDiagram: '/assets/aistudio/image_bac8f1ef.jpeg',
-    vol2CoverWrap: '/assets/aistudio/image_6282f2dd.jpeg',
-    vol1VisionBanner: '/assets/aistudio/image_9344ecf6.jpeg',
-    vol1CoverWrap: '/assets/aistudio/image_40c593dc.jpeg',
-    meetAuthorArched: '/assets/aistudio/image_952aa696.jpeg',
-    duologySideBySide: '/assets/aistudio/image_ae2218a8.jpeg',
-    duologyMinimalist: '/assets/aistudio/image_48d8c6bc.jpeg',
-    duologyInvitation: '/assets/aistudio/image_af8dfaa4.jpeg',
-    meetAuthorTransformation: '/assets/aistudio/image_2228d4b4.jpeg',
-    vol2DeskLifestyle: '/assets/aistudio/image_1f772201.jpeg',
+    vol1AuthorFeature: '/public/assets/aistudio/image_f5d7a1f7.jpeg',
+    vol2OceanPoster: '/public/assets/aistudio/image_5ac19ddd.jpeg',
+    vol2LandscapePromo: '/public/assets/aistudio/image_b738bcb7.jpeg',
+    vol2Availability: '/public/assets/aistudio/image_1534ac7e.jpeg',
+    vol2CalloutDiagram: '/public/assets/aistudio/image_bac8f1ef.jpeg',
+    vol2CoverWrap: '/public/assets/aistudio/image_6282f2dd.jpeg',
+    vol1VisionBanner: '/public/assets/aistudio/image_9344ecf6.jpeg',
+    vol1CoverWrap: '/public/assets/aistudio/image_40c593dc.jpeg',
+    meetAuthorArched: '/public/assets/aistudio/image_952aa696.jpeg',
+    duologySideBySide: '/public/assets/aistudio/image_ae2218a8.jpeg',
+    duologyMinimalist: '/public/assets/aistudio/image_48d8c6bc.jpeg',
+    duologyInvitation: '/public/assets/aistudio/image_af8dfaa4.jpeg',
+    meetAuthorTransformation: '/public/assets/aistudio/image_2228d4b4.jpeg',
+    vol2DeskLifestyle: '/public/assets/aistudio/image_1f772201.jpeg',
   },
 };
 
@@ -3452,6 +3452,16 @@ function renderShell(currentPath, title, desc, body) {
             var res = await fetch('/api/admin/status');
             var info = await res.json();
             if (adminLoadingCard) adminLoadingCard.hidden = true;
+            if (info.sessionReady === false) {
+              adminSetupCard.hidden = true;
+              adminAuthCard.hidden = false;
+              if (setupForm) setupForm.hidden = true;
+              if (loginForm) loginForm.hidden = true;
+              if (authHint) {
+                authHint.textContent = 'The admin dashboard is not ready yet. The site administrator must configure ADMIN_SESSION_SECRET as a stable secret of at least 32 characters in Cloudflare Worker secrets.';
+              }
+              return;
+            }
             if (info.mode === 'unclaimed') {
               adminSetupCard.hidden = false;
               adminAuthCard.hidden = true;
@@ -3545,16 +3555,19 @@ function renderShell(currentPath, title, desc, body) {
 </html>`;
 }
 
-let fallbackSessionSecret = '';
+function hasSessionSecret(env) {
+  return Boolean(
+    env &&
+    typeof env.ADMIN_SESSION_SECRET === 'string' &&
+    env.ADMIN_SESSION_SECRET.length >= 32
+  );
+}
 
 function getSessionSecret(env) {
-  if (env && env.ADMIN_SESSION_SECRET) return env.ADMIN_SESSION_SECRET;
-  if (!fallbackSessionSecret) {
-    const bytes = new Uint8Array(32);
-    crypto.getRandomValues(bytes);
-    fallbackSessionSecret = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  if (!hasSessionSecret(env)) {
+    throw new Error('ADMIN_SESSION_SECRET must be configured as a stable secret of at least 32 characters.');
   }
-  return fallbackSessionSecret;
+  return env.ADMIN_SESSION_SECRET;
 }
 
 function toHex(buf) {
@@ -3769,7 +3782,7 @@ export default {
     if (u.pathname === '/api/admin/status') {
       if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
       const state = await getAdminAuthState(env);
-      return json({ configured: state.mode !== 'unclaimed', mode: state.mode }, 200);
+      return json({ configured: state.mode !== 'unclaimed', mode: state.mode, sessionReady: hasSessionSecret(env) }, 200);
     }
 
     if (u.pathname === '/api/admin/claim') {
@@ -3778,6 +3791,7 @@ export default {
       if (origin && new URL(origin).host !== u.host) {
         return json({ error: 'Origin not allowed' }, 403);
       }
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets before claiming the dashboard.' }, 503);
       if (!env.DB) return json({ error: 'Database unavailable.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode !== 'unclaimed') {
@@ -3812,6 +3826,7 @@ export default {
       if (origin && new URL(origin).host !== u.host) {
         return json({ error: 'Origin not allowed' }, 403);
       }
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets before logging in.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode === 'unclaimed') {
         return json({ error: 'Set your initial admin passcode first.' }, 409);
@@ -3839,6 +3854,7 @@ export default {
     }
 
     if (u.pathname === '/api/enquiries' || u.pathname.startsWith('/api/enquiries/')) {
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode === 'unclaimed') {
         return json({ error: 'Admin passcode must be configured before viewing enquiries.' }, 503);

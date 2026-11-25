@@ -24,6 +24,7 @@ Official source-code backup for the BookRise Centre website.
 - Do not commit live enquiry records or customer personal information.
 - The D1 database itself remains hosted by Cloudflare. This repository contains the schema only, not a full database-data backup.
 - Keep this repository private unless you intentionally want the source code to be publicly visible.
+- Configure `ADMIN_SESSION_SECRET` as a stable random secret of at least 32 characters in Cloudflare Worker secrets. The Worker deliberately refuses admin setup/login when this secret is missing or too short; it never signs sessions with a per-isolate random fallback.
 
 ## Editing with an AI coding tool
 
