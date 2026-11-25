@@ -1,0 +1,16 @@
+{
+  "name": "bookrise-centre",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "BookRise Centre website migrated to run on Node.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js && node --check worker/worker.js",
+    "lint": "node --check server.js && node --check worker/worker.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
