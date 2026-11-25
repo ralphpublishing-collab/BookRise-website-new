@@ -12,8 +12,8 @@ for (const match of workerSource.matchAll(/['"](\/(?:assets|src\/assets)\/[^'"]+
   if (checked.has(publicPath)) continue;
   checked.add(publicPath);
 
-  const diskPath = publicPath.startsWith('/assets/')
-    ? path.join(root, 'public', publicPath.slice('/assets/'.length))
+  const diskPath = publicPath.startsWith('/public/assets/')
+    ? path.join(root, 'public', 'assets', publicPath.slice('/public/assets/'.length))
     : path.join(root, publicPath.slice(1));
 
   try {
