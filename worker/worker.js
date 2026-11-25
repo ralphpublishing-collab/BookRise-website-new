@@ -3545,16 +3545,19 @@ function renderShell(currentPath, title, desc, body) {
 </html>`;
 }
 
-let fallbackSessionSecret = '';
+function hasSessionSecret(env) {
+  return Boolean(
+    env &&
+    typeof env.ADMIN_SESSION_SECRET === 'string' &&
+    env.ADMIN_SESSION_SECRET.length >= 32
+  );
+}
 
 function getSessionSecret(env) {
-  if (env && env.ADMIN_SESSION_SECRET) return env.ADMIN_SESSION_SECRET;
-  if (!fallbackSessionSecret) {
-    const bytes = new Uint8Array(32);
-    crypto.getRandomValues(bytes);
-    fallbackSessionSecret = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  if (!hasSessionSecret(env)) {
+    throw new Error('ADMIN_SESSION_SECRET must be configured as a stable secret of at least 32 characters.');
   }
-  return fallbackSessionSecret;
+  return env.ADMIN_SESSION_SECRET;
 }
 
 function toHex(buf) {
@@ -3769,7 +3772,7 @@ export default {
     if (u.pathname === '/api/admin/status') {
       if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
       const state = await getAdminAuthState(env);
-      return json({ configured: state.mode !== 'unclaimed', mode: state.mode }, 200);
+      return json({ configured: state.mode !== 'unclaimed', mode: state.mode, sessionReady: hasSessionSecret(env) }, 200);
     }
 
     if (u.pathname === '/api/admin/claim') {
@@ -3778,6 +3781,7 @@ export default {
       if (origin && new URL(origin).host !== u.host) {
         return json({ error: 'Origin not allowed' }, 403);
       }
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets before claiming the dashboard.' }, 503);
       if (!env.DB) return json({ error: 'Database unavailable.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode !== 'unclaimed') {
@@ -3812,6 +3816,7 @@ export default {
       if (origin && new URL(origin).host !== u.host) {
         return json({ error: 'Origin not allowed' }, 403);
       }
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets before logging in.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode === 'unclaimed') {
         return json({ error: 'Set your initial admin passcode first.' }, 409);
@@ -3839,6 +3844,7 @@ export default {
     }
 
     if (u.pathname === '/api/enquiries' || u.pathname.startsWith('/api/enquiries/')) {
+      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets.' }, 503);
       const state = await getAdminAuthState(env);
       if (state.mode === 'unclaimed') {
         return json({ error: 'Admin passcode must be configured before viewing enquiries.' }, 503);
