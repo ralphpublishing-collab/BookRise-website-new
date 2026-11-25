@@ -476,6 +476,7 @@ const PROJECTS = [
   {
     number: '02',
     id: 'whispers-of-the-wind',
+    title: 'Whispers of the Wind',
     author: 'Sarah Mitchell',
     genre: 'Memoir',
     scope: 'Editorial Support · Visibility & Categorization · Reader Outreach',
@@ -492,6 +493,7 @@ const PROJECTS = [
   {
     number: '03',
     id: 'lead-with-purpose',
+    title: 'Lead with Purpose',
     author: 'Robert Caldwell',
     genre: 'Leadership & Strategy',
     scope: 'Book Positioning · Metadata Optimization · Launch Campaign',
