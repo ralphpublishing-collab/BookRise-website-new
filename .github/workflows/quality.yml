@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Validate Cloudflare Worker bundle and static asset manifest
+        run: npx --yes wrangler@4 deploy --dry-run --outdir=/tmp/bookrise-worker-dry-run
       - name: Verify syntax and project assets
         run: npm run build
       - name: Run Worker smoke tests
