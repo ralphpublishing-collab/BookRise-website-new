@@ -200,9 +200,9 @@ async function tryServeStatic(reqPath, method, res) {
   let candidateBase = null;
   let relativeSegment = null;
 
-  if (decodedPath.startsWith('/assets/')) {
+  if (decodedPath.startsWith('/public/assets/')) {
     candidateBase = path.join(__dirname, 'public', 'assets');
-    relativeSegment = decodedPath.slice('/assets/'.length);
+    relativeSegment = decodedPath.slice('/public/assets/'.length);
   } else if (decodedPath.startsWith('/src/assets/')) {
     candidateBase = path.join(__dirname, 'src', 'assets');
     relativeSegment = decodedPath.slice('/src/assets/'.length);
