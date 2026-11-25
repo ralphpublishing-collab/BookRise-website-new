@@ -12,10 +12,155 @@ const ASSETS = {
     rapheal: '/assets/aistudio/IMG_0011_4a7c0b55.jpeg',
     katherine: '/assets/aistudio/IMG_0012_7f92ff9b.jpeg',
     benjamin: '/assets/aistudio/IMG_0013_d58db1da.jpeg',
-    newMemberOne: '/assets/aistudio/eebfae47-e2de-44d8-ad66-751de0aa9c64_decfff18.jpeg',
-    newMemberTwo: '/assets/aistudio/bce90cec-7a51-4abb-9d4d-d7f45bba9217_d8ada729.jpeg',
+    stephen: '/assets/aistudio/eebfae47-e2de-44d8-ad66-751de0aa9c64_decfff18.jpeg',
+    moses: '/assets/aistudio/bce90cec-7a51-4abb-9d4d-d7f45bba9217_d8ada729.jpeg',
+  },
+  adrian: {
+    vol1AuthorFeature: '/assets/aistudio/image_f5d7a1f7.jpeg',
+    vol2OceanPoster: '/assets/aistudio/image_5ac19ddd.jpeg',
+    vol2LandscapePromo: '/assets/aistudio/image_b738bcb7.jpeg',
+    vol2Availability: '/assets/aistudio/image_1534ac7e.jpeg',
+    vol2CalloutDiagram: '/assets/aistudio/image_bac8f1ef.jpeg',
+    vol2CoverWrap: '/assets/aistudio/image_6282f2dd.jpeg',
+    vol1VisionBanner: '/assets/aistudio/image_9344ecf6.jpeg',
+    vol1CoverWrap: '/assets/aistudio/image_40c593dc.jpeg',
+    meetAuthorArched: '/assets/aistudio/image_952aa696.jpeg',
+    duologySideBySide: '/assets/aistudio/image_ae2218a8.jpeg',
+    duologyMinimalist: '/assets/aistudio/image_48d8c6bc.jpeg',
+    duologyInvitation: '/assets/aistudio/image_af8dfaa4.jpeg',
+    meetAuthorTransformation: '/assets/aistudio/image_2228d4b4.jpeg',
+    vol2DeskLifestyle: '/assets/aistudio/image_1f772201.jpeg',
   },
 };
+
+const ADRIAN_DELIVERABLES = [
+  {
+    id: 'adrian-vol1-wrap',
+    category: 'covers',
+    categoryLabel: 'Cover Spreads & Editions',
+    title: 'Personal Sovereignty — Full Print Wrap & Standing Edition',
+    volume: 'Volume I · Front, Spine & Back Cover',
+    description: 'Complete hardcover and paperback wrap featuring full-bleed planetary artwork, spine alignment, barcode/ISBN integration, and back-cover editorial copy.',
+    image: ASSETS.adrian.vol1CoverWrap,
+  },
+  {
+    id: 'adrian-vol2-wrap',
+    category: 'covers',
+    categoryLabel: 'Cover Spreads & Editions',
+    title: 'Tao Tuning: The Art of Flow — Full Print Wrap',
+    volume: 'Volume II · Front, Spine & Back Cover',
+    description: 'Coordinated sequel wrap layout pairing bold crimson cover typography with wave illustration, spine branding, and structured bulleted back-cover copy.',
+    image: ASSETS.adrian.vol2CoverWrap,
+  },
+  {
+    id: 'adrian-duology-minimal',
+    category: 'covers',
+    categoryLabel: 'Cover Spreads & Editions',
+    title: 'The Temple of Understanding — Duology Edition Card',
+    volume: 'Volumes I & II · Series Presentation',
+    description: 'Clean editorial presentation uniting both covers under a cohesive series masthead for retail, press kits, and author landing pages.',
+    image: ASSETS.adrian.duologyMinimalist,
+  },
+  {
+    id: 'adrian-duology-invite',
+    category: 'covers',
+    categoryLabel: 'Cover Spreads & Editions',
+    title: 'Reader Invitation — Two-Book Reflection Graphic',
+    volume: 'Volumes I & II · Campaign Collateral',
+    description: 'Editorial invitation asset framing both volumes around reflection, purpose, and self-discovery for newsletters and reader landing pages.',
+    image: ASSETS.adrian.duologyInvitation,
+  },
+  {
+    id: 'adrian-vol1-feature',
+    category: 'spotlights',
+    categoryLabel: 'Author & Duology Spotlights',
+    title: 'Personal Sovereignty — Author Feature Banner',
+    volume: 'Volume I · Author Portrait & Benefit Triad',
+    description: 'Flagship promotional banner pairing Adrian Emery’s portrait with Volume I’s core reader takeaways and signature block.',
+    image: ASSETS.adrian.vol1AuthorFeature,
+  },
+  {
+    id: 'adrian-meet-arched',
+    category: 'spotlights',
+    categoryLabel: 'Author & Duology Spotlights',
+    title: 'Meet Adrian Emery — Author Spotlight Card',
+    volume: 'Series · Arched Editorial Portrait',
+    description: 'Vertical social and reader-outreach spotlight introducing Adrian Emery as author of The Temple of Understanding duology.',
+    image: ASSETS.adrian.meetAuthorArched,
+  },
+  {
+    id: 'adrian-meet-transform',
+    category: 'spotlights',
+    categoryLabel: 'Author & Duology Spotlights',
+    title: 'Meet the Author — Two Books, One Journey Feature',
+    volume: 'Volumes I & II · Hero Campaign Asset',
+    description: 'High-impact author showcase positioning Adrian Emery holding both printed volumes for launch-week awareness campaigns.',
+    image: ASSETS.adrian.meetAuthorTransformation,
+  },
+  {
+    id: 'adrian-duology-vision',
+    category: 'spotlights',
+    categoryLabel: 'Author & Duology Spotlights',
+    title: 'Two Powerful Books, One Vision — Comparative Display',
+    volume: 'Volumes I & II · Dual-Title Showcase',
+    description: 'Side-by-side book positioning graphic contrasting the core themes of Personal Sovereignty and Tao Tuning.',
+    image: ASSETS.adrian.duologySideBySide,
+  },
+  {
+    id: 'adrian-vol1-vision',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Personal Sovereignty — Two Books, One Vision Poster',
+    volume: 'Volume I · Launch Awareness Creative',
+    description: 'Promotional poster combining Adrian Emery’s portrait, key thematic icons, and direct purchase call-to-action.',
+    image: ASSETS.adrian.vol1VisionBanner,
+  },
+  {
+    id: 'adrian-vol2-ocean',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Tao Tuning — Cliffside Reader Benefit Poster',
+    volume: 'Volume II · Campaign Creative',
+    description: 'Coastal atmospheric promotional card pairing Volume II with four structured reader outcome pillars.',
+    image: ASSETS.adrian.vol2OceanPoster,
+  },
+  {
+    id: 'adrian-vol2-landscape',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Tao Tuning — Widescreen Book Promotion Banner',
+    volume: 'Volume II · Horizontal Campaign Format',
+    description: '16:10 horizontal display graphic designed for web banners, social headers, and newsletter feature placements.',
+    image: ASSETS.adrian.vol2LandscapePromo,
+  },
+  {
+    id: 'adrian-vol2-availability',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Tao Tuning — Multi-Format Storefront Availability Graphic',
+    volume: 'Volume II · Kindle, eBook & Print',
+    description: 'Retail-ready promotional sheet highlighting Kindle, eBook, and Print availability alongside thematic icons.',
+    image: ASSETS.adrian.vol2Availability,
+  },
+  {
+    id: 'adrian-vol2-callout',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Tao Tuning — Annotated Book Value Breakdown',
+    volume: 'Volume II · Reader Benefit Callout',
+    description: 'Studio-lit book display surrounded by five concise callouts summarizing the book’s practical message.',
+    image: ASSETS.adrian.vol2CalloutDiagram,
+  },
+  {
+    id: 'adrian-vol2-desk',
+    category: 'posters',
+    categoryLabel: 'Promotional Posters',
+    title: 'Tao Tuning — Editorial Desk Lifestyle Promo',
+    volume: 'Volume II · Warm Studio Scene',
+    description: 'Warm desk lifestyle creative staging Volume II beside manuscript notebook and fountain pen for reader engagement.',
+    image: ASSETS.adrian.vol2DeskLifestyle,
+  },
+];
 
 const SERVICES = [
   {
@@ -23,14 +168,22 @@ const SERVICES = [
     category: 'editorial',
     categoryLabel: 'Editorial & Publishing',
     title: 'Publishing Support',
+    bestFor: 'Authors preparing a completed manuscript for independent or hybrid release who want clear technical and strategic guidance.',
+    turnaround: '2 to 4 weeks depending on platform scope',
     summary:
-      'Publishing guidance, preparation and practical support for authors navigating the decisions involved in bringing a book to market.',
+      'End-to-end publishing guidance, file preparation, ISBN and imprint planning, and distribution setup for authors bringing a book to market without surrendering their rights.',
+    workflow: [
+      'Audit manuscript files, front/back matter completeness, and copyright/imprint readiness.',
+      'Compare distribution options (Amazon KDP, IngramSpark, wide ebook aggregators) against your territorial and format goals.',
+      'Prepare print-ready interior PDFs and validated EPUB packages with clean chapter navigation and typography.',
+      'Guide storefront setup, pricing calculations, proof copy checks, and release timing.',
+    ],
     deliverables: [
-      'Publishing-readiness assessment and guidance',
-      'Manuscript and file preparation guidance',
-      'ISBN, imprint and metadata considerations',
-      'Platform and distribution option review',
-      'Launch-readiness checklist and next-step recommendations',
+      'Comprehensive publishing-readiness assessment and action roadmap',
+      'Print-ready interior typesetting and validated EPUB file guidance',
+      'ISBN, imprint, copyright page, and front/back matter structuring',
+      'Platform and global distribution comparison tailored to your title',
+      'Pre-launch technical checklist and post-upload verification notes',
     ],
   },
   {
@@ -38,14 +191,22 @@ const SERVICES = [
     category: 'editorial',
     categoryLabel: 'Editorial & Publishing',
     title: 'Editing & Writing',
+    bestFor: 'Writers seeking structural clarity, stronger narrative flow, line-level polish, or collaborative manuscript development.',
+    turnaround: '2 to 6 weeks based on word count and editorial depth',
     summary:
-      'Editorial and writing support to improve clarity, consistency, structure and the reading experience while respecting the author’s voice.',
+      'Careful editorial and writing support—from big-picture developmental feedback to meticulous copy editing and final proofreading—while safeguarding the author’s distinctive voice.',
+    workflow: [
+      'Complete an initial sample read to calibrate editorial depth, tone preservation, and revision scope.',
+      'Deliver chapter-by-chapter structural or developmental notes addressing pacing, clarity, and argument arc.',
+      'Execute sentence-level copy editing using Track Changes for grammar, cadence, consistency, and style.',
+      'Perform a dedicated final proofread on formatted proofs before publication.',
+    ],
     deliverables: [
-      'Developmental and structural feedback',
-      'Copy editing for clarity, flow and consistency',
-      'Proofreading for spelling, punctuation and typographical issues',
-      'Writing and rewriting support by agreed brief',
-      'Editorial notes and revision guidance',
+      'Editorial assessment memo with structural and chapter recommendations',
+      'Tracked-changes copy-edited manuscript with marginal explanations',
+      'Project style sheet recording spelling, hyphenation, and terminology choices',
+      'Final proofread pass catching typographical, spacing, and punctuation errors',
+      'Collaborative writing or rewriting support strictly to an agreed brief',
     ],
   },
   {
@@ -53,14 +214,22 @@ const SERVICES = [
     category: 'design',
     categoryLabel: 'Design & Media',
     title: 'Cover Design',
+    bestFor: 'Authors launching a debut title, unifying a multi-book series, or refreshing an existing cover to match genre expectations.',
+    turnaround: '2 to 3 weeks including concept and print wrap rounds',
     summary:
-      'Genre-aware cover concepts and production-ready design intended to communicate the book’s subject, tone and market positioning.',
+      'Genre-aware cover architecture and production-ready artwork engineered to read clearly at thumbnail scale while holding physical authority in hardcover and paperback print.',
+    workflow: [
+      'Research category benchmarks, visual tone, typography hierarchies, and series continuity.',
+      'Present distinct front-cover concepts for author review and focused creative feedback.',
+      'Refine typography, color balance, imagery, and thumbnail legibility across agreed revision rounds.',
+      'Build exact spine-width print wraps (hardcover, paperback, dust jacket) and high-resolution digital covers.',
+    ],
     deliverables: [
-      'Creative direction and visual research',
-      'Front-cover concept and typography',
-      'Spine and back-cover layout where required',
-      'Print and digital specifications by platform',
-      'Final export files included in the agreed scope',
+      'Creative direction and category visual positioning brief',
+      'Custom front-cover concepts with hierarchy and typography study',
+      'Full print wrap (front, calibrated spine, back cover blurb, ISBN/barcode space)',
+      'Platform-compliant KDP, IngramSpark, and ebook cover specifications',
+      'Final layered/print-ready PDF and high-resolution RGB JPEG/PNG exports',
     ],
   },
   {
@@ -68,14 +237,22 @@ const SERVICES = [
     category: 'promotion',
     categoryLabel: 'Promotion & Outreach',
     title: 'Book Promotion',
+    bestFor: 'Newly releasing or backlist authors needing structured launch campaigns, promotional graphics, and coordinated reader messaging.',
+    turnaround: '4 to 8 week campaign cycles',
     summary:
-      'Campaign planning and promotional content designed to introduce a book to relevant audiences through selected channels.',
+      'Structured campaign planning and bespoke promotional assets designed to introduce your book credibly to target readers across digital channels.',
+    workflow: [
+      'Define campaign objectives, core reader personas, and key message angles from the manuscript.',
+      'Design cohesive promotional graphics, author spotlight cards, and launch-week visual collateral.',
+      'Map a realistic multi-week content and outreach calendar aligned to your release date.',
+      'Coordinate scheduled activity, monitor engagement signals, and deliver a transparent post-campaign summary.',
+    ],
     deliverables: [
-      'Campaign objectives and audience definition',
-      'Promotional messaging and content planning',
-      'Channel and schedule recommendations',
-      'Campaign coordination and progress communication',
-      'Post-campaign review of agreed activity',
+      'Written campaign strategy with audience positioning and messaging pillars',
+      'Custom promotional graphics suite (social cards, quotes, availability banners)',
+      'Structured release calendar with weekly milestones and copy prompts',
+      'Launch coordination and regular milestone progress reporting',
+      'Post-campaign activity review and next-stage recommendations',
     ],
   },
   {
@@ -83,14 +260,22 @@ const SERVICES = [
     category: 'design',
     categoryLabel: 'Design & Media',
     title: 'Video Promotion & Book Trailers',
+    bestFor: 'Authors wanting atmospheric book trailers, launch teasers, or short-form vertical reels for social platforms and author pages.',
+    turnaround: '2 to 3 weeks per trailer suite',
     summary:
-      'Creative video content that presents a book and its author in an engaging, shareable format to support awareness and promotion.',
+      'Narrative book trailers and short-form promotional videos combining evocative pacing, clear typography, licensed visuals, and voice/caption storytelling.',
+    workflow: [
+      'Extract core emotional hooks or strategic takeaways into a concise 30-to-60 second script and beat sheet.',
+      'Assemble visual storyboard frames matching the book cover palette and genre atmosphere.',
+      'Produce motion typography, book 3D/studio reveals, paced soundbed, and readable burned-in captions.',
+      'Export master cuts in widescreen (16:9), square (1:1), and vertical reel (9:16) ratios.',
+    ],
     deliverables: [
-      'Book trailer concept and creative direction',
-      'Promotional video scripting and storyboarding',
-      'Short-form promotional videos for social platforms',
-      'Author introduction and book-launch video content',
-      'Editing, captions and export in agreed formats',
+      'Trailer concept brief, hook script, and scene-by-scene storyboard',
+      'Primary 45–60 second launch book trailer in 1080p MP4',
+      'Short-form 15–30 second social reels formatted for Instagram, TikTok, and YouTube Shorts',
+      'Accessible captions, music licensing, and cover end-card call-to-action',
+      'Platform-ready exports with thumbnail still frames',
     ],
   },
   {
@@ -98,14 +283,22 @@ const SERVICES = [
     category: 'promotion',
     categoryLabel: 'Promotion & Outreach',
     title: 'Visibility & Discoverability',
+    bestFor: 'Authors whose books are live or nearing upload and need stronger storefront copy, category placement, and search relevance.',
+    turnaround: '1 to 2 weeks',
     summary:
-      'Book positioning and listing improvements that help readers and relevant search systems understand what a book is about.',
+      'Detailed storefront positioning, book description copywriting, BISAC/retail category refinement, and metadata alignment so readers and search systems accurately understand your book.',
+    workflow: [
+      'Audit existing or planned retailer listings, subtitle clarity, author bio, and category competitiveness.',
+      'Conduct reader-intent keyword and thematic category research tailored to your book’s exact audience.',
+      'Rewrite the storefront book description with strong hook copy, scannable formatting, and clear reader promise.',
+      'Align author profiles, series metadata, and retail attributes across platforms for consistency.',
+    ],
     deliverables: [
-      'Book description and positioning review',
-      'Category and keyword research guidance',
-      'Metadata review and recommendations',
-      'Author and book profile consistency',
-      'Storefront listing improvement recommendations',
+      'Storefront listing audit with prioritized improvement notes',
+      'Rewritten conversion-focused book description (HTML-ready for Amazon/retailers)',
+      'Targeted category and reader-search keyword matrix',
+      'Author bio refinement and series metadata consistency check',
+      'Step-by-step implementation guide for updating live retailer dashboards',
     ],
   },
   {
@@ -113,14 +306,22 @@ const SERVICES = [
     category: 'promotion',
     categoryLabel: 'Promotion & Outreach',
     title: 'Reader Outreach',
+    bestFor: 'Authors seeking genuine outreach to genre book clubs, independent reviewers, podcast hosts, and niche newsletters.',
+    turnaround: '3 to 6 week outreach cycles',
     summary:
-      'Thoughtful outreach to relevant reader communities, reviewers, podcasts and literary platforms, subject to their rules and editorial decisions.',
+      'Thoughtful, human-written outreach to relevant reader communities, podcasts, and editorial platforms—respecting every publication’s submission rules and independent editorial judgment.',
+    workflow: [
+      'Research aligned podcasts, book bloggers, literary newsletters, and genre communities matching your readership.',
+      'Draft individualized pitch letters, review-copy invitations, and concise author press notes.',
+      'Coordinate outreach batches, track responses, and manage review-copy fulfillment requests.',
+      'Provide a clean activity log detailing every prospect contacted, response received, and follow-up status.',
+    ],
     deliverables: [
-      'Audience and community research',
-      'Personalised outreach copy and pitch preparation',
-      'Reviewer and podcast prospect identification',
-      'Outreach tracking and response coordination',
-      'Clear reporting on activity and responses',
+      'Curated prospect list of aligned reviewers, podcasts, and reader communities',
+      'Personalized pitch templates and one-page digital media/press sheet',
+      'Coordinated outreach execution and response tracking',
+      'Review-copy coordination notes (ARC / digital / print)',
+      'Transparent outreach activity and response report',
     ],
   },
 ];
@@ -131,72 +332,126 @@ const TEAM = [
     initials: 'GJ',
     name: 'Gracious J. Literary',
     role: 'Team Leader & Senior Publishing and Literary Specialist',
-    bio: 'Provides senior literary and publishing direction, helping coordinate the Centre’s author-focused work and maintain a clear view of each project’s publishing objectives.',
     email: 'gracious@bookrisecentre.com',
     photo: ASSETS.team.gracious,
     framedScreenshot: true,
     focus: '50% 3%',
     scale: '1.34',
+    bio: 'Leads overall literary direction and team coordination at BookRise Centre, ensuring every author project is structured around sound editorial judgment, clear written agreements, and realistic publishing goals.',
+    officeSummary:
+      'In the office, Gracious oversees initial manuscript evaluations, chairs weekly project-alignment reviews across all six specialists, and personally guides authors through complex publishing decisions—from structural editorial roadmaps to imprint and distribution strategy.',
+    workflow: [
+      'Reviews incoming project briefs and evaluates manuscript readiness before formal scoping begins.',
+      'Leads literary direction and assigns editorial, design, and promotion milestones across the specialist team.',
+      'Audits final deliverables prior to handover to verify editorial fidelity and adherence to the written agreement.',
+      'Serves as senior advisor on author rights, creative independence, and multi-book series planning.',
+    ],
+    collaboration: 'Coordinates directly with Stephen O. Quill on editorial scheduling and with Moses O. Lane on launch-level strategic positioning.',
   },
   {
     id: 'rapheal',
     initials: 'RA',
     name: 'Rapheal Adebayo',
     role: 'Publishing & Book Promotion Specialist',
-    bio: 'Contributes publishing and book-promotion expertise, with a focus on project positioning, communication and connecting books with relevant promotional opportunities.',
     email: 'rapheal@bookrisecentre.com',
     photo: ASSETS.team.rapheal,
     framedScreenshot: true,
     focus: '50% 3%',
     scale: '1.28',
+    bio: 'Combines hands-on publishing preparation with practical campaign execution, helping authors bridge the gap between finishing a manuscript and presenting it persuasively to the marketplace.',
+    officeSummary:
+      'Day-to-day at BookRise Centre, Rapheal translates a book’s core themes into clear promotional messaging, builds campaign rollouts, and manages visual and written promotion assets—ensuring the book’s positioning stays consistent across cover design, listings, and outreach.',
+    workflow: [
+      'Audits manuscript positioning and identifies the strongest hooks for target reader segments.',
+      'Coordinates promotional asset production—including launch banners, author spotlights, and trailer briefs.',
+      'Manages multi-week promotional schedules and keeps authors informed at each campaign checkpoint.',
+      'Compiles post-campaign performance notes and clear next-step recommendations after launch.',
+    ],
+    collaboration: 'Partners closely with Katherine S. Ashmore on campaign execution and with Benjamin Stewart on promotional collateral.',
   },
   {
     id: 'katherine',
     initials: 'KA',
     name: 'Katherine S. Ashmore',
     role: 'Book Marketing Specialist & Reader Promoter',
-    bio: 'Specializes in book marketing and reader promotion, supporting audience research, campaign planning and reader-focused outreach.',
     email: 'katherine@bookrisecentre.com',
     photo: ASSETS.team.katherine,
     framedScreenshot: true,
     focus: '50% 3%',
     scale: '1.28',
+    bio: 'Focuses on audience discovery, reader-community engagement, and personalized outreach that introduces books to the specific readers, podcasts, and reviewers most likely to appreciate them.',
+    officeSummary:
+      'In the office, Katherine conducts deep genre-audience research, crafts individualized pitch letters for literary podcasts, book clubs, and independent reviewers, and manages reader-outreach calendars with strict respect for editorial independence.',
+    workflow: [
+      'Maps genre-specific reader communities, newsletters, book clubs, and podcast rosters.',
+      'Writes tailored pitch copy and press notes highlighting each book’s distinctive reader value.',
+      'Tracks outreach correspondence, review-copy dispatches, and interview or feature confirmations.',
+      'Maintains transparent reporting logs so authors see every outreach touchpoint completed.',
+    ],
+    collaboration: 'Works alongside Rapheal Adebayo on launch-month audience momentum and Moses O. Lane on discoverability alignment.',
   },
   {
     id: 'benjamin',
     initials: 'BS',
     name: 'Benjamin Stewart',
     role: 'Publishing & Book Promotion Specialist',
-    bio: 'Contributes publishing, book-promotion and author-support expertise to coordinated project delivery.',
     email: 'benjamin@bookrisecentre.com',
     photo: ASSETS.team.benjamin,
     framedScreenshot: true,
     focus: '50% 3%',
     scale: '1.28',
+    bio: 'Supports both pre-publication readiness and coordinated book promotion, helping authors navigate platform workflows, storefront asset preparation, and campaign follow-through.',
+    officeSummary:
+      'At his desk, Benjamin handles cross-channel promotional coordination, validates retail storefront assets, supports video trailer production briefs, and ensures campaign deliverables move smoothly from concept approval to publication day.',
+    workflow: [
+      'Prepares platform-ready promotional kits, storefront visuals, and retail presentation assets.',
+      'Coordinates trailer storyboarding, captioning checks, and multi-ratio social video exports.',
+      'Reviews campaign checklists ahead of scheduled release milestones to prevent launch bottlenecks.',
+      'Supports client communication and revision coordination during active promotional cycles.',
+    ],
+    collaboration: 'Works hand-in-hand with Rapheal Adebayo on promotional production and Stephen O. Quill on technical delivery deadlines.',
   },
   {
     id: 'stephen',
     initials: 'SQ',
     name: 'Stephen O. Quill',
     role: 'Editorial & Publishing Operations Specialist',
-    bio: 'Supports manuscript preparation, editorial workflow coordination and pre-publication readiness to keep author milestones structured and on schedule.',
     email: 'stephen@bookrisecentre.com',
-    photo: ASSETS.team.newMemberOne,
+    photo: ASSETS.team.stephen,
     framedScreenshot: false,
     focus: '50% 18%',
     scale: '1',
+    bio: 'Oversees editorial workflows, manuscript preparation, formatting standards, and production operations so every book transitions cleanly from raw draft to publication-grade files.',
+    officeSummary:
+      'In the office, Stephen manages manuscript intake, coordinates developmental and copy-editing passes, enforces style-sheet consistency, and oversees print interior typesetting, EPUB validation, and ISBN/imprint technical checks.',
+    workflow: [
+      'Performs structural and technical intake checks on newly submitted manuscripts and front/back matter.',
+      'Maintains project style sheets and tracks editorial revisions across developmental, copy, and proof passes.',
+      'Supervises print layout specifications (margins, bleed, spine math) and digital EPUB validation.',
+      'Manages milestone timelines and final production file handovers to the author.',
+    ],
+    collaboration: 'Coordinates directly with Gracious J. Literary on editorial quality and with Benjamin Stewart on print/digital release readiness.',
   },
   {
     id: 'moses',
     initials: 'ML',
     name: 'Moses O. Lane',
     role: 'Book Visibility & Author Strategy Specialist',
-    bio: 'Advises authors on positioning, discoverability planning and multi-channel launch campaigns tailored to each title’s target readership.',
     email: 'moses@bookrisecentre.com',
-    photo: ASSETS.team.newMemberTwo,
+    photo: ASSETS.team.moses,
     framedScreenshot: false,
     focus: '50% 16%',
     scale: '1',
+    bio: 'Specializes in book discoverability, storefront listing architecture, keyword and category research, and long-term author positioning across major retail ecosystems.',
+    officeSummary:
+      'In the office, Moses analyzes storefront category dynamics, writes high-clarity book descriptions, structures BISAC and retail keyword metadata, and advises authors on building cohesive multi-book visibility across Amazon, Ingram, and direct channels.',
+    workflow: [
+      'Audits book titles, subtitles, descriptions, and category placements against live marketplace patterns.',
+      'Researches reader-intent search terms and builds balanced primary/secondary category recommendations.',
+      'Rewrites storefront blurbs and author bios for immediate clarity, credibility, and reader conversion.',
+      'Designs long-tail visibility plans connecting debut releases with follow-up volumes and backlist titles.',
+    ],
+    collaboration: 'Partners with Katherine S. Ashmore on audience targeting and with Gracious J. Literary on overarching author strategy.',
   },
 ];
 
@@ -209,7 +464,11 @@ const PROJECTS = [
     genre: 'Business & Strategy',
     scope: 'Developmental Editing · Hardcover Cover Design · Positioning',
     brief: 'Strengthen executive clarity across twelve leadership chapters and establish a flagship clothbound visual identity built for senior decision-makers.',
-    deliverables: ['Full developmental & structural manuscript edit', 'Custom navy linen & gold-foil hardcover design', 'Storefront positioning & executive synopsis'],
+    deliverables: [
+      'Full developmental and structural manuscript edit across 12 chapters',
+      'Custom navy linen and brushed gold-foil hardcover design',
+      'Storefront positioning, executive synopsis, and category placement',
+    ],
     image: ASSETS.books.executive,
     quote:
       'BookRise Centre completely transformed my manuscript. Their developmental editing was sharp, and the cover design for The Executive Edge gave it the premium, authoritative look I needed for the business market.',
@@ -217,12 +476,15 @@ const PROJECTS = [
   {
     number: '02',
     id: 'whispers-of-the-wind',
-    title: 'Whispers of the Wind',
     author: 'Sarah Mitchell',
     genre: 'Memoir',
     scope: 'Editorial Support · Visibility & Categorization · Reader Outreach',
     brief: 'Preserve an intimate literary memoir voice while refining chapter pacing, reader categorization, and thoughtful book-club outreach.',
-    deliverables: ['Line editing & sensitive narrative pacing review', 'Tactile ivory cotton jacket & botanical embossing', 'Category taxonomy & targeted memoir reader outreach'],
+    deliverables: [
+      'Sensitive line editing and narrative pacing review',
+      'Tactile ivory cotton dust jacket with embossed botanical motif',
+      'Memoir category taxonomy and targeted reader-community outreach',
+    ],
     image: ASSETS.books.whispers,
     quote:
       'As a memoirist, I was nervous about sharing my personal story. The team at BookRise was incredibly supportive and respectful. The visibility and categorization they set up meant my book reached exactly the right readers.',
@@ -230,12 +492,15 @@ const PROJECTS = [
   {
     number: '03',
     id: 'lead-with-purpose',
-    title: 'Lead with Purpose',
     author: 'Robert Caldwell',
     genre: 'Leadership & Strategy',
     scope: 'Book Positioning · Metadata Optimization · Launch Campaign',
     brief: 'Unify hardcover presentation, keyword architecture, and launch-month outreach into one cohesive leadership release.',
-    deliverables: ['Slate cloth hardcover & brass spine typography', 'Keyword, BISAC category & listing optimization', 'Coordinated launch-window campaign plan'],
+    deliverables: [
+      'Slate cloth hardcover and brass spine typography',
+      'Keyword, BISAC category, and retail listing optimization',
+      'Coordinated launch-window campaign plan and progress reporting',
+    ],
     image: ASSETS.books.purpose,
     quote:
       'They do not just design a cover; they position the whole book. The promotional strategy and metadata optimization they did for Lead with Purpose made my launch much smoother.',
@@ -243,54 +508,55 @@ const PROJECTS = [
 ];
 
 const FAQS = [
-  [
-    'What services does BookRise Centre provide?',
-    'We provide publishing support, editing and writing, cover design, book promotion, video promotion and book trailers, visibility and discoverability support, and reader outreach. The exact work available for a project is confirmed during the initial discussion and scoping process.',
-  ],
-  [
-    'Can I request just one service?',
-    'Yes. You may enquire about an individual service or a combination of services. The recommendation depends on your project requirements and the work you want completed.',
-  ],
-  [
-    'How much do your services cost?',
-    'We use project-based quotations rather than publishing a single price for every book. Fees depend on the service, manuscript or campaign requirements, scope, turnaround, deliverables and any external costs. Contact us for a written quotation.',
-  ],
-  [
-    'Do you offer fixed packages?',
-    'A defined package may be discussed where the scope is suitable, but we do not assume every author needs the same combination of services. Any package, inclusions and exclusions must be stated clearly in writing.',
-  ],
-  [
-    'Does BookRise Centre take ownership of my book?',
-    'No. Authors retain their intellectual property rights. The written agreement should confirm ownership and any limited permissions needed to perform the agreed services.',
-  ],
-  [
-    'Do you take royalties from book sales?',
-    'No. BookRise Centre charges for the agreed author services and does not take your book royalties.',
-  ],
-  [
-    'Do you guarantee book sales, reviews, rankings or media coverage?',
-    'No. Sales, reviews, rankings, media coverage and audience response depend on factors outside any service provider’s control. We do not guarantee these outcomes. We focus on carrying out the agreed professional work and reporting on the activity within scope.',
-  ],
-  [
-    'How do you begin a project?',
-    'We start with an enquiry and a discussion of your book, goals and requirements. If the proposed work is suitable, we provide a written scope, quotation and terms for your review.',
-  ],
-  [
-    'When does work begin?',
-    'Work begins after the scope, fees, deliverables, timeline, payment arrangements and applicable terms have been agreed in writing and any required initial payment has been received.',
-  ],
-  [
-    'Can you work with a book that is already published?',
-    'Yes. Authors may enquire about editing, cover updates, metadata and discoverability reviews, promotional planning or reader outreach for an already published title.',
-  ],
-  [
-    'Will I receive updates during the project?',
-    'Communication and review points are agreed as part of the project scope. The agreement should identify the expected contact points and how feedback or approvals will be handled.',
-  ],
-  [
-    'What information should I include in my enquiry?',
-    'Include your name, email, book title if available, genre, current publishing stage, the service you are considering, a short project description and your preferred timeline.',
-  ],
+  ['What services does BookRise Centre provide?', 'We provide seven connected author services: publishing support, editing and writing, cover design, book promotion, video promotion and book trailers, visibility and discoverability optimization, and reader outreach. Services can be commissioned individually or combined under a coordinated written plan.'],
+  ['Can I request just one service?', 'Yes. Authors frequently engage us for a single focused discipline—such as cover design, copy editing, or storefront metadata optimization—without being pushed into a bundled package.'],
+  ['How much do your services cost?', 'We prepare project-based quotations rather than flat one-size-fits-all pricing. Fees depend on manuscript word count, file condition, editorial depth, design deliverables, turnaround timeline, and any approved external costs. You receive a full written quotation before making any commitment.'],
+  ['Do you offer fixed packages?', 'Defined multi-service scopes can be structured when a book genuinely needs several stages (for example, editing plus cover design plus launch visibility), and every inclusion and exclusion is stated clearly in writing.'],
+  ['Does BookRise Centre take ownership of my book?', 'No. Authors retain 100% of their copyright and intellectual property. Our written agreements confirm that any limited access granted to BookRise Centre is solely for executing the agreed project deliverables.'],
+  ['Do you take royalties from book sales?', 'No. BookRise Centre operates strictly as a fee-for-service partner. You keep 100% of your royalties and distribution account control.'],
+  ['Do you guarantee book sales, reviews, rankings, or media coverage?', 'No. No ethical publishing-services provider can guarantee commercial sales, bestseller rankings, or independent editorial reviews. We guarantee disciplined, professional execution of every agreed deliverable and transparent reporting on all work carried out.'],
+  ['How do you begin a project?', 'Start with an enquiry sharing your book stage, genre, word count if known, and goals. We review your project, discuss recommended options, and send a written scope, timeline, and quotation for review.'],
+  ['When does work begin?', 'Work begins only after you have reviewed and approved the written agreement and submitted any agreed initial stage payment.'],
+  ['Can you work with a book that is already published?', 'Yes. We regularly help published authors refresh book covers, rewrite storefront descriptions, refine categories and keywords, produce promotional trailers, and launch reader outreach campaigns.'],
+  ['Will I receive updates during the project?', 'Yes. Every project includes clear communication checkpoints, revision windows, and milestone updates managed by your assigned specialist team.'],
+  ['Who owns the final design and manuscript files?', 'Upon completion and final payment, the final agreed export files (print-ready wraps, ebook covers, edited manuscripts, promotional graphics, and trailers) are handed over directly to you.'],
+  ['How do you handle confidential manuscripts?', 'Please do not upload complete manuscripts in the initial public contact form. Once we establish contact and agree terms, secure submission channels and confidentiality arrangements are confirmed directly.'],
+  ['What information should I include in my enquiry?', 'Share your name, email, working title, genre, approximate word count, publishing stage, the services you are exploring, and your preferred timeline or consultation window.'],
+];
+
+const CHECKLIST_GROUPS = [
+  {
+    title: '01. Structural & Editorial Readiness',
+    items: [
+      { id: 'chk-struct', label: 'Manuscript structure, chapter sequence, and narrative arc reviewed' },
+      { id: 'chk-copy', label: 'Copy edit completed for clarity, voice consistency, and grammar' },
+      { id: 'chk-proof', label: 'Final proofread completed on formatted pages prior to release' },
+    ],
+  },
+  {
+    title: '02. Design & Production Files',
+    items: [
+      { id: 'chk-cover', label: 'Front cover evaluated at both full scale and mobile thumbnail size' },
+      { id: 'chk-wrap', label: 'Spine width and back-cover wrap calibrated to final page count' },
+      { id: 'chk-interior', label: 'Interior print PDF (margins, bleed) and validated EPUB prepared' },
+    ],
+  },
+  {
+    title: '03. Rights, ISBN & Metadata',
+    items: [
+      { id: 'chk-isbn', label: 'ISBN ownership, imprint name, and copyright page details confirmed' },
+      { id: 'chk-blurb', label: 'Storefront book description written with clear hook and reader promise' },
+      { id: 'chk-cats', label: 'Primary retail categories and reader-intent keywords selected' },
+    ],
+  },
+  {
+    title: '04. Promotion & Reader Outreach',
+    items: [
+      { id: 'chk-assets', label: 'Author spotlight graphics, quote cards, or launch trailer prepared' },
+      { id: 'chk-bio', label: 'Author bio and press/contact links aligned across platforms' },
+      { id: 'chk-outreach', label: 'Target podcasts, reviewers, or reader communities shortlisted' },
+    ],
+  },
 ];
 
 const esc = (str = '') =>
@@ -321,7 +587,6 @@ const css = `
   --gold-soft: rgba(181, 139, 64, 0.12);
   --header-bg: rgba(255, 255, 255, 0.94);
   --input-bg: #fcfbf8;
-  --shadow-card: 0 12px 32px rgba(12, 25, 48, 0.05);
   --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -346,7 +611,6 @@ html[data-theme="dark"] {
   --gold-soft: rgba(223, 189, 117, 0.14);
   --header-bg: rgba(11, 21, 36, 0.94);
   --input-bg: #0d192b;
-  --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.3);
 }
 
 html[data-text-size="comfortable"] { --base-size: 17px; }
@@ -366,9 +630,7 @@ html[data-theme="dark"][data-contrast="high"] {
   --line-strong: rgba(255, 255, 255, 0.48);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   font-size: var(--base-size);
@@ -377,9 +639,7 @@ html {
   scrollbar-color: var(--gold) var(--surface-alt);
 }
 
-html[data-motion="reduced"] {
-  scroll-behavior: auto;
-}
+html[data-motion="reduced"] { scroll-behavior: auto; }
 
 body {
   margin: 0;
@@ -392,39 +652,15 @@ body {
   transition: background-color 180ms var(--ease), color 180ms var(--ease);
 }
 
-html[data-theme="dark"] body {
-  letter-spacing: 0.01em;
-}
+html[data-theme="dark"] body { letter-spacing: 0.01em; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+.wrap { width: min(var(--container), calc(100% - 48px)); margin: 0 auto; }
+.tabular { font-variant-numeric: tabular-nums; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-}
-
-:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-}
-
-.wrap {
-  width: min(var(--container), calc(100% - 48px));
-  margin: 0 auto;
-}
-
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
-
-/* Scroll Progress */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -438,7 +674,7 @@ button, input, select, textarea {
   pointer-events: none;
 }
 
-/* Top Bar Contract: strictly 3 zones — Brand | 5 links | 1 Primary Action */
+/* Top Bar Contract: strictly 3 zones */
 .site-header {
   position: sticky;
   top: 0;
@@ -476,11 +712,7 @@ button, input, select, textarea {
   flex-shrink: 0;
 }
 
-.brand-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
 
 .brand-wordmark {
   font-family: var(--serif);
@@ -491,11 +723,7 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-.primary-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
+.primary-nav { display: flex; align-items: center; gap: 28px; }
 
 .primary-nav a {
   position: relative;
@@ -521,15 +749,8 @@ button, input, select, textarea {
   transition: transform 180ms var(--ease);
 }
 
-.primary-nav a:hover,
-.primary-nav a.is-active {
-  color: var(--ink-strong);
-}
-
-.primary-nav a:hover::after,
-.primary-nav a.is-active::after {
-  transform: scaleX(1);
-}
+.primary-nav a:hover, .primary-nav a.is-active { color: var(--ink-strong); }
+.primary-nav a:hover::after, .primary-nav a.is-active::after { transform: scaleX(1); }
 
 .header-cta {
   display: inline-flex;
@@ -545,7 +766,7 @@ button, input, select, textarea {
   white-space: nowrap;
   flex-shrink: 0;
   min-height: 40px;
-  transition: transform 160ms var(--ease), background-color 160ms var(--ease), border-color 160ms var(--ease);
+  transition: transform 160ms var(--ease), background-color 160ms var(--ease);
 }
 
 html[data-theme="dark"] .header-cta {
@@ -554,14 +775,8 @@ html[data-theme="dark"] .header-cta {
   border-color: var(--gold);
 }
 
-.header-cta:hover {
-  transform: translateY(-1px);
-  background: var(--navy-soft);
-}
-
-html[data-theme="dark"] .header-cta:hover {
-  background: var(--gold-bright);
-}
+.header-cta:hover { transform: translateY(-1px); background: var(--navy-soft); }
+html[data-theme="dark"] .header-cta:hover { background: var(--gold-bright); }
 
 .mobile-menu-btn {
   display: none;
@@ -577,7 +792,6 @@ html[data-theme="dark"] .header-cta:hover {
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  gap: 8px;
 }
 
 .mobile-drawer {
@@ -590,17 +804,8 @@ html[data-theme="dark"] .header-cta:hover {
   transition: opacity 180ms var(--ease), transform 180ms var(--ease);
 }
 
-.mobile-drawer.is-open {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.mobile-drawer-links {
-  display: grid;
-  gap: 4px;
-}
-
+.mobile-drawer.is-open { display: block; opacity: 1; transform: translateY(0); }
+.mobile-drawer-links { display: grid; gap: 4px; }
 .mobile-drawer-links a {
   display: flex;
   align-items: center;
@@ -611,34 +816,15 @@ html[data-theme="dark"] .header-cta:hover {
   color: var(--ink);
   border-bottom: 1px solid var(--line);
 }
+.mobile-drawer-links a.is-active { color: var(--gold); }
+.mobile-drawer-actions { display: grid; gap: 10px; margin-top: 16px; }
 
-.mobile-drawer-links a.is-active {
-  color: var(--gold);
-}
-
-.mobile-drawer-actions {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-/* Main entrance transition */
-.page-main {
-  animation: pageEnter 240ms var(--ease) both;
-}
-
+.page-main { animation: pageEnter 240ms var(--ease) both; }
 @keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -654,57 +840,16 @@ html[data-theme="dark"] .header-cta:hover {
   border: 1px solid transparent;
   transition: transform 160ms var(--ease), background-color 160ms var(--ease), color 160ms var(--ease), border-color 160ms var(--ease);
 }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--gold-bright); color: #0b1524; border-color: var(--gold-bright); }
+.btn-primary:hover { background: #e2c27e; border-color: #e2c27e; }
+.btn-navy { background: var(--navy); color: #ffffff; border-color: var(--navy); }
+html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; border-color: var(--gold); }
+.btn-ghost { background: transparent; color: #ffffff; border-color: rgba(255, 255, 255, 0.35); }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.7); }
+.btn-outline { background: transparent; color: var(--ink-strong); border-color: var(--line-strong); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: var(--gold-bright);
-  color: #0b1524;
-  border-color: var(--gold-bright);
-}
-
-.btn-primary:hover {
-  background: #e2c27e;
-  border-color: #e2c27e;
-}
-
-.btn-navy {
-  background: var(--navy);
-  color: #ffffff;
-  border-color: var(--navy);
-}
-
-html[data-theme="dark"] .btn-navy {
-  background: var(--gold);
-  color: #091322;
-  border-color: var(--gold);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--ink-strong);
-  border-color: var(--line-strong);
-}
-
-.btn-outline:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-/* Typography & Section Primitives */
 .eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
@@ -713,21 +858,14 @@ html[data-theme="dark"] .btn-navy {
   color: var(--gold);
 }
 
-.section {
-  padding: 84px 0;
-}
-
+.section { padding: 80px 0; }
 .section-surface {
   background: var(--surface);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.section-header {
-  max-width: 720px;
-  margin-bottom: 40px;
-}
-
+.section-header { max-width: 740px; margin-bottom: 40px; }
 .section-header-split {
   display: flex;
   align-items: flex-end;
@@ -736,10 +874,7 @@ html[data-theme="dark"] .btn-navy {
   margin-bottom: 40px;
   flex-wrap: wrap;
 }
-
-.section-header-split > div {
-  max-width: 680px;
-}
+.section-header-split > div { max-width: 700px; }
 
 .section h2 {
   font-family: var(--serif);
@@ -752,13 +887,7 @@ html[data-theme="dark"] .btn-navy {
   text-wrap: balance;
 }
 
-.lead {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
-  max-width: 64ch;
-}
+.lead { font-size: 1.0625rem; line-height: 1.7; color: var(--muted); margin: 0; max-width: 68ch; }
 
 .text-link {
   display: inline-flex;
@@ -767,14 +896,11 @@ html[data-theme="dark"] .btn-navy {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--gold);
-  transition: transform 160ms var(--ease), color 160ms var(--ease);
+  transition: transform 160ms var(--ease);
 }
+.text-link:hover { transform: translateX(3px); }
 
-.text-link:hover {
-  transform: translateX(3px);
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
   background: linear-gradient(125deg, #091529 0%, #122442 62%, #0c1930 100%);
   color: #f8fafc;
@@ -789,13 +915,7 @@ html[data-theme="dark"] .btn-navy {
   align-items: stretch;
 }
 
-.hero-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 12px 0;
-}
-
+.hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 10px 0; }
 .hero h1 {
   font-family: var(--serif);
   font-size: clamp(2.35rem, 4.1vw, 3.75rem);
@@ -806,23 +926,8 @@ html[data-theme="dark"] .btn-navy {
   color: #ffffff;
   text-wrap: balance;
 }
-
-.hero-lead {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: #d4deec;
-  max-width: 58ch;
-  margin: 0;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
+.hero-lead { font-size: 1.0625rem; line-height: 1.7; color: #d4deec; max-width: 60ch; margin: 0; }
+.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
 .hero-meta {
   display: flex;
   align-items: center;
@@ -843,7 +948,6 @@ html[data-theme="dark"] .btn-navy {
   background: #0d1b32;
   min-height: 360px;
 }
-
 .hero-media img {
   width: 100%;
   height: 100%;
@@ -851,11 +955,7 @@ html[data-theme="dark"] .btn-navy {
   object-position: center;
   transition: transform 420ms var(--ease);
 }
-
-.hero-media:hover img {
-  transform: scale(1.025);
-}
-
+.hero-media:hover img { transform: scale(1.025); }
 .hero-media-caption {
   position: absolute;
   left: 0;
@@ -871,7 +971,6 @@ html[data-theme="dark"] .btn-navy {
   gap: 12px;
 }
 
-/* Full-width 4-column Credential Strip below Hero Split */
 .metrics-band {
   margin-top: 44px;
   display: grid;
@@ -880,40 +979,18 @@ html[data-theme="dark"] .btn-navy {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);
 }
+.metric-cell { padding: 20px 22px; border-right: 1px solid rgba(255, 255, 255, 0.12); }
+.metric-cell:last-child { border-right: 0; }
+.metric-cell strong { display: block; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--gold-bright); line-height: 1.2; }
+.metric-cell span { display: block; margin-top: 4px; font-size: 0.8125rem; color: #cbd6e6; }
 
-.metric-cell {
-  padding: 20px 22px;
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.metric-cell:last-child {
-  border-right: 0;
-}
-
-.metric-cell strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--gold-bright);
-  line-height: 1.2;
-}
-
-.metric-cell span {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.8125rem;
-  color: #cbd6e6;
-}
-
-/* Page Intro Header (Inner Pages) */
+/* Page Intro */
 .page-intro {
   background: linear-gradient(125deg, #091529 0%, #142848 100%);
   color: #ffffff;
   padding: 64px 0;
   border-bottom: 1px solid rgba(212, 175, 98, 0.25);
 }
-
 .page-intro h1 {
   font-family: var(--serif);
   font-size: clamp(2.1rem, 3.8vw, 3.15rem);
@@ -922,31 +999,15 @@ html[data-theme="dark"] .btn-navy {
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 12px 0 16px;
-  max-width: 820px;
+  max-width: 860px;
   text-wrap: balance;
 }
+.page-intro p { font-size: 1.0625rem; color: #d4deec; max-width: 68ch; margin: 0; }
 
-.page-intro p {
-  font-size: 1.0625rem;
-  color: #d4deec;
-  max-width: 65ch;
-  margin: 0;
-}
-
-/* Asymmetric Bento Grid (7 Services — zero orphans) */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-}
-
-.bento-span-3 {
-  grid-column: span 3;
-}
-
-.bento-span-2 {
-  grid-column: span 2;
-}
+/* Bento & Cards */
+.bento-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+.bento-span-3 { grid-column: span 3; }
+.bento-span-2 { grid-column: span 2; }
 
 .card {
   background: var(--surface);
@@ -957,91 +1018,27 @@ html[data-theme="dark"] .btn-navy {
   flex-direction: column;
   transition: transform 200ms var(--ease), border-color 200ms var(--ease);
 }
+.card:hover { transform: translateY(-2px); border-color: var(--gold); }
+.card-index { font-size: 0.75rem; font-weight: 600; color: var(--gold); margin-bottom: 10px; }
+.card h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 10px; line-height: 1.25; }
+.card p { font-size: 0.9375rem; color: var(--muted); margin: 0; }
+.card-footer-link { margin-top: auto; padding-top: 18px; }
+.card ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.875rem; }
+.card li { margin: 6px 0; }
+.card-subhead { font-size: 0.8125rem; font-weight: 700; color: var(--ink-strong); margin: 18px 0 6px; }
 
-.card:hover {
-  transform: translateY(-2px);
-  border-color: var(--gold);
-}
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.split-editorial { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
 
-.card-index {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-  margin: 0 0 10px;
-  line-height: 1.25;
-}
-
-.card p {
-  font-size: 0.9375rem;
-  color: var(--muted);
-  margin: 0;
-}
-
-.card-footer-link {
-  margin-top: auto;
-  padding-top: 18px;
-}
-
-.card ul {
-  margin: 16px 0 0;
-  padding-left: 18px;
-  color: var(--muted);
-  font-size: 0.875rem;
-}
-
-.card li {
-  margin: 6px 0;
-}
-
-/* Editorial Grids */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.split-editorial {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 48px;
-  align-items: center;
-}
-
-/* Pullquote & Notice (clean hairline enclosure — NO thick left bar!) */
 .editorial-callout {
   background: var(--surface-alt);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 28px 30px;
+  padding: 26px 28px;
 }
-
-.editorial-callout blockquote {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  line-height: 1.55;
-  color: var(--ink-strong);
-}
-
-.editorial-callout figcaption {
-  margin-top: 14px;
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
+.editorial-callout blockquote { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.55; color: var(--ink-strong); }
+.editorial-callout figcaption { margin-top: 14px; font-size: 0.8125rem; color: var(--muted); }
 
 .crest-panel {
   background: #ffffff;
@@ -1051,15 +1048,16 @@ html[data-theme="dark"] .btn-navy {
   display: grid;
   place-items: center;
 }
+.crest-panel img { width: min(100%, 290px); height: auto; object-fit: contain; }
 
-.crest-panel img {
-  width: min(100%, 290px);
-  height: auto;
-  object-fit: contain;
+/* Adrian Emery Portfolio Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* Selected Work & Adjacent Testimonials */
-.work-card {
+.gallery-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1069,29 +1067,84 @@ html[data-theme="dark"] .btn-navy {
   transition: transform 200ms var(--ease), border-color 200ms var(--ease);
 }
 
-.work-card:hover {
+.gallery-card:hover {
   transform: translateY(-2px);
   border-color: var(--gold);
 }
 
-.work-media {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
+.gallery-mat {
+  height: 310px;
+  padding: 14px;
   background: var(--surface-alt);
   border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
 
-.work-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 320ms var(--ease);
+.gallery-mat img {
+  max-width: 100%;
+  max-height: 282px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 280ms var(--ease);
 }
 
-.work-card:hover .work-media img {
+.gallery-card:hover .gallery-mat img {
   transform: scale(1.025);
 }
+
+.gallery-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.gallery-meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.gallery-body h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink-strong);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.gallery-body p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+/* Selected Work Editions */
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms var(--ease), border-color 200ms var(--ease);
+}
+.work-card:hover { transform: translateY(-2px); border-color: var(--gold); }
+.work-media { aspect-ratio: 3 / 4; overflow: hidden; background: var(--surface-alt); border-bottom: 1px solid var(--line); }
+.work-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 320ms var(--ease); }
+.work-card:hover .work-media img { transform: scale(1.025); }
+.work-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.work-meta { font-size: 0.8125rem; color: var(--muted); margin-bottom: 8px; }
+.work-body h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 8px; }
+.work-scope { font-size: 0.8125rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+.work-quote { margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9rem; line-height: 1.65; color: var(--ink); }
+.work-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.8125rem; color: var(--muted); }
 
 .work-inspect-btn {
   margin-top: 16px;
@@ -1108,17 +1161,14 @@ html[data-theme="dark"] .btn-navy {
   gap: 6px;
   transition: transform 160ms var(--ease);
 }
+.work-inspect-btn:hover { transform: translateX(3px); }
 
-.work-inspect-btn:hover {
-  transform: translateX(3px);
-}
-
-/* Case Study Inspection Modal */
+/* Modals */
 .case-backdrop {
   position: fixed;
   inset: 0;
   z-index: 85;
-  background: rgba(9, 19, 34, 0.6);
+  background: rgba(9, 19, 34, 0.65);
   display: grid;
   place-items: center;
   padding: 20px;
@@ -1126,142 +1176,44 @@ html[data-theme="dark"] .btn-navy {
   pointer-events: none;
   transition: opacity 200ms var(--ease);
 }
-
-.case-backdrop.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
+.case-backdrop.is-open { opacity: 1; pointer-events: auto; }
 .case-modal {
-  width: min(880px, 100%);
+  width: min(920px, 100%);
   max-height: 90vh;
   overflow-y: auto;
   background: var(--surface);
   border: 1px solid var(--line-strong);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
+  grid-template-columns: 0.95fr 1.05fr;
   transform: translateY(10px);
   transition: transform 220ms var(--ease);
 }
-
-.case-backdrop.is-open .case-modal {
-  transform: translateY(0);
-}
-
+.case-backdrop.is-open .case-modal { transform: translateY(0); }
 .case-modal-media {
   background: var(--surface-alt);
   border-right: 1px solid var(--line);
+  padding: 16px;
+  display: grid;
+  place-items: center;
 }
+.case-modal-media img { max-width: 100%; max-height: 75vh; width: auto; height: auto; object-fit: contain; border-radius: 4px; }
+.case-modal-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.case-modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.case-modal-body h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--ink-strong); margin: 4px 0 0; }
+.case-modal-body ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.875rem; }
+.case-modal-body li { margin: 5px 0; }
 
-.case-modal-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.case-modal-body {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.case-modal-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.case-modal-body h3 {
-  font-family: var(--serif);
-  font-size: 1.65rem;
-  color: var(--ink-strong);
-  margin: 4px 0 0;
-}
-
-.case-modal-body ul {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-  font-size: 0.875rem;
-}
-
-.case-modal-body li {
-  margin: 5px 0;
-}
-
-@media (max-width: 760px) {
-  .case-modal {
-    grid-template-columns: 1fr;
-  }
-  .case-modal-media {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    max-height: 340px;
-  }
-}
-
-.work-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.work-meta {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.work-body h3 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-  margin: 0 0 8px;
-}
-
-.work-scope {
-  font-size: 0.8125rem;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.work-quote {
-  margin: auto 0 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: var(--ink);
-}
-
-.work-quote cite {
-  display: block;
-  margin-top: 10px;
-  font-style: normal;
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
-
-/* Team Cards (6 members in 3-col balanced grid) */
-.team-card {
+/* Team Detailed Profiles */
+.team-detailed-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 200ms var(--ease), border-color 200ms var(--ease);
-}
-
-.team-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--gold);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
 .team-portrait-frame {
@@ -1272,20 +1224,8 @@ html[data-theme="dark"] .btn-navy {
   overflow: hidden;
   background: var(--surface-alt);
   border: 1px solid var(--line);
-  margin-bottom: 18px;
 }
-
-.team-portrait-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 320ms var(--ease);
-}
-
-.team-card:hover .team-portrait-frame img.team-photo-native {
-  transform: scale(1.03);
-}
-
+.team-portrait-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 320ms var(--ease); }
 .team-fallback {
   position: absolute;
   inset: 0;
@@ -1296,57 +1236,35 @@ html[data-theme="dark"] .btn-navy {
   color: var(--gold);
   background: var(--surface-alt);
 }
+.team-portrait-frame.is-broken .team-fallback { display: grid; }
 
-.team-portrait-frame.is-broken .team-fallback {
-  display: grid;
+.team-detail-head h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 4px; }
+.team-role { font-size: 0.875rem; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+.team-office-box {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
-
-.team-card h3 {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-  margin: 0 0 6px;
-}
-
-.team-role {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--gold);
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.team-bio {
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin: 0 0 18px;
-  flex: 1;
-}
-
-.team-contact {
+.team-office-box h4 { font-size: 0.8125rem; font-weight: 700; color: var(--ink-strong); margin: 0 0 8px; }
+.team-office-box ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.875rem; }
+.team-office-box li { margin: 6px 0; }
+.team-collab { margin-top: 14px; font-size: 0.8125rem; color: var(--muted); }
+.team-contact-row {
+  margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
-  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
 }
-
-.team-contact a {
-  color: var(--ink-strong);
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-
-.team-contact a:hover {
-  color: var(--gold);
-}
+.team-contact-row a { font-weight: 600; color: var(--ink-strong); }
+.team-contact-row a:hover { color: var(--gold); }
 
 /* Home compact team strip */
-.team-strip-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
-}
-
+.team-strip-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .team-mini {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1354,33 +1272,12 @@ html[data-theme="dark"] .btn-navy {
   padding: 14px;
   transition: transform 180ms var(--ease), border-color 180ms var(--ease);
 }
+.team-mini:hover { transform: translateY(-2px); border-color: var(--gold); }
+.team-mini .team-portrait-frame { margin-bottom: 12px; }
+.team-mini h3 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 4px; line-height: 1.3; }
+.team-mini p { font-size: 0.75rem; color: var(--muted); margin: 0; line-height: 1.4; }
 
-.team-mini:hover {
-  transform: translateY(-2px);
-  border-color: var(--gold);
-}
-
-.team-mini .team-portrait-frame {
-  margin-bottom: 12px;
-}
-
-.team-mini h3 {
-  font-family: var(--serif);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-  margin: 0 0 4px;
-  line-height: 1.3;
-}
-
-.team-mini p {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Segmented Filter Controls */
+/* Interactive Tools (Before/After, Estimator, Checklist, Comparison Table) */
 .filter-bar {
   display: inline-flex;
   align-items: center;
@@ -1391,7 +1288,6 @@ html[data-theme="dark"] .btn-navy {
   border-radius: 8px;
   flex-wrap: wrap;
 }
-
 .filter-btn {
   min-height: 36px;
   padding: 6px 14px;
@@ -1405,29 +1301,101 @@ html[data-theme="dark"] .btn-navy {
   cursor: pointer;
   transition: background-color 160ms var(--ease), color 160ms var(--ease);
 }
+.filter-btn:hover { color: var(--ink-strong); }
+.filter-btn.is-active { background: var(--surface); color: var(--ink-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
 
-.filter-btn:hover {
-  color: var(--ink-strong);
-}
-
-.filter-btn.is-active {
+.sample-compare-box {
   background: var(--surface);
-  color: var(--ink-strong);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
 }
+.sample-pane { display: none; }
+.sample-pane.is-active { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+.sample-column {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+.sample-column-head {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.sample-column p { margin: 0 0 10px; font-size: 0.9375rem; color: var(--ink); }
+.sample-notes { font-size: 0.8125rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 12px; }
 
-/* FAQ Search & Accordion */
-.faq-toolbar {
+.estimator-shell {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+.estimator-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.check-chip {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  gap: 10px;
+  padding: 11px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--input-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
 }
+.check-chip input { width: 17px; height: 17px; accent-color: var(--gold); flex-shrink: 0; }
 
+.checklist-progress-bar {
+  height: 8px;
+  width: 100%;
+  background: var(--surface-alt);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.checklist-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 220ms var(--ease);
+}
+.checklist-group {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+.checklist-group h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 12px; color: var(--ink-strong); }
+.checklist-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.checklist-row input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--gold); flex-shrink: 0; }
+
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 0.875rem; }
+.compare-table th, .compare-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.compare-table th { background: var(--surface-alt); color: var(--ink-strong); font-weight: 700; font-size: 0.8125rem; }
+.compare-table tr:last-child td { border-bottom: 0; }
+
+/* FAQ Search & Accordion */
+.faq-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
 .faq-search {
-  width: min(420px, 100%);
+  width: min(440px, 100%);
   min-height: 44px;
   padding: 10px 14px;
   border: 1px solid var(--line-strong);
@@ -1436,15 +1404,8 @@ html[data-theme="dark"] .btn-navy {
   color: var(--ink);
   font-size: 0.9375rem;
 }
-
-.faq-list {
-  border-top: 1px solid var(--line);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--line);
-}
-
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
 .faq-item summary {
   list-style: none;
   display: flex;
@@ -1457,138 +1418,32 @@ html[data-theme="dark"] .btn-navy {
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--ink-strong);
-  transition: color 160ms var(--ease);
 }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--gold); }
+.faq-chevron { font-family: var(--sans); font-size: 1.1rem; color: var(--gold); transition: transform 180ms var(--ease); flex-shrink: 0; }
+.faq-item[open] .faq-chevron { transform: rotate(45deg); }
+.faq-answer { padding: 0 4px 20px; color: var(--muted); font-size: 0.9375rem; max-width: 76ch; }
 
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
+/* Process */
+.process-list { border-top: 1px solid var(--line); }
+.process-row { display: grid; grid-template-columns: 72px 1fr; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.process-num { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--gold); }
+.process-row h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--ink-strong); margin: 0 0 8px; }
+.process-row p { margin: 0; color: var(--muted); font-size: 0.9375rem; max-width: 72ch; }
 
-.faq-item summary:hover {
-  color: var(--gold);
-}
+/* Contact & Receipt */
+.contact-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 36px; align-items: start; }
+.contact-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 28px; }
+.contact-row { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.contact-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.contact-label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+.contact-row a { font-weight: 600; color: var(--ink-strong); }
+.contact-row a:hover { color: var(--gold); }
 
-.faq-chevron {
-  font-family: var(--sans);
-  font-size: 1.1rem;
-  color: var(--gold);
-  transition: transform 180ms var(--ease);
-  flex-shrink: 0;
-}
-
-.faq-item[open] .faq-chevron {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 4px 20px;
-  color: var(--muted);
-  font-size: 0.9375rem;
-  max-width: 74ch;
-  animation: fadeSlide 180ms var(--ease);
-}
-
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Process Steps */
-.process-list {
-  border-top: 1px solid var(--line);
-}
-
-.process-row {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 20px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-}
-
-.process-num {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-
-.process-row h3 {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  color: var(--ink-strong);
-  margin: 0 0 6px;
-}
-
-.process-row p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9375rem;
-  max-width: 68ch;
-}
-
-/* Contact Layout & Form */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 36px;
-  align-items: start;
-}
-
-.contact-panel {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 28px;
-}
-
-.contact-row {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.contact-row:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.contact-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-
-.contact-row a {
-  font-weight: 600;
-  color: var(--ink-strong);
-}
-
-.contact-row a:hover {
-  color: var(--gold);
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-full {
-  grid-column: 1 / -1;
-}
-
-.field-label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-}
-
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-full { grid-column: 1 / -1; }
+.field-label { display: flex; flex-direction: column; gap: 6px; font-size: 0.8125rem; font-weight: 600; color: var(--ink-strong); }
 .field-input {
   width: 100%;
   min-height: 44px;
@@ -1598,239 +1453,60 @@ html[data-theme="dark"] .btn-navy {
   background: var(--input-bg);
   color: var(--ink);
   font-size: 0.9375rem;
-  transition: border-color 160ms var(--ease);
 }
+.field-input:focus { border-color: var(--gold); }
+textarea.field-input { min-height: 140px; resize: vertical; }
+.field-hint-row { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+.consent-label { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--muted); cursor: pointer; }
+.consent-label input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold); flex-shrink: 0; }
+.consent-label a { color: var(--gold); text-decoration: underline; }
+.honeypot { position: absolute; left: -9999px; }
+.form-status { margin: 14px 0 0; font-size: 0.875rem; font-weight: 500; min-height: 22px; }
+.form-status.success { color: #166534; }
+html[data-theme="dark"] .form-status.success { color: #86efac; }
+.form-status.error { color: #b91c1c; }
+html[data-theme="dark"] .form-status.error { color: #fca5a5; }
 
-.field-input:focus {
-  border-color: var(--gold);
-}
-
-textarea.field-input {
-  min-height: 140px;
-  resize: vertical;
-}
-
-.field-hint-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.consent-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.875rem;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.consent-label input {
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
-  accent-color: var(--gold);
-  flex-shrink: 0;
-}
-
-.consent-label a {
-  color: var(--gold);
-  text-decoration: underline;
-}
-
-.honeypot {
-  position: absolute;
-  left: -9999px;
-}
-
-.form-status {
-  margin: 14px 0 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  min-height: 22px;
-}
-
-.form-status.success {
-  color: #166534;
-}
-
-html[data-theme="dark"] .form-status.success {
-  color: #86efac;
-}
-
-.form-status.error {
-  color: #b91c1c;
-}
-
-html[data-theme="dark"] .form-status.error {
-  color: #fca5a5;
-}
-
-/* CTA Band */
-.cta-band {
+.receipt-box {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
   background: var(--surface-alt);
-  border-top: 1px solid var(--line);
-  padding: 56px 0;
 }
 
-.cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  flex-wrap: wrap;
-}
+/* CTA & Footer */
+.cta-band { background: var(--surface-alt); border-top: 1px solid var(--line); padding: 56px 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.cta-inner h2 { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.15rem); color: var(--ink-strong); margin: 0 0 6px; }
+.cta-inner p { margin: 0; color: var(--muted); font-size: 0.9375rem; }
 
-.cta-inner h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 2.6vw, 2.15rem);
-  color: var(--ink-strong);
-  margin: 0 0 6px;
-}
-
-.cta-inner p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-/* Quiet Editorial Footer */
 .site-footer {
   background: #091322;
   color: #d0dae7;
   padding: 60px 0 28px;
   border-top: 1px solid rgba(212, 175, 98, 0.25);
 }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-brand strong { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.08em; color: #ffffff; }
+.footer-tagline { font-size: 0.875rem; color: #aab6c8; max-width: 34ch; margin: 0 0 14px; }
+.footer-location { font-size: 0.8125rem; color: #8e9cb2; }
+.site-footer h4 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-bright); margin: 0 0 14px; }
+.footer-links { display: grid; gap: 9px; }
+.footer-links a, .footer-links button { background: none; border: 0; padding: 0; text-align: left; font-size: 0.875rem; color: #c2cede; cursor: pointer; }
+.footer-links a:hover, .footer-links button:hover { color: var(--gold-bright); }
+.footer-social { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.footer-social a { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; font-size: 0.8125rem; color: #f1f5f9; }
+.footer-social a:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
+.footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.12); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.8125rem; color: #8e9cb2; }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 36px;
-}
+.legal-prose { max-width: 78ch; }
+.legal-prose h2 { font-family: var(--serif); font-size: 1.45rem; color: var(--ink-strong); margin: 32px 0 10px; }
+.legal-prose p { color: var(--muted); margin: 0 0 12px; }
 
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.footer-brand strong {
-  font-family: var(--serif);
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-}
-
-.footer-tagline {
-  font-size: 0.875rem;
-  color: #aab6c8;
-  max-width: 34ch;
-  margin: 0 0 14px;
-}
-
-.footer-location {
-  font-size: 0.8125rem;
-  color: #8e9cb2;
-}
-
-.site-footer h4 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-bright);
-  margin: 0 0 14px;
-}
-
-.footer-links {
-  display: grid;
-  gap: 9px;
-}
-
-.footer-links a,
-.footer-links button {
-  background: none;
-  border: 0;
-  padding: 0;
-  text-align: left;
-  font-size: 0.875rem;
-  color: #c2cede;
-  cursor: pointer;
-  transition: color 150ms var(--ease);
-}
-
-.footer-links a:hover,
-.footer-links button:hover {
-  color: var(--gold-bright);
-}
-
-.footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-
-.footer-social a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  font-size: 0.8125rem;
-  color: #f1f5f9;
-  transition: border-color 160ms var(--ease), color 160ms var(--ease);
-}
-
-.footer-social a:hover {
-  border-color: var(--gold-bright);
-  color: var(--gold-bright);
-}
-
-.footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 0.8125rem;
-  color: #8e9cb2;
-}
-
-/* Legal Prose */
-.legal-prose {
-  max-width: 78ch;
-}
-
-.legal-prose h2 {
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  color: var(--ink-strong);
-  margin: 32px 0 10px;
-}
-
-.legal-prose p {
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
-/* Floating Utility Dock & Display Settings Drawer */
-.utility-dock {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 45;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+/* Settings Dock & Drawer */
+.utility-dock { position: fixed; right: 20px; bottom: 20px; z-index: 45; display: flex; align-items: center; gap: 8px; }
 .utility-btn {
   display: inline-flex;
   align-items: center;
@@ -1845,41 +1521,13 @@ html[data-theme="dark"] .form-status.error {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(10, 20, 38, 0.14);
-  transition: transform 160ms var(--ease), border-color 160ms var(--ease), opacity 180ms var(--ease);
 }
+.utility-btn:hover { transform: translateY(-1px); border-color: var(--gold); }
+.to-top-btn { opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity 180ms var(--ease), transform 180ms var(--ease); }
+.to-top-btn.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
-.utility-btn:hover {
-  transform: translateY(-1px);
-  border-color: var(--gold);
-}
-
-.to-top-btn {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(8px);
-}
-
-.to-top-btn.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.settings-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 70;
-  background: rgba(9, 19, 34, 0.45);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 200ms var(--ease);
-}
-
-.settings-backdrop.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
+.settings-backdrop { position: fixed; inset: 0; z-index: 70; background: rgba(9, 19, 34, 0.45); opacity: 0; pointer-events: none; transition: opacity 200ms var(--ease); }
+.settings-backdrop.is-open { opacity: 1; pointer-events: auto; }
 .settings-drawer {
   position: fixed;
   top: 0;
@@ -1897,203 +1545,61 @@ html[data-theme="dark"] .form-status.error {
   transform: translateX(100%);
   transition: transform 220ms var(--ease);
 }
+.settings-drawer.is-open { transform: translateX(0); }
+.settings-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.settings-head h2 { font-family: var(--serif); font-size: 1.35rem; color: var(--ink-strong); margin: 0; }
+.settings-close { min-width: 40px; min-height: 40px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1.1rem; cursor: pointer; }
+.setting-group { display: grid; gap: 10px; }
+.setting-label { font-size: 0.8125rem; font-weight: 600; color: var(--ink-strong); }
+.setting-desc { font-size: 0.78rem; color: var(--muted); margin: -4px 0 2px; }
+.segmented { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; background: var(--surface-alt); border: 1px solid var(--line); border-radius: 8px; }
+.segmented.two-col { grid-template-columns: repeat(2, 1fr); }
+.seg-opt { min-height: 36px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); font-size: 0.8125rem; font-weight: 600; cursor: pointer; }
+.seg-opt.is-selected { background: var(--surface); color: var(--ink-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+.settings-footer { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 
-.settings-drawer.is-open {
-  transform: translateX(0);
-}
+.reveal { transition: opacity 320ms var(--ease), transform 320ms var(--ease); }
+.reveal.is-pending { opacity: 0; transform: translateY(14px); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-.settings-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-}
-
-.settings-head h2 {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  color: var(--ink-strong);
-  margin: 0;
-}
-
-.settings-close {
-  min-width: 40px;
-  min-height: 40px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink);
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.setting-group {
-  display: grid;
-  gap: 10px;
-}
-
-.setting-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--ink-strong);
-}
-
-.setting-desc {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin: -4px 0 2px;
-}
-
-.segmented {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  padding: 4px;
-  background: var(--surface-alt);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.segmented.two-col {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.seg-opt {
-  min-height: 36px;
-  border: 0;
-  border-radius: 5px;
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 150ms var(--ease), color 150ms var(--ease);
-}
-
-.seg-opt.is-selected {
-  background: var(--surface);
-  color: var(--ink-strong);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.settings-footer {
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Scroll Reveal (Progressive, Zero-Latency for hero/critical content) */
-.reveal {
-  transition: opacity 320ms var(--ease), transform 320ms var(--ease);
-}
-
-.reveal.is-pending {
-  opacity: 0;
-  transform: translateY(14px);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-html[data-motion="reduced"] *,
-html[data-motion="reduced"] *::before,
-html[data-motion="reduced"] *::after {
+html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-motion="reduced"] *::after {
   animation-duration: 0.01ms !important;
   transition-duration: 0.01ms !important;
 }
-
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
-/* Responsive Breakpoints */
 @media (max-width: 1080px) {
-  .team-strip-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .bento-span-2 {
-    grid-column: span 3;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .team-strip-grid { grid-template-columns: repeat(3, 1fr); }
+  .bento-span-2 { grid-column: span 3; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 920px) {
-  .primary-nav,
-  .header-cta {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: inline-flex;
-  }
-  .hero-grid,
-  .split-editorial,
-  .contact-layout,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-  .metrics-band {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .metric-cell:nth-child(2) {
-    border-right: 0;
-  }
-  .metric-cell:nth-child(-n+2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-  .bento-span-3,
-  .bento-span-2 {
-    grid-column: span 1;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
+  .primary-nav, .header-cta { display: none; }
+  .mobile-menu-btn { display: inline-flex; }
+  .hero-grid, .split-editorial, .contact-layout, .grid-3, .estimator-shell, .sample-pane.is-active, .case-modal { grid-template-columns: 1fr; }
+  .case-modal-media { border-right: 0; border-bottom: 1px solid var(--line); }
+  .team-detailed-card { grid-template-columns: 1fr; }
+  .team-detailed-card .team-portrait-frame { max-width: 260px; }
+  .metrics-band { grid-template-columns: repeat(2, 1fr); }
+  .metric-cell:nth-child(2) { border-right: 0; }
+  .metric-cell:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+  .bento-grid, .grid-2 { grid-template-columns: 1fr; }
+  .bento-span-3, .bento-span-2 { grid-column: span 1; }
 }
 
 @media (max-width: 640px) {
-  .wrap {
-    width: calc(100% - 32px);
-  }
-  .header-inner {
-    min-height: 64px;
-  }
-  .section {
-    padding: 56px 0;
-  }
-  .hero {
-    padding: 48px 0;
-  }
-  .team-strip-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  .process-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .utility-dock {
-    right: 14px;
-    bottom: 14px;
-  }
+  .wrap { width: calc(100% - 32px); }
+  .header-inner { min-height: 64px; }
+  .section { padding: 56px 0; }
+  .hero { padding: 48px 0; }
+  .team-strip-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid, .form-grid, .estimator-options, .footer-grid { grid-template-columns: 1fr; }
+  .process-row { grid-template-columns: 1fr; gap: 8px; }
+  .utility-dock { right: 14px; bottom: 14px; }
 }
 `;
 
@@ -2116,11 +1622,31 @@ function renderServiceCardsHome() {
       <div class="card-index tabular">${num}. ${esc(service.categoryLabel)}</div>
       <h3>${esc(service.title)}</h3>
       <p>${esc(service.summary)}</p>
+      <p style="font-size:0.8125rem;color:var(--ink);margin-top:12px"><strong>Typical turnaround:</strong> ${esc(service.turnaround)}</p>
       <div class="card-footer-link">
-        <a class="text-link" href="/services#${service.id}">Explore scope &rarr;</a>
+        <a class="text-link" href="/services#${service.id}">View full scope &amp; deliverables &rarr;</a>
       </div>
     </article>`;
   }).join('');
+}
+
+function renderAdrianShowcaseGrid(limit = null) {
+  const items = limit ? ADRIAN_DELIVERABLES.slice(0, limit) : ADRIAN_DELIVERABLES;
+  return items
+    .map(
+      (item, idx) => `<article class="gallery-card reveal" data-adrian-cat="${item.category}">
+      <div class="gallery-mat" data-lightbox-id="${item.id}" role="button" tabindex="0" aria-label="Inspect ${esc(item.title)} full size">
+        <img src="${item.image}" alt="${esc(item.title)} — ${esc(item.volume)}" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-body">
+        <div class="gallery-meta tabular">${String(idx + 1).padStart(2, '0')}. ${esc(item.volume)}</div>
+        <h3>${esc(item.title)}</h3>
+        <p>${esc(item.description)}</p>
+        <button type="button" class="work-inspect-btn" data-lightbox-id="${item.id}">Inspect Full Design &rarr;</button>
+      </div>
+    </article>`
+    )
+    .join('');
 }
 
 function renderProjectCards() {
@@ -2143,15 +1669,24 @@ function renderProjectCards() {
   ).join('');
 }
 
-function renderTeamCards(eager = true) {
+function renderTeamDetailedProfiles() {
   return TEAM.map(
-    (member) => `<article class="team-card reveal">
-      ${renderPortrait(member, eager)}
-      <h3>${esc(member.name)}</h3>
-      <div class="team-role">${esc(member.role)}</div>
-      <p class="team-bio">${esc(member.bio)}</p>
-      <div class="team-contact">
-        <a href="mailto:${esc(member.email)}">${esc(member.email)}</a>
+    (member) => `<article class="team-detailed-card reveal" id="${member.id}">
+      ${renderPortrait(member, true)}
+      <div class="team-detail-head">
+        <h3>${esc(member.name)}</h3>
+        <div class="team-role">${esc(member.role)}</div>
+        <p style="margin:0 0 12px;color:var(--ink);font-size:0.9375rem">${esc(member.bio)}</p>
+        <p style="margin:0;color:var(--muted);font-size:0.9375rem">${esc(member.officeSummary)}</p>
+        <div class="team-office-box">
+          <h4>Daily Office Responsibilities &amp; Execution Workflow</h4>
+          <ul>${member.workflow.map((step) => `<li>${esc(step)}</li>`).join('')}</ul>
+          <p class="team-collab"><strong>Team Coordination:</strong> ${esc(member.collaboration)}</p>
+        </div>
+        <div class="team-contact-row">
+          <a href="mailto:${esc(member.email)}">${esc(member.email)}</a>
+          <a class="text-link" href="/contact">Discuss a project with our team &rarr;</a>
+        </div>
       </div>
     </article>`
   ).join('');
@@ -2159,7 +1694,7 @@ function renderTeamCards(eager = true) {
 
 function renderMiniTeamStrip() {
   return TEAM.map(
-    (member) => `<a class="team-mini reveal" href="/team">
+    (member) => `<a class="team-mini reveal" href="/team#${member.id}">
       ${renderPortrait(member, false)}
       <h3>${esc(member.name)}</h3>
       <p>${esc(member.role)}</p>
@@ -2167,14 +1702,83 @@ function renderMiniTeamStrip() {
   ).join('');
 }
 
+const BEFORE_AFTER_SECTION = `
+<div class="sample-compare-box">
+  <div class="section-header-split" style="margin-bottom:12px">
+    <div>
+      <div class="eyebrow">Craft Samples</div>
+      <h3 style="font-family:var(--serif);font-size:1.6rem;color:var(--ink-strong);margin:6px 0 6px">Before &amp; After Editorial and Listing Samples</h3>
+      <p style="margin:0;color:var(--muted);font-size:0.9375rem">Inspect how BookRise Centre refines raw manuscript prose and restructures storefront book descriptions for reader clarity.</p>
+    </div>
+    <div class="filter-bar" role="tablist" aria-label="Choose craft sample">
+      <button type="button" class="filter-btn is-active" data-sample-tab="editing" role="tab" aria-selected="true">Copy Editing Sample</button>
+      <button type="button" class="filter-btn" data-sample-tab="metadata" role="tab" aria-selected="false">Storefront Listing Sample</button>
+    </div>
+  </div>
+
+  <div class="sample-pane is-active" data-sample-pane="editing">
+    <div class="sample-column">
+      <div class="sample-column-head">Original Author Draft</div>
+      <p>&ldquo;In today’s fast paced business world leaders often times find themselves making very quick decisions without actually having the full clarity on what their teams are really needing from them at that moment in time.&rdquo;</p>
+      <div class="sample-notes">Issues: filler phrasing (&ldquo;actually&rdquo;, &ldquo;really&rdquo;, &ldquo;at that moment in time&rdquo;), missing comma after introductory phrase, passive cadence.</div>
+    </div>
+    <div class="sample-column">
+      <div class="sample-column-head">BookRise Copy-Edited Revision</div>
+      <p>&ldquo;In a fast-moving organization, leaders often make rapid decisions before understanding what their teams truly need.&rdquo;</p>
+      <div class="sample-notes">Improvements: tightened word count by 47%, preserved the author’s meaning, sharpened rhythm, and corrected hyphenation and punctuation.</div>
+    </div>
+  </div>
+
+  <div class="sample-pane" data-sample-pane="metadata">
+    <div class="sample-column">
+      <div class="sample-column-head">Generic Book Description</div>
+      <p>&ldquo;This book is about personal growth and understanding how life works. The author shares many thoughts and chapters on awareness, flow, and living better every day for anyone who wants to improve.&rdquo;</p>
+      <div class="sample-notes">Issues: vague value proposition, zero scannable structure, missing audience signal and thematic search keywords.</div>
+    </div>
+    <div class="sample-column">
+      <div class="sample-column-head">Discoverability-Positioned Listing</div>
+      <p>&ldquo;<strong>Reclaim clarity in an age of noise.</strong> Blending practical self-awareness with timeless philosophy, <em>The Temple of Understanding</em> gives thoughtful readers a structured framework for deliberate decisions, inner steadiness, and purposeful daily living.&rdquo;</p>
+      <div class="sample-notes">Improvements: bold opening hook, clear audience alignment, scannable reader promise, and natural thematic keywords.</div>
+    </div>
+  </div>
+</div>`;
+
+const VIDEO_PROMO_SHOWCASE = `
+<div class="card" style="margin-top:32px">
+  <div class="eyebrow" style="margin-bottom:6px">Video Promotion &amp; Book Trailers</div>
+  <h3 style="margin-top:0">Adrian Emery — Video Promotion Campaign Architecture</h3>
+  <p style="margin-bottom:18px">Alongside the 14 print and digital design deliverables above, BookRise Centre structures video promotion campaigns around four purpose-built formats ready to embed directly once client video files are uploaded.</p>
+  <div class="grid-2" style="gap:16px">
+    <div class="editorial-callout" style="padding:20px">
+      <div class="card-index tabular">01. 60-Second Narrative Book Trailer (16:9)</div>
+      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Opening hook question, atmospheric motion visuals aligned to Volume I &amp; Volume II covers, voiceover/on-screen title cards, and clear availability end-slate.</p>
+    </div>
+    <div class="editorial-callout" style="padding:20px">
+      <div class="card-index tabular">02. 30-Second Vertical Launch Reels (9:16)</div>
+      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Short-form vertical cuts tailored for Instagram Reels, TikTok, and YouTube Shorts with crisp burned-in captions and quick 3D hardcover reveals.</p>
+    </div>
+    <div class="editorial-callout" style="padding:20px">
+      <div class="card-index tabular">03. Author Spotlight Introduction Clip</div>
+      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Author-led story clip introducing Adrian Emery’s philosophy behind <em>Personal Sovereignty</em> and <em>Tao Tuning</em> to build direct reader trust.</p>
+    </div>
+    <div class="editorial-callout" style="padding:20px">
+      <div class="card-index tabular">04. Storefront &amp; Social Square Teasers (1:1)</div>
+      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Looping 15-second thematic quote animations linking readers directly to Kindle, eBook, and print editions.</p>
+    </div>
+  </div>
+</div>`;
+
 const CTA_SECTION = `
 <section class="cta-band">
   <div class="wrap cta-inner">
     <div>
       <h2>Have a book project in mind?</h2>
-      <p>Share your manuscript stage and the support you are considering. We will prepare a clear next step.</p>
+      <p>Share your manuscript stage, goals, and the support you are considering. We will prepare a clear written scope and next step.</p>
     </div>
-    <a class="btn btn-primary" href="/contact">Start a Conversation</a>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="/contact">Start a Conversation</a>
+      <a class="btn btn-outline" href="/pricing">Use Scope Estimator</a>
+    </div>
   </div>
 </section>`;
 
@@ -2186,7 +1790,7 @@ const homePage = `
         <div class="hero-copy">
           <div class="eyebrow">Publishing &middot; Editorial &middot; Design &middot; Promotion</div>
           <h1>Helping authors bring remarkable books to market.</h1>
-          <p class="hero-lead">BookRise Centre brings editorial craft, book design, positioning, and reader outreach together under one coordinated team&mdash;so authors retain full creative control and ownership while moving forward with clarity.</p>
+          <p class="hero-lead">BookRise Centre is a Brooklyn-coordinated author-services team bringing publishing preparation, developmental and copy editing, custom cover design, video promotion, discoverability, and reader outreach together under clear written agreements&mdash;while you keep 100% of your intellectual property and royalties.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/contact">Discuss Your Book</a>
             <a class="btn btn-ghost" href="/services">Explore Our Services</a>
@@ -2194,7 +1798,9 @@ const homePage = `
           <div class="hero-meta">
             <span>Brooklyn, New York</span>
             <span aria-hidden="true">&middot;</span>
-            <span>Author-retained IP &amp; royalties</span>
+            <span>Six dedicated specialists</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>100% Author IP &amp; Royalties</span>
             <span aria-hidden="true">&middot;</span>
             <span>Written project scoping</span>
           </div>
@@ -2208,10 +1814,10 @@ const homePage = `
         </div>
       </div>
       <div class="metrics-band tabular">
-        <div class="metric-cell"><strong>Six</strong><span>Publishing &amp; promotion specialists</span></div>
+        <div class="metric-cell"><strong>Six</strong><span>In-house publishing &amp; marketing specialists</span></div>
         <div class="metric-cell"><strong>Seven</strong><span>Connected service disciplines</span></div>
         <div class="metric-cell"><strong>100%</strong><span>Author IP &amp; royalty retention</span></div>
-        <div class="metric-cell"><strong>Written</strong><span>Scope &amp; deliverables upfront</span></div>
+        <div class="metric-cell"><strong>Written</strong><span>Scope, timeline &amp; deliverables upfront</span></div>
       </div>
     </div>
   </section>
@@ -2222,9 +1828,9 @@ const homePage = `
         <div>
           <div class="eyebrow">Capabilities</div>
           <h2>One Centre. Seven connected disciplines.</h2>
-          <p class="lead">Commission an individual service or combine editorial, design, and promotional support around a unified publishing schedule.</p>
+          <p class="lead">Whether you are refining an unpublished draft, designing a print wrap, optimizing storefront metadata, or planning reader outreach, every service is scoped transparently around your book’s exact stage.</p>
         </div>
-        <a class="text-link" href="/services">View full service breakdown &rarr;</a>
+        <a class="text-link" href="/services">View detailed workflows &amp; deliverables &rarr;</a>
       </div>
       <div class="bento-grid">${renderServiceCardsHome()}</div>
     </div>
@@ -2234,11 +1840,31 @@ const homePage = `
     <div class="wrap">
       <div class="section-header-split">
         <div>
-          <div class="eyebrow">Selected Work &amp; Author Experiences</div>
-          <h2>Books positioned with craft and clarity.</h2>
-          <p class="lead">Recent author engagements alongside direct feedback from the writers behind each title.</p>
+          <div class="eyebrow">Featured Client Campaign &middot; Adrian Emery</div>
+          <h2>The Temple of Understanding — Vol. I &amp; II Showcase</h2>
+          <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II)—spanning full print wraps, author spotlight cards, and multi-format launch graphics.</p>
         </div>
-        <a class="text-link" href="/work">Explore our portfolio &rarr;</a>
+        <a class="text-link" href="/work">View all 14 campaign designs &rarr;</a>
+      </div>
+      <div class="gallery-grid">${renderAdrianShowcaseGrid(6)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      ${BEFORE_AFTER_SECTION}
+    </div>
+  </section>
+
+  <section class="section section-surface">
+    <div class="wrap">
+      <div class="section-header-split">
+        <div>
+          <div class="eyebrow">Selected Author Editions &amp; Perspectives</div>
+          <h2>Crafted editions paired with client feedback.</h2>
+          <p class="lead">Explore additional featured client editions alongside perspectives from the authors behind each book.</p>
+        </div>
+        <a class="text-link" href="/work">Explore full portfolio &rarr;</a>
       </div>
       <div class="grid-3">${renderProjectCards()}</div>
     </div>
@@ -2250,9 +1876,9 @@ const homePage = `
         <div>
           <div class="eyebrow">Our Team</div>
           <h2>Six specialists aligned around your book.</h2>
-          <p class="lead">Expanded to six publishing, editorial, design, and book-promotion specialists working together as one coordinated team.</p>
+          <p class="lead">Click any specialist to read their detailed daily office responsibilities, execution workflow, and how they collaborate on your project.</p>
         </div>
-        <a class="text-link" href="/team">Meet the full team &rarr;</a>
+        <a class="text-link" href="/team">Read full office profiles &rarr;</a>
       </div>
       <div class="team-strip-grid">${renderMiniTeamStrip()}</div>
     </div>
@@ -2261,12 +1887,12 @@ const homePage = `
   <section class="section section-surface">
     <div class="wrap split-editorial">
       <div>
-        <div class="eyebrow">Our Philosophy</div>
+        <div class="eyebrow">Author Ownership &amp; Transparency</div>
         <h2>Clear agreements. Full author ownership.</h2>
-        <p class="lead" style="margin-bottom:24px">BookRise Centre is a paid author-services organization. Authors retain 100% of their intellectual property rights and book royalties. Every engagement begins with written deliverables, timelines, and transparent terms.</p>
+        <p class="lead" style="margin-bottom:20px">BookRise Centre is strictly a professional author-services partner. We never claim copyright, never take a percentage of your book royalties, and never lock you into vague retainers. Every engagement begins with written deliverables, revision rounds, timelines, and separate disclosure of any third-party platform fees.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn btn-navy" href="/process">See Our 5-Step Process</a>
-          <a class="btn btn-outline" href="/pricing">Pricing &amp; Scoping</a>
+          <a class="btn btn-navy" href="/process">Explore Our 5-Step Process</a>
+          <a class="btn btn-outline" href="/resources">Manuscript Readiness Checklist</a>
         </div>
       </div>
       <div class="crest-panel">
@@ -2283,8 +1909,8 @@ const aboutPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">About BookRise Centre</div>
-      <h1>Bringing publishing expertise together around authors.</h1>
-      <p>An author-services team built around editorial quality, clear written agreements, and complete respect for creative ownership.</p>
+      <h1>A coordinated author-services centre built on craft, clarity, and independence.</h1>
+      <p>Learn how our team operates, who we serve, and why authors trust BookRise Centre to guide their books from draft to marketplace visibility without surrendering creative rights.</p>
     </div>
   </section>
 
@@ -2292,11 +1918,12 @@ const aboutPage = `
     <div class="wrap split-editorial">
       <div>
         <div class="eyebrow">Who We Are</div>
-        <h2>Thoughtful support. A shared commitment to authors.</h2>
-        <p class="lead">BookRise Centre supports authors with the editorial, publishing, design, and promotional work involved in preparing and positioning a book. Led by Gracious J. Literary, our six-person team brings together expertise in literary direction, editing, writing, cover design, marketing, and reader outreach.</p>
+        <h2>One connected team replacing fragmented guesswork.</h2>
+        <p class="lead" style="margin-bottom:16px">Independent and thought-leader authors often struggle when forced to hire separate, disconnected freelancers for editing, cover artwork, distribution formatting, storefront metadata, and reader outreach—with no one ensuring the parts fit together.</p>
+        <p class="lead">Led by Gracious J. Literary from Brooklyn, New York, BookRise Centre brings six specialized professionals under one coordinated roof. Every stage—from structural editing and typesetting to cover wraps, trailer briefs, and reader outreach—is aligned to the same book identity and audience goal.</p>
       </div>
       <figure class="editorial-callout">
-        <blockquote>&ldquo;The author’s goals, creative voice, and ownership remain central to every decision we help them make.&rdquo;</blockquote>
+        <blockquote>&ldquo;The author’s goals, creative voice, and intellectual property remain central to every recommendation we make and every deliverable we produce.&rdquo;</blockquote>
         <figcaption>BookRise Centre Editorial Charter &middot; Brooklyn, New York</figcaption>
       </figure>
     </div>
@@ -2305,25 +1932,28 @@ const aboutPage = `
   <section class="section section-surface">
     <div class="wrap">
       <div class="section-header">
-        <div class="eyebrow">Guiding Principles</div>
-        <h2>What shapes every engagement.</h2>
+        <div class="eyebrow">Who We Serve</div>
+        <h2>Tailored support across genres and publishing stages.</h2>
       </div>
       <div class="grid-3">
-        <article class="card reveal">
-          <div class="card-index tabular">01. Clarity</div>
-          <h3>Clear expectations</h3>
-          <p>We discuss the proposed scope, fees, deliverables, timelines, and responsibilities in writing before any project begins.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-index tabular">02. Craft</div>
-          <h3>Respect for the work</h3>
-          <p>We approach each manuscript and book project with careful attention to its subject, audience, voice, and presentation.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-index tabular">03. Independence</div>
-          <h3>Author ownership</h3>
-          <p>Our service model is built around professional execution, never acquiring an author’s intellectual property or royalties.</p>
-        </article>
+        <article class="card"><div class="card-index tabular">01. First-Time Authors</div><h3>Guided debut launches</h3><p>Writers completing their first manuscript who need clear answers on editing sequence, ISBN registration, print/ebook setup, cover standards, and realistic launch planning.</p></article>
+        <article class="card"><div class="card-index tabular">02. Thought Leaders &amp; Memoirists</div><h3>Authority and personal story</h3><p>Executives, founders, educators, and memoirists seeking refined developmental editing and distinguished hardcover presentation that respects their lived voice.</p></article>
+        <article class="card"><div class="card-index tabular">03. Published &amp; Series Authors</div><h3>Refreshes and sequel continuity</h3><p>Authors with live titles or multi-volume series looking for cohesive cover redesigns, sharper retail descriptions, trailer assets, and targeted reader outreach.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="eyebrow">What Guides Our Work</div>
+        <h2>Our operating standards and honest boundaries.</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card"><h3>Written scope before payment</h3><p>Every engagement details exact deliverables, file formats, included revision rounds, author responsibilities, and milestone timing in writing before work commences.</p></article>
+        <article class="card"><h3>100% rights &amp; royalties retained</h3><p>We charge solely for professional services rendered. Authors keep full copyright, distribution control, and 100% of book royalties.</p></article>
+        <article class="card"><h3>Zero fabricated guarantees</h3><p>We do not promise bestseller rankings, guaranteed sales figures, or paid review outcomes. Instead, we guarantee disciplined craft and transparent activity reporting.</p></article>
+        <article class="card"><h3>Confidentiality &amp; respect</h3><p>Unpublished manuscripts and author communications are handled strictly within the assigned project team under clear confidentiality practices.</p></article>
       </div>
     </div>
   </section>
@@ -2336,8 +1966,8 @@ const servicesPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Our Services</div>
-      <h1>Specialist support for every stage of your book journey.</h1>
-      <p>Explore the seven disciplines available through BookRise Centre. Commission a single service or combine areas into a coordinated publishing plan.</p>
+      <h1>Deeply structured support for every stage of your book.</h1>
+      <p>Read the complete workflow, typical turnaround, target fit, and exact deliverables for all seven BookRise Centre disciplines. Filter by area or proceed directly to scoping.</p>
     </div>
   </section>
 
@@ -2346,10 +1976,10 @@ const servicesPage = `
       <div class="section-header-split">
         <div>
           <div class="eyebrow">Service Directory</div>
-          <h2>Filter by discipline</h2>
+          <h2>Detailed workflows &amp; deliverables</h2>
         </div>
         <div class="filter-bar" role="tablist" aria-label="Filter services by category">
-          <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Disciplines</button>
+          <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Disciplines (7)</button>
           <button type="button" class="filter-btn" data-filter="editorial" role="tab" aria-selected="false">Editorial &amp; Publishing</button>
           <button type="button" class="filter-btn" data-filter="design" role="tab" aria-selected="false">Design &amp; Media</button>
           <button type="button" class="filter-btn" data-filter="promotion" role="tab" aria-selected="false">Promotion &amp; Outreach</button>
@@ -2359,20 +1989,25 @@ const servicesPage = `
       <div class="grid-2" id="services-grid">
         ${SERVICES.map((s, i) => `
           <article class="card service-item" id="${s.id}" data-category="${s.category}">
-            <div class="card-index tabular">${String(i + 1).padStart(2, '0')}. ${esc(s.categoryLabel)}</div>
+            <div class="card-index tabular">${String(i + 1).padStart(2, '0')}. ${esc(s.categoryLabel)} &middot; ${esc(s.turnaround)}</div>
             <h3>${esc(s.title)}</h3>
             <p>${esc(s.summary)}</p>
+            <p style="font-size:0.875rem;color:var(--ink);margin-top:12px"><strong>Ideal for:</strong> ${esc(s.bestFor)}</p>
+            <div class="card-subhead">How our team executes this service</div>
+            <ul>${s.workflow.map((w) => `<li>${esc(w)}</li>`).join('')}</ul>
+            <div class="card-subhead">Included deliverables (per agreed scope)</div>
             <ul>${s.deliverables.map((d) => `<li>${esc(d)}</li>`).join('')}</ul>
-            <div class="card-footer-link">
-              <a class="text-link" href="/contact?service=${encodeURIComponent(s.title)}">Enquire about ${esc(s.title)} &rarr;</a>
+            <div class="card-footer-link" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+              <a class="text-link" href="/contact?service=${encodeURIComponent(s.title)}">Request scope for ${esc(s.title)} &rarr;</a>
+              <a class="text-link" href="/pricing" style="color:var(--muted)">Estimate timeline &rarr;</a>
             </div>
           </article>
         `).join('')}
       </div>
 
-      <div class="editorial-callout" style="margin-top:32px">
-        <p style="margin:0;color:var(--ink);font-size:0.9375rem"><strong>Scope transparency:</strong> Exact deliverables, revision rounds, schedule, and fees are confirmed in writing for each project. Services are not considered included unless specified in the agreed scope.</p>
-      </div>
+      ${VIDEO_PROMO_SHOWCASE}
+
+      <div style="margin-top:32px">${BEFORE_AFTER_SECTION}</div>
     </div>
   </section>
 
@@ -2384,16 +2019,16 @@ const teamPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Our Team</div>
-      <h1>Complementary expertise. One author-focused team.</h1>
-      <p>Meet the six publishing, editorial, marketing, and reader-outreach specialists guiding authors at BookRise Centre.</p>
+      <h1>Six specialists. Clearly defined roles inside our office.</h1>
+      <p>Meet the full BookRise Centre team and read exactly how each specialist operates day-to-day—from manuscript evaluation and typesetting to cover positioning, storefront discoverability, and reader outreach.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="grid-3">${renderTeamCards(true)}</div>
+      <div style="display:grid;gap:24px">${renderTeamDetailedProfiles()}</div>
       <div class="editorial-callout" style="margin-top:36px">
-        <p style="margin:0;color:var(--ink);font-size:0.9375rem">Project responsibilities are coordinated across our team around the services agreed with each author and the specific needs of the book.</p>
+        <p style="margin:0;color:var(--ink);font-size:0.9375rem"><strong>How projects are staffed:</strong> Every engagement is assigned a lead point of contact alongside the specific specialists required for your agreed deliverables—so your editorial, design, and promotional work stays unified.</p>
       </div>
     </div>
   </section>
@@ -2405,14 +2040,41 @@ const workPage = `
 <main class="page-main">
   <section class="page-intro">
     <div class="wrap">
-      <div class="eyebrow">Selected Work</div>
-      <h1>Every book has its own voice. Every project deserves its own approach.</h1>
-      <p>Explore featured editions and direct author perspectives from the BookRise Centre portfolio.</p>
+      <div class="eyebrow">Our Work &amp; Client Showcase</div>
+      <h1>Real publishing, design, and promotional campaigns built around each author’s vision.</h1>
+      <p>Explore our recent 14-asset campaign for Adrian Emery’s <em>The Temple of Understanding</em> duology alongside additional selected author editions.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <div class="section-header-split">
+        <div>
+          <div class="eyebrow">Featured Client Portfolio &middot; Adrian Emery</div>
+          <h2>The Temple of Understanding (Vol. I &amp; Vol. II)</h2>
+          <p class="lead">A complete multi-volume visual and promotional campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Click any deliverable to inspect the full-resolution design.</p>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Filter Adrian Emery deliverables">
+          <button type="button" class="filter-btn is-active" data-adrian-filter="all" role="tab" aria-selected="true">All Deliverables (14)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="covers" role="tab" aria-selected="false">Cover Spreads (4)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="posters" role="tab" aria-selected="false">Promo Posters (6)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="spotlights" role="tab" aria-selected="false">Author Spotlights (4)</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="adrian-gallery">${renderAdrianShowcaseGrid()}</div>
+
+      ${VIDEO_PROMO_SHOWCASE}
+    </div>
+  </section>
+
+  <section class="section section-surface">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="eyebrow">Selected Portfolio Editions &amp; Testimonials</div>
+        <h2>Additional author engagements.</h2>
+        <p class="lead">Inspect edition details, delivered scope, and client feedback across business, memoir, and leadership titles.</p>
+      </div>
       <div class="grid-3">${renderProjectCards()}</div>
     </div>
   </section>
@@ -2425,35 +2087,74 @@ const authorsPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">For Authors</div>
-      <h1>Your book. Your rights. A clearer path forward.</h1>
-      <p>Professional support shaped around your manuscript, publishing ambitions, and intended readership.</p>
+      <h1>Your book. Your rights. Complete clarity on every publishing path.</h1>
+      <p>Understand how BookRise Centre partners with you at every stage, protects your intellectual property, and compares major distribution platforms honestly.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="section-header">
-        <div class="eyebrow">Author Partnership</div>
-        <h2>Support that begins with listening.</h2>
-        <p class="lead">Every author arrives at a different stage. We begin by understanding your book, priorities, and timeline before recommending a practical scope.</p>
+        <div class="eyebrow">Stage-by-Stage Partnership</div>
+        <h2>How we support you from idea to live release.</h2>
       </div>
       <div class="grid-3">
-        <article class="card reveal"><div class="card-index tabular">01. Discovery</div><h3>Share your project</h3><p>Tell us about your book, current stage, genre, intended readership, and what you want to accomplish.</p></article>
-        <article class="card reveal"><div class="card-index tabular">02. Scope</div><h3>Review the recommendation</h3><p>Discuss services, deliverables, schedule, fees, revision rounds, and any third-party platform costs.</p></article>
-        <article class="card reveal"><div class="card-index tabular">03. Agreement</div><h3>Move forward clearly</h3><p>Review and approve the written agreement before work begins so expectations stay aligned on both sides.</p></article>
+        <article class="card"><div class="card-index tabular">01. Discovery</div><h3>Share your project</h3><p>Tell us your working title, genre, approximate word count, current manuscript status, and desired release window. Partial drafts and initial questions are welcome.</p></article>
+        <article class="card"><div class="card-index tabular">02. Scoping</div><h3>Review our written recommendation</h3><p>We break down recommended services into clear phases, revision rounds, estimated turnaround, exact deliverables, and any external third-party costs.</p></article>
+        <article class="card"><div class="card-index tabular">03. Ownership</div><h3>Approve and retain full control</h3><p>Your written agreement confirms you retain 100% of copyright, distribution account ownership, and all net royalties from book sales.</p></article>
       </div>
     </div>
   </section>
 
   <section class="section section-surface">
-    <div class="wrap split-editorial">
-      <div>
-        <div class="eyebrow">Creative Independence</div>
-        <h2>Author ownership is fundamental.</h2>
-        <p class="lead">BookRise Centre is a paid author-services organization. Authors retain their intellectual property rights and book royalties in full.</p>
+    <div class="wrap">
+      <div class="section-header">
+        <div class="eyebrow">Platform &amp; Distribution Guide</div>
+        <h2>Comparing your book distribution options.</h2>
+        <p class="lead">Before formatting or uploading, we help authors weigh print reach, ISBN control, and royalty structures across primary publishing channels.</p>
       </div>
-      <div class="editorial-callout">
-        <p style="margin:0;color:var(--ink);font-size:0.9375rem">Every written agreement details the exact scope, fees, deliverables, ownership terms, third-party expenses, payment schedule, and cancellation terms before commencement.</p>
+      <div class="table-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Channel / Model</th>
+              <th>Format Reach</th>
+              <th>ISBN &amp; Imprint Control</th>
+              <th>Typical Royalty Structure</th>
+              <th>Best Fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amazon KDP</strong></td>
+              <td>Kindle eBook, Paperback &amp; Hardcover via Amazon stores</td>
+              <td>Free platform ASIN/ISBN or your own purchased ISBN</td>
+              <td>~60% print list minus print cost; 35%–70% eBook</td>
+              <td>Fast direct Amazon storefront availability &amp; Kindle Unlimited option</td>
+            </tr>
+            <tr>
+              <td><strong>IngramSpark</strong></td>
+              <td>Global wholesalers, indie bookstores, libraries, Barnes &amp; Noble</td>
+              <td>Requires author-owned ISBN &amp; imprint name</td>
+              <td>List minus wholesale discount (typically 40%–55%) &amp; print cost</td>
+              <td>Bookstore/library ordering capability &amp; wider hardcover availability</td>
+            </tr>
+            <tr>
+              <td><strong>Wide eBook Aggregators</strong></td>
+              <td>Apple Books, Kobo, Barnes &amp; Noble Nook, library OverDrive</td>
+              <td>Author-owned ISBN recommended for clean tracking</td>
+              <td>Typically 60%–70% of net retail proceeds</td>
+              <td>Non-exclusive authors reaching international &amp; library readers</td>
+            </tr>
+            <tr>
+              <td><strong>Direct / Offset Print Runs</strong></td>
+              <td>Bulk physical inventory for events, speaking, &amp; direct store</td>
+              <td>Author-owned ISBN &amp; barcode</td>
+              <td>100% direct net margin minus upfront unit printing &amp; shipping</td>
+              <td>Keynote speakers, corporate bulk orders, &amp; premium special editions</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -2466,19 +2167,19 @@ const processPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Our Process</div>
-      <h1>From first conversation to agreed delivery.</h1>
-      <p>Good collaboration begins with shared expectations, an appropriate scope, and transparent milestones.</p>
+      <h1>A disciplined five-stage workflow from first enquiry to final handover.</h1>
+      <p>Every BookRise Centre engagement follows transparent checkpoints so you always know what is being worked on, who is responsible, and what happens next.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="process-list">
-        <div class="process-row"><div class="process-num tabular">01</div><div><h3>Discovery and project understanding</h3><p>We learn about your manuscript or published book, its genre, current stage, intended readership, objectives, and the support you are seeking.</p></div></div>
-        <div class="process-row"><div class="process-num tabular">02</div><div><h3>Service recommendation and scope</h3><p>We identify relevant areas of support and outline the proposed tasks, deliverables, review points, responsibilities, and estimated schedule.</p></div></div>
-        <div class="process-row"><div class="process-num tabular">03</div><div><h3>Written quotation and agreement</h3><p>You receive the proposed fee and terms covering payment stages, deliverables, ownership, third-party costs, and cancellation conditions before work begins.</p></div></div>
-        <div class="process-row"><div class="process-num tabular">04</div><div><h3>Project delivery and communication</h3><p>We carry out the agreed work, provide scheduled updates, and incorporate feedback within the agreed review rounds.</p></div></div>
-        <div class="process-row"><div class="process-num tabular">05</div><div><h3>Completion and handover</h3><p>At completion, the final files, editorial materials, or campaign summary are handed over cleanly. Any further work is scoped separately.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">01</div><div><h3>Discovery &amp; Manuscript Understanding</h3><p>We review your enquiry, learn about your book’s genre, word count, stage, target audience, and goals, and hold an introductory email or consultation discussion to identify genuine priorities.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">02</div><div><h3>Editorial &amp; Service Scoping</h3><p>Gracious J. Literary and the relevant specialists evaluate sample pages or existing assets to map a tailored sequence of tasks, review points, and realistic turnaround estimates.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">03</div><div><h3>Written Quotation &amp; Agreement</h3><p>You receive a formal written scope detailing exact deliverables, included revision rounds, payment schedule, third-party cost transparency, cancellation terms, and explicit author IP retention.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">04</div><div><h3>Coordinated Execution &amp; Checkpoints</h3><p>Our team executes each milestone—sharing editorial notes, cover concepts, metadata drafts, or trailer cuts at agreed checkpoints for your feedback and sign-off.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">05</div><div><h3>Final Delivery, Handover &amp; Next Steps</h3><p>Upon approval, final print-ready files, digital exports, style sheets, or campaign reports are delivered directly to you. Any follow-on phase is discussed separately with zero obligation.</p></div></div>
       </div>
     </div>
   </section>
@@ -2491,20 +2192,20 @@ const whyPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Why BookRise Centre</div>
-      <h1>Author-focused support with clear terms and respect for your work.</h1>
-      <p>A coordinated six-person team, a transparent service model, and complete respect for your creative rights.</p>
+      <h1>Six reasons authors choose a coordinated partner over fragmented shortcuts.</h1>
+      <p>Built on transparent agreements, complementary specialist skill sets, and unwavering respect for your creative independence.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="grid-3">
-        <article class="card"><div class="card-index tabular">01</div><h3>Complementary expertise</h3><p>Publishing, literary, editorial, design, marketing, and reader-promotion skills aligned under one roof.</p></article>
-        <article class="card"><div class="card-index tabular">02</div><h3>Coordinated support</h3><p>Discuss connected areas of support without managing disconnected freelancers or conflicting timelines.</p></article>
-        <article class="card"><div class="card-index tabular">03</div><h3>Transparent terms</h3><p>Scope, fees, deliverables, timelines, and responsibilities are confirmed in writing before work starts.</p></article>
-        <article class="card"><div class="card-index tabular">04</div><h3>Author ownership</h3><p>Authors retain 100% of their intellectual property rights, creative independence, and royalties.</p></article>
-        <article class="card"><div class="card-index tabular">05</div><h3>Project-led recommendations</h3><p>Every recommendation is grounded in your book’s actual stage and stated publishing objectives.</p></article>
-        <article class="card"><div class="card-index tabular">06</div><h3>Thoughtful communication</h3><p>Structured review points and responsive project coordination throughout the engagement.</p></article>
+        <article class="card"><div class="card-index tabular">01. Integrated Team</div><h3>Six aligned specialists</h3><p>Editorial operations, cover direction, visibility strategy, and reader outreach collaborate under one roof so your book’s message never fractures between vendors.</p></article>
+        <article class="card"><div class="card-index tabular">02. Author Rights</div><h3>100% ownership retained</h3><p>You never assign copyright, publishing control, or royalty shares to BookRise Centre. Your accounts and files stay completely yours.</p></article>
+        <article class="card"><div class="card-index tabular">03. Written Clarity</div><h3>Detailed upfront scopes</h3><p>Deliverables, revision allowances, timelines, and payment milestones are documented in plain language before any work begins.</p></article>
+        <article class="card"><div class="card-index tabular">04. Honest Boundaries</div><h3>Zero misleading promises</h3><p>We never sell guaranteed bestseller lists or fabricated review promises—our focus is verifiable editorial, design, and outreach craft.</p></article>
+        <article class="card"><div class="card-index tabular">05. Tailored Recommendations</div><h3>No forced packages</h3><p>Request a single focused service or combine disciplines into a phased roadmap tailored to your manuscript’s true condition.</p></article>
+        <article class="card"><div class="card-index tabular">06. Consistent Communication</div><h3>Structured review checkpoints</h3><p>Clear milestone updates and direct specialist accountability ensure you are never left wondering where your project stands.</p></article>
       </div>
     </div>
   </section>
@@ -2517,38 +2218,58 @@ const pricingPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Pricing &amp; Engagement</div>
-      <h1>Clear quotations. Defined deliverables. No one-size-fits-all fees.</h1>
-      <p>BookRise Centre provides paid professional author services. Each quotation is shaped around the exact work your book requires.</p>
+      <h1>Transparent project-based scoping built around your exact manuscript.</h1>
+      <p>Use our interactive scope estimator below to map your recommended engagement model and estimated timeline, then send your configured brief straight to our team for a formal written quotation.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="editorial-callout" style="margin-bottom:32px">
-        <div class="eyebrow" style="margin-bottom:8px">Scoping Model</div>
-        <p style="font-family:var(--serif);font-size:1.35rem;color:var(--ink-strong);margin:0 0 10px">Every project is scoped before it is priced.</p>
-        <p class="lead">The fee for a project reflects the service selected, manuscript length and condition, editing depth or design requirements, number of deliverables, turnaround time, and any approved third-party expenses.</p>
+      <div class="section-header">
+        <div class="eyebrow">Interactive Tool</div>
+        <h2>Project Scope &amp; Timeline Estimator</h2>
+        <p class="lead">Select the services, manuscript length, and timeline you are considering to preview a tailored milestone plan.</p>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-index tabular">01. Single Service</div>
-          <h3>Individual services</h3>
-          <p>Request a quotation for a focused task such as proofreading, cover design, metadata optimization, or a promotional campaign.</p>
-          <div class="card-footer-link"><a class="text-link" href="/contact">Request single-service quote &rarr;</a></div>
-        </article>
-        <article class="card">
-          <div class="card-index tabular">02. Combined Support</div>
-          <h3>Coordinated projects</h3>
-          <p>When a book requires multiple disciplines, we sequence editorial, cover design, and visibility work into clear milestones.</p>
-          <div class="card-footer-link"><a class="text-link" href="/contact?service=${encodeURIComponent('Multiple Services / Not Sure')}">Discuss combined scope &rarr;</a></div>
-        </article>
-        <article class="card">
-          <div class="card-index tabular">03. Bespoke Scope</div>
-          <h3>Project-specific proposals</h3>
-          <p>For multi-title or extended launch campaigns, proposals detail milestones, review stages, payment schedule, and delivery timing.</p>
-          <div class="card-footer-link"><a class="text-link" href="/contact">Request bespoke proposal &rarr;</a></div>
-        </article>
+      <div class="estimator-shell">
+        <div class="card">
+          <div class="setting-group" style="margin-bottom:20px">
+            <div class="setting-label">1. Services under consideration</div>
+            <div class="estimator-options" id="est-services">
+              ${SERVICES.map(
+                (s) => `<label class="check-chip"><input type="checkbox" value="${esc(s.title)}" data-weeks="2"><span>${esc(s.title)}</span></label>`
+              ).join('')}
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <label class="field-label">2. Approximate word count
+              <select class="field-input" id="est-words">
+                <option value="1">Under 25,000 words (Short / Guide)</option>
+                <option value="2" selected>25,000 &ndash; 60,000 words (Standard Non-Fiction / Novella)</option>
+                <option value="3">60,000 &ndash; 95,000 words (Full-Length Trade Book)</option>
+                <option value="4">95,000+ words (Comprehensive / Epic)</option>
+                <option value="1">Already Published (Promotion / Refresh Only)</option>
+              </select>
+            </label>
+            <label class="field-label">3. Preferred pace
+              <select class="field-input" id="est-pace">
+                <option value="1" selected>Standard Balanced Schedule</option>
+                <option value="0.75">Accelerated Priority Timeline</option>
+                <option value="1.25">Flexible Phased Delivery</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="editorial-callout" id="est-output">
+          <div class="eyebrow" style="margin-bottom:6px">Estimated Engagement Blueprint</div>
+          <h3 id="est-model" style="font-family:var(--serif);font-size:1.5rem;color:var(--ink-strong);margin:0 0 8px">Select one or more services</h3>
+          <p id="est-duration" class="tabular" style="font-weight:700;color:var(--gold);margin:0 0 14px">Estimated duration: &mdash;</p>
+          <p id="est-summary" style="font-size:0.9375rem;color:var(--muted);margin:0 0 14px">Choose at least one service on the left to generate a recommended delivery sequence.</p>
+          <ul id="est-milestones" style="margin:0 0 20px;padding-left:18px;font-size:0.875rem;color:var(--ink)"></ul>
+          <a class="btn btn-primary" id="est-apply-link" href="/contact" style="width:100%">Send This Scope for a Written Quote &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
@@ -2556,17 +2277,14 @@ const pricingPage = `
   <section class="section section-surface">
     <div class="wrap">
       <div class="section-header">
-        <div class="eyebrow">What Shapes a Quotation</div>
-        <h2>The factors we evaluate.</h2>
+        <div class="eyebrow">Quotation Factors</div>
+        <h2>What determines your final written quotation.</h2>
       </div>
       <div class="grid-2">
-        <article class="card"><h3>Nature and size of the work</h3><p>Manuscript word count, file condition, editorial depth, cover specifications, and volume of material under review.</p></article>
-        <article class="card"><h3>Deliverables and revisions</h3><p>Agreed output files, formats, concept variations, included revision rounds, and final handover requirements.</p></article>
-        <article class="card"><h3>Schedule and coordination</h3><p>Target publication date, turnaround window, approval stages, and cross-discipline coordination.</p></article>
-        <article class="card"><h3>External and platform costs</h3><p>Any agreed third-party expenses such as printing, paid advertising spend, or platform fees are itemized separately.</p></article>
-      </div>
-      <div class="editorial-callout" style="margin-top:28px">
-        <p style="margin:0;color:var(--ink);font-size:0.9375rem"><strong>Commitment to transparency:</strong> We do not guarantee sales, reviews, rankings, or commercial outcomes. Any quotation covers the professional services and deliverables specified in the written agreement.</p>
+        <article class="card"><h3>Manuscript length &amp; condition</h3><p>Total word count, structural state, presence of tables, citations, or illustrations, and the depth of editing required.</p></article>
+        <article class="card"><h3>Deliverables &amp; revision rounds</h3><p>Number of concepts, interior/print formats (paperback, hardcover, ebook), and agreed review iterations.</p></article>
+        <article class="card"><h3>Schedule &amp; multi-service sequencing</h3><p>Target release date and whether editorial, cover design, and promotional phases run sequentially or in parallel.</p></article>
+        <article class="card"><h3>External third-party costs</h3><p>Any optional external costs—such as ISBN blocks, paid advertising spend, or author proof printing—are itemized separately before approval.</p></article>
       </div>
     </div>
   </section>
@@ -2579,20 +2297,63 @@ const resourcesPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">The Author Desk</div>
-      <h1>Author Resources</h1>
-      <p>Practical publishing guidance to help authors make informed decisions at every stage of the book journey.</p>
+      <h1>Author Resources &amp; Interactive Readiness Checklist</h1>
+      <p>Assess where your book stands today with our interactive 12-point readiness checklist, then explore practical guides on covers, platforms, metadata, and outreach.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <div class="section-header-split" style="margin-bottom:20px">
+        <div>
+          <div class="eyebrow">Interactive Readiness Tool</div>
+          <h2>Manuscript &amp; Launch Readiness Checklist</h2>
+          <p class="lead">Check off completed steps below. Your progress saves automatically in your browser and can be attached straight to a consultation request.</p>
+        </div>
+        <div style="text-align:right">
+          <div class="tabular" id="chk-score" style="font-family:var(--serif);font-size:1.65rem;font-weight:600;color:var(--gold)">0% Ready (0 / 12)</div>
+          <div style="font-size:0.8125rem;color:var(--muted)" id="chk-stage-label">Early preparation stage</div>
+        </div>
+      </div>
+
+      <div class="checklist-progress-bar" style="margin-bottom:24px">
+        <div class="checklist-progress-fill" id="chk-bar"></div>
+      </div>
+
+      <div class="grid-2" id="checklist-root">
+        ${CHECKLIST_GROUPS.map(
+          (group) => `<div class="checklist-group">
+            <h3>${esc(group.title)}</h3>
+            ${group.items
+              .map(
+                (item) => `<label class="checklist-row"><input type="checkbox" class="readiness-chk" value="${esc(item.id)}" data-label="${esc(item.label)}"><span>${esc(item.label)}</span></label>`
+              )
+              .join('')}
+          </div>`
+        ).join('')}
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <a class="btn btn-primary" id="chk-carry-btn" href="/contact">Attach Readiness Stage to Enquiry &rarr;</a>
+        <button type="button" class="btn btn-outline" id="chk-print-btn">Print Checklist Summary</button>
+        <button type="button" class="btn btn-outline" id="chk-reset-btn">Reset Checklist</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-surface">
+    <div class="wrap">
+      <div class="section-header">
+        <div class="eyebrow">Publishing Guides</div>
+        <h2>Practical guidance for every milestone.</h2>
+      </div>
       <div class="grid-3">
-        <article class="card"><div class="card-index tabular">01. Preparation</div><h3>Manuscript readiness checklist</h3><p>Review structure, consistency, formatting, permissions, and final proofing before production begins.</p><div class="card-footer-link"><a class="text-link" href="/contact?service=${encodeURIComponent('Editing & Writing')}">Discuss manuscript preparation &rarr;</a></div></article>
-        <article class="card"><div class="card-index tabular">02. Presentation</div><h3>What makes a strong book cover?</h3><p>Understand genre expectations, title hierarchy, thumbnail legibility, and print-versus-digital framing.</p><div class="card-footer-link"><a class="text-link" href="/services#cover-design">Explore cover design &rarr;</a></div></article>
-        <article class="card"><div class="card-index tabular">03. Distribution</div><h3>Choosing a publishing platform</h3><p>Compare distribution channels, file specifications, royalty structures, territories, and metadata control.</p><div class="card-footer-link"><a class="text-link" href="/authors">Read our author approach &rarr;</a></div></article>
-        <article class="card"><div class="card-index tabular">04. Discoverability</div><h3>Metadata, categories and keywords</h3><p>Learn how accurate descriptions and structured metadata help readers locate the right book.</p><div class="card-footer-link"><a class="text-link" href="/services#visibility-discoverability">Explore discoverability &rarr;</a></div></article>
-        <article class="card"><div class="card-index tabular">05. Ownership</div><h3>Protecting creative independence</h3><p>Clarify intellectual property retention, service agreements, asset licenses, and third-party fees.</p><div class="card-footer-link"><a class="text-link" href="/why-choose-us">Our transparency standard &rarr;</a></div></article>
-        <article class="card"><div class="card-index tabular">06. Promotion</div><h3>Planning thoughtful outreach</h3><p>Set realistic launch milestones and identify relevant reader communities, podcasts, and reviewers.</p><div class="card-footer-link"><a class="text-link" href="/services#book-promotion">Explore book promotion &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">01. Preparation</div><h3>Manuscript readiness checklist</h3><p>How to separate developmental structural feedback from final line copy editing and proofread checks so revisions stay clean and cost-effective.</p><div class="card-footer-link"><a class="text-link" href="/contact?service=${encodeURIComponent('Editing & Writing')}">Discuss manuscript preparation &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">02. Presentation</div><h3>What makes a strong book cover?</h3><p>Why title contrast, genre cues, thumbnail legibility at 120px width, and calibrated spine math matter equally across digital and print editions.</p><div class="card-footer-link"><a class="text-link" href="/services#cover-design">Explore cover design &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">03. Distribution</div><h3>Choosing a publishing platform</h3><p>Understanding when Amazon KDP alone suffices versus pairing KDP with IngramSpark for bookstore and library wholesale distribution.</p><div class="card-footer-link"><a class="text-link" href="/authors">Compare distribution platforms &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">04. Discoverability</div><h3>Metadata, categories &amp; keywords</h3><p>How subtitle clarity, HTML-formatted storefront descriptions, and accurate BISAC/retail categories help the right readers find your title.</p><div class="card-footer-link"><a class="text-link" href="/services#visibility-discoverability">Explore discoverability &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">05. Ownership</div><h3>Protecting creative independence</h3><p>Essential questions every author should ask about copyright ownership, ISBN registration, third-party costs, and non-royalty service agreements.</p><div class="card-footer-link"><a class="text-link" href="/why-choose-us">Our transparency standard &rarr;</a></div></article>
+        <article class="card"><div class="card-index tabular">06. Promotion</div><h3>Planning thoughtful outreach</h3><p>Sequencing advance review copies, trailer teasers, author spotlights, and targeted podcast pitches around a sustainable launch calendar.</p><div class="card-footer-link"><a class="text-link" href="/services#book-promotion">Explore book promotion &rarr;</a></div></article>
       </div>
     </div>
   </section>
@@ -2605,15 +2366,15 @@ const faqPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Frequently Asked Questions</div>
-      <h1>Helpful answers before you begin.</h1>
-      <p>Clear information about our services, project scoping, author ownership, and working process.</p>
+      <h1>Clear answers before you begin.</h1>
+      <p>Search or browse detailed answers covering BookRise Centre services, project scoping, author IP ownership, timelines, and confidentiality.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="faq-toolbar">
-        <input class="faq-search" id="faq-search" type="search" placeholder="Filter questions (e.g. royalties, pricing, timeline)..." aria-label="Filter frequently asked questions">
+        <input class="faq-search" id="faq-search" type="search" placeholder="Filter questions (e.g. royalties, ISBN, pricing, timeline)..." aria-label="Filter frequently asked questions">
         <span class="tabular" id="faq-count" style="font-size:0.875rem;color:var(--muted)">Showing ${FAQS.length} of ${FAQS.length} questions</span>
       </div>
       <div class="faq-list" id="faq-list">
@@ -2638,8 +2399,8 @@ const contactPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">Contact BookRise Centre</div>
-      <h1>Let us start a conversation about your book.</h1>
-      <p>Share a few details about your project. Our team will review your inquiry and follow up using your contact details.</p>
+      <h1>Let us start a clear, structured conversation about your book.</h1>
+      <p>Share your project details and preferred consultation window below. You will receive an immediate confirmation receipt upon submission.</p>
     </div>
   </section>
 
@@ -2648,7 +2409,7 @@ const contactPage = `
       <div>
         <div class="eyebrow">Direct Channels</div>
         <h2 style="font-family:var(--serif);font-size:2rem;color:var(--ink-strong);margin:10px 0 12px">Tell us about the book you are building.</h2>
-        <p class="lead" style="margin-bottom:24px">Whether you are preparing a manuscript, refining a published title, or planning a promotional campaign, context helps us recommend a practical next step.</p>
+        <p class="lead" style="margin-bottom:24px">Whether you are planning an outline, revising a completed draft, or repositioning a published title, detailed context helps our team prepare an accurate written scope.</p>
         <div class="contact-panel">
           <div class="contact-row">
             <span class="contact-label">General Inquiries</span>
@@ -2662,12 +2423,16 @@ const contactPage = `
             <span class="contact-label">Office</span>
             <span>Brooklyn, New York, United States</span>
           </div>
+          <div class="contact-row">
+            <span class="contact-label">Enquiry Admin Portal</span>
+            <a href="/admin">Team Enquiry Dashboard &rarr;</a>
+          </div>
         </div>
-        <p style="font-size:0.8125rem;color:var(--muted);margin-top:16px">Please do not attach confidential manuscript files, passwords, or payment details at this initial inquiry stage.</p>
+        <p style="font-size:0.8125rem;color:var(--muted);margin-top:16px">Please do not include full manuscripts, passwords, or payment details in this initial form. Secure file-transfer instructions are provided after initial contact.</p>
       </div>
 
       <div class="contact-panel">
-        <div class="eyebrow">Project Inquiry</div>
+        <div class="eyebrow">Project Inquiry &amp; Consultation Window</div>
         <h2 style="font-family:var(--serif);font-size:1.75rem;color:var(--ink-strong);margin:8px 0 20px">How can we support you?</h2>
         <form id="enquiry-form" novalidate>
           <div class="form-grid">
@@ -2681,7 +2446,7 @@ const contactPage = `
               <input class="field-input" name="bookTitle" maxlength="180" placeholder="Working or published title">
             </label>
             <label class="field-label">Genre / category
-              <input class="field-input" name="genre" maxlength="120" placeholder="e.g. Memoir, Business, Fiction">
+              <input class="field-input" name="genre" maxlength="120" placeholder="e.g. Memoir, Business, Philosophy">
             </label>
             <label class="field-label">Service required *
               <select class="field-input" name="service" id="service-select" required>
@@ -2706,13 +2471,38 @@ const contactPage = `
                 <option>Already published</option>
               </select>
             </label>
-            <label class="field-label form-full">Preferred timeline
+            <label class="field-label">Preferred timeline
               <select class="field-input" name="timeline">
                 <option value="">Select timeline</option>
                 <option>As soon as practical</option>
                 <option>Within 1 month</option>
                 <option>Within 2&ndash;3 months</option>
                 <option>Flexible</option>
+              </select>
+            </label>
+            <label class="field-label">Preferred consultation format
+              <select class="field-input" name="contactMethod">
+                <option value="Email follow-up">Email follow-up</option>
+                <option value="Video consultation">Video consultation</option>
+                <option value="Phone / WhatsApp call">Phone / WhatsApp call</option>
+              </select>
+            </label>
+            <label class="field-label">Preferred time window
+              <select class="field-input" name="preferredWindow">
+                <option value="Flexible">Flexible</option>
+                <option value="Morning (9:00 AM - 12:00 PM)">Morning (9:00 AM &ndash; 12:00 PM)</option>
+                <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM &ndash; 4:00 PM)</option>
+                <option value="Late Afternoon (4:00 PM - 6:00 PM)">Late Afternoon (4:00 PM &ndash; 6:00 PM)</option>
+              </select>
+            </label>
+            <label class="field-label">Your timezone
+              <select class="field-input" name="timezone">
+                <option value="EST / New York (UTC-5)">EST / New York (UTC-5)</option>
+                <option value="CST / Chicago (UTC-6)">CST / Chicago (UTC-6)</option>
+                <option value="PST / Los Angeles (UTC-8)">PST / Los Angeles (UTC-8)</option>
+                <option value="GMT / London (UTC+0)">GMT / London (UTC+0)</option>
+                <option value="WAT / Lagos (UTC+1)">WAT / Lagos (UTC+1)</option>
+                <option value="Other">Other</option>
               </select>
             </label>
             <label class="field-label form-full">Tell us about your project *
@@ -2727,7 +2517,70 @@ const contactPage = `
           </div>
           <button class="btn btn-primary" type="submit" style="margin-top:20px;width:100%">Submit Project Enquiry</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <div class="receipt-box" id="enquiry-receipt" hidden></div>
         </form>
+      </div>
+    </div>
+  </section>
+</main>`;
+
+const adminPage = `
+<main class="page-main">
+  <section class="page-intro">
+    <div class="wrap">
+      <div class="eyebrow">Team Workspace</div>
+      <h1>Enquiry Management Dashboard</h1>
+      <p>Review submitted author project inquiries, consultation windows, and workflow statuses.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card" id="admin-loading-card" style="max-width:480px">
+        <p style="margin:0;color:var(--muted)">Checking team workspace status...</p>
+      </div>
+
+      <div class="card" id="admin-setup-card" style="max-width:480px" hidden>
+        <div class="eyebrow" style="margin-bottom:8px">First-Time Setup</div>
+        <h3 style="margin-top:0">Set Your Team Admin Passcode</h3>
+        <p style="margin-bottom:16px">No environment passcode is configured yet. Create your private team passcode now—it is hashed securely on the server and locks setup immediately once saved.</p>
+        <form id="admin-setup-form" style="display:grid;gap:12px">
+          <input class="field-input" type="password" id="admin-setup-passcode" placeholder="Create admin passcode (min. 8 characters)" minlength="8" maxlength="128" required>
+          <input class="field-input" type="password" id="admin-setup-confirm" placeholder="Confirm admin passcode" minlength="8" maxlength="128" required>
+          <button type="submit" class="btn btn-navy">Save Passcode &amp; Unlock Dashboard</button>
+        </form>
+        <p class="form-status" id="admin-setup-status"></p>
+      </div>
+
+      <div class="card" id="admin-auth-card" style="max-width:480px" hidden>
+        <h3 style="margin-top:0">Sign in with Team Passcode</h3>
+        <p style="margin-bottom:16px" id="admin-auth-hint">Enter your team admin passcode to view and manage submitted author enquiries.</p>
+        <form id="admin-login-form" style="display:grid;gap:12px">
+          <input class="field-input" type="password" id="admin-passcode-input" placeholder="Enter admin passcode" required>
+          <button type="submit" class="btn btn-navy">Unlock Enquiries</button>
+        </form>
+        <p class="form-status" id="admin-auth-status"></p>
+      </div>
+
+      <div id="admin-board" hidden>
+        <div class="section-header-split" style="margin-bottom:20px">
+          <div>
+            <h2 style="margin:0 0 6px">Submitted Project Enquiries</h2>
+            <p class="lead" id="admin-count-label">Loading records...</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <select class="field-input" id="admin-status-filter" style="width:auto;min-width:160px">
+              <option value="all">All Statuses</option>
+              <option value="new">New</option>
+              <option value="in_review">In Review</option>
+              <option value="quoted">Quoted</option>
+              <option value="archived">Archived</option>
+            </select>
+            <button type="button" class="btn btn-outline" id="admin-refresh-btn">Refresh</button>
+            <button type="button" class="btn btn-outline" id="admin-logout-btn">Sign Out</button>
+          </div>
+        </div>
+        <div id="admin-list" style="display:grid;gap:16px"></div>
       </div>
     </div>
   </section>
@@ -2754,17 +2607,16 @@ const termsPage = legalPage(
   'Terms of Service',
   'The principles governing inquiries and paid author-service engagements with BookRise Centre.',
   [
-    ['1. Services and project scope', 'BookRise Centre provides professional author services including publishing support, editing and writing, cover design, book promotion, visibility and discoverability support, and reader outreach. The services provided for a particular project are limited to the tasks and deliverables expressly described in the written quotation or service agreement.'],
+    ['1. Services and project scope', 'BookRise Centre provides professional author services including publishing support, editing and writing, cover design, book promotion, video promotion, visibility and discoverability support, and reader outreach. The services provided for a particular project are limited to the tasks and deliverables expressly described in the written quotation or service agreement.'],
     ['2. Quotations and acceptance', 'A quotation is based on the information available when it is prepared. If the manuscript, project requirements, deliverables or schedule change, the scope and fee may need to be reviewed. Work begins only after the parties have accepted the applicable written terms and any required initial payment has been received.'],
-    ['3. Fees and payment', 'The quotation or agreement should state the fee, currency, payment stages, due dates and any external costs. Any additional work outside the agreed scope requires a separate written approval and may attract an additional fee.'],
-    ['4. Author materials and responsibilities', 'Authors are responsible for ensuring that they have the right to provide all manuscripts, images, text and other materials supplied for the project. Authors should provide accurate information, feedback and approvals within the agreed timeframe.'],
-    ['5. Intellectual property and ownership', 'Authors retain ownership of their original manuscripts and intellectual property. Any limited permission required for BookRise Centre to access, edit, format, design or promote materials is restricted to performing the agreed services. The project agreement should record any third-party assets, licenses or platform terms that apply.'],
-    ['6. Revisions, approvals and delivery', 'The agreement should state the number and nature of included revision rounds, approval responsibilities, file formats and delivery method. Work requested after approval or beyond the agreed revision allowance may be treated as additional work.'],
-    ['7. Third-party services and platforms', 'Printing, distribution platforms, advertising platforms, paid placements, software, ISBN services and other third-party providers may have their own fees, rules and terms. Such costs should be identified and approved before they are incurred. BookRise Centre does not control third-party platform decisions or availability.'],
-    ['8. No guaranteed commercial outcomes', 'BookRise Centre does not guarantee book sales, income, reviews, rankings, media coverage, acceptance by reviewers or podcasts, or a particular audience response. Marketing and outreach outcomes depend on independent decisions and market conditions.'],
-    ['9. Cancellation and refunds', 'Cancellation, pause and refund arrangements should be stated in the project-specific agreement, including how completed work, committed third-party costs and outstanding payments are handled.'],
-    ['10. Communication and changes', 'Project updates, review points, response expectations and change requests should be agreed at the outset. Material changes to the project may require a revised scope, fee or timeline.'],
-    ['11. Contact', 'Questions about these terms or a proposed engagement may be sent to hello@bookrisecentre.com.'],
+    ['3. Fees and payment', 'The quotation or agreement states the fee, currency, payment stages, due dates and any external costs. Additional work outside the agreed scope requires separate written approval.'],
+    ['4. Author materials and responsibilities', 'Authors are responsible for ensuring they have the right to supply all manuscripts, images, text and materials for the project, and for providing timely feedback within agreed review windows.'],
+    ['5. Intellectual property and ownership', 'Authors retain 100% ownership of their original manuscripts and intellectual property. Limited permissions granted to BookRise Centre apply strictly to performing the agreed services.'],
+    ['6. Revisions, approvals and delivery', 'The written agreement specifies included revision rounds, approval checkpoints, file formats and delivery methods.'],
+    ['7. Third-party services and platforms', 'Printing, distribution platforms, advertising spend, ISBN agencies and other third-party providers operate under their own fees and policies, disclosed separately where applicable.'],
+    ['8. No guaranteed commercial outcomes', 'BookRise Centre does not guarantee book sales, income, reviews, rankings, or media coverage. We guarantee professional execution of agreed deliverables and clear activity reporting.'],
+    ['9. Cancellation and refunds', 'Cancellation, pause and refund arrangements are governed by the project-specific written agreement and applicable consumer protections.'],
+    ['10. Contact', 'Questions about these terms or a proposed engagement may be sent to hello@bookrisecentre.com.'],
   ]
 );
 
@@ -2772,13 +2624,11 @@ const privacyPage = legalPage(
   'Privacy Policy',
   'How BookRise Centre handles information provided through enquiries and service engagements.',
   [
-    ['1. Information you may provide', 'Depending on your enquiry, you may provide your name, email address, contact details, book title, genre, manuscript or project information, service preferences and communications with our team.'],
-    ['2. How information is used', 'Information is used to respond to enquiries, assess requested services, prepare quotations, communicate about projects, deliver agreed services and maintain relevant business records.'],
-    ['3. Sharing and service providers', 'Information may be shared with team members or service providers only where reasonably necessary to respond to an enquiry or perform agreed work. Any third-party platform or provider may process information under its own terms and privacy practices.'],
-    ['4. Manuscripts and confidential material', 'Please do not send a complete manuscript or sensitive personal information through an unsecured channel before the submission method and any applicable confidentiality arrangements have been discussed and agreed.'],
-    ['5. Retention and security', 'Information is retained for as long as reasonably necessary for the purpose for which it was provided, relevant project administration and legitimate record-keeping. Appropriate care should be taken to protect information, although no method of electronic transmission or storage can be guaranteed to be completely secure.'],
-    ['6. Your questions and requests', 'You may contact BookRise Centre to ask about information you have provided or to request an update where appropriate. We may need to retain certain records for legitimate business or legal purposes.'],
-    ['7. Policy updates and contact', 'This policy may be updated as the Centre’s practices or applicable requirements change. For questions about this policy or requests concerning information you have provided, contact hello@bookrisecentre.com.'],
+    ['1. Information you may provide', 'Depending on your enquiry, you may provide your name, email address, book title, genre, manuscript stage, consultation preferences, and project communications.'],
+    ['2. How information is used', 'Information is used solely to respond to enquiries, evaluate requested services, prepare written quotations, coordinate projects, and maintain legitimate business records.'],
+    ['3. Sharing and service providers', 'Information is shared with assigned BookRise Centre specialists only where reasonably necessary to prepare or deliver agreed services.'],
+    ['4. Manuscripts and confidential material', 'Please do not send full manuscripts or sensitive personal data in the initial public contact form prior to confirming submission procedures.'],
+    ['5. Retention and requests', 'You may contact hello@bookrisecentre.com to ask about information you have submitted or request corrections where appropriate.'],
   ]
 );
 
@@ -2786,31 +2636,29 @@ const refundsPage = legalPage(
   'Refund & Cancellation Policy',
   'How cancellation and refund arrangements are addressed for BookRise Centre author services.',
   [
-    ['1. Written terms before payment', 'Before a project begins, the author should receive written information describing the services, deliverables, total fee, payment schedule, estimated timeline, cancellation process and any applicable refund conditions.'],
-    ['2. Project-specific arrangements', 'Refund eligibility and cancellation arrangements depend on the agreement for the particular project, the nature of the service, work already completed, resources committed and third-party costs already incurred.'],
-    ['3. Work already completed', 'Where a project is cancelled after work has started, the agreement should explain how completed work, work in progress and any non-recoverable external costs are accounted for.'],
-    ['4. Third-party charges', 'Charges paid or committed to independent platforms, suppliers, advertising providers, printers or other third parties may be subject to their own refund rules. Such costs should be disclosed and approved where applicable.'],
-    ['5. Requesting a cancellation or clarification', 'Authors should submit cancellation requests or questions in writing to hello@bookrisecentre.com, identifying the project and the relevant agreement. The team can then review the applicable terms and respond.'],
-    ['6. Governing agreement', 'This page provides general information. The project-specific written agreement and any mandatory consumer protections applicable to the transaction govern the final cancellation and refund position.'],
+    ['1. Written terms before payment', 'Before work begins, every author receives written terms detailing deliverables, total fee, payment stages, timeline, and cancellation conditions.'],
+    ['2. Work already completed', 'Where a project is cancelled after work has commenced, completed milestones, work in progress, and any committed non-recoverable external costs are accounted for per the written agreement.'],
+    ['3. Requesting cancellation or review', 'Submit cancellation requests or questions in writing to hello@bookrisecentre.com referencing your project agreement.'],
   ]
 );
 
 const PAGES = {
-  '/': ['Home', 'Publishing, editorial, design and book-promotion support for authors preparing, positioning and promoting their books.', homePage],
-  '/about': ['About BookRise Centre', 'Learn about BookRise Centre and our author-focused publishing philosophy.', aboutPage],
-  '/services': ['Our Services', 'Explore publishing, editing, cover design, book promotion, discoverability and reader outreach.', servicesPage],
-  '/team': ['Our Team', 'Meet the six publishing, literary, marketing and book-promotion specialists at BookRise Centre.', teamPage],
-  '/work': ['Our Work', 'Explore selected author projects and testimonials represented in the BookRise Centre portfolio.', workPage],
-  '/authors': ['For Authors', 'How BookRise Centre supports authors with publishing, editorial and promotional services.', authorsPage],
-  '/resources': ['Author Resources', 'Practical publishing guidance for authors.', resourcesPage],
-  '/process': ['Our Process', 'A clear, author-focused process for working with BookRise Centre.', processPage],
-  '/why-choose-us': ['Why Choose Us', 'Learn about BookRise Centre’s collaborative expertise, author focus and transparent service model.', whyPage],
-  '/faq': ['Frequently Asked Questions', 'Answers about BookRise Centre services, pricing, ownership and project process.', faqPage],
-  '/pricing': ['Pricing & Engagement', 'Understand how BookRise Centre scopes projects and prepares transparent quotations.', pricingPage],
-  '/contact': ['Contact BookRise Centre', 'Contact BookRise Centre to discuss publishing, editing, writing and book promotion support.', contactPage],
+  '/': ['Home', 'Detailed publishing, editorial, design, video promotion, and book-marketing support for authors retaining 100% IP and royalties.', homePage],
+  '/about': ['About BookRise Centre', 'Learn about BookRise Centre, our operating model, who we serve, and our author-first standards.', aboutPage],
+  '/services': ['Our Services', 'Detailed workflows, turnaround times, deliverables, video trailers, and editorial samples across seven disciplines.', servicesPage],
+  '/team': ['Our Team', 'Detailed office profiles and workflows for all six BookRise Centre specialists.', teamPage],
+  '/work': ['Our Work', 'Adrian Emery duology showcase (14 deliverables) and featured author editions.', workPage],
+  '/authors': ['For Authors', 'Stage-by-stage partnership guide, author IP charter, and distribution platform comparison.', authorsPage],
+  '/resources': ['Author Resources', 'Interactive 12-point Manuscript Readiness Checklist and practical publishing guides.', resourcesPage],
+  '/process': ['Our Process', 'Our five-stage workflow from discovery through completion and file handover.', processPage],
+  '/why-choose-us': ['Why Choose Us', 'Why authors choose BookRise Centre’s integrated six-specialist model.', whyPage],
+  '/faq': ['Frequently Asked Questions', 'Detailed answers on services, pricing, IP ownership, royalties, and process.', faqPage],
+  '/pricing': ['Pricing & Engagement', 'Interactive Project Scope & Timeline Estimator and transparent quotation guide.', pricingPage],
+  '/contact': ['Contact BookRise Centre', 'Start a conversation with consultation window selection and instant confirmation receipt.', contactPage],
+  '/admin': ['Enquiry Dashboard', 'Manage submitted author enquiries.', adminPage],
   '/terms': ['Terms of Service', 'Terms for BookRise Centre author-service engagements.', termsPage],
-  '/privacy': ['Privacy Policy', 'How BookRise Centre handles information provided through enquiries and projects.', privacyPage],
-  '/refunds': ['Refund & Cancellation Policy', 'Information about cancellation and refund arrangements for BookRise Centre services.', refundsPage],
+  '/privacy': ['Privacy Policy', 'How BookRise Centre handles enquiry and project information.', privacyPage],
+  '/refunds': ['Refund & Cancellation Policy', 'Cancellation and refund policy for BookRise Centre services.', refundsPage],
 };
 
 function renderShell(currentPath, title, desc, body) {
@@ -2826,11 +2674,11 @@ function renderShell(currentPath, title, desc, body) {
     ['/', 'Home'],
     ['/about', 'About'],
     ['/services', 'Services'],
-    ['/pricing', 'Pricing & Engagement'],
+    ['/pricing', 'Pricing & Estimator'],
     ['/work', 'Our Work'],
     ['/team', 'Our Team'],
     ['/authors', 'For Authors'],
-    ['/resources', 'Resources'],
+    ['/resources', 'Resources & Checklist'],
     ['/process', 'Our Process'],
     ['/faq', 'FAQ'],
     ['/contact', 'Contact'],
@@ -2854,14 +2702,9 @@ function renderShell(currentPath, title, desc, body) {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'BookRise Centre',
-    description: 'Coordinated publishing, editorial, cover design, and book-promotion services with full author ownership.',
+    description: 'Coordinated publishing, editorial, cover design, video promotion, and book-marketing services with full author ownership.',
     email: 'hello@bookrisecentre.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Brooklyn',
-      addressRegion: 'NY',
-      addressCountry: 'US',
-    },
+    address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' },
     sameAs: ['https://www.instagram.com/bookrisecentre', 'https://x.com/bookrisecentre'],
   })}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2928,7 +2771,7 @@ function renderShell(currentPath, title, desc, body) {
             <span class="brand-mark"><img src="${ASSETS.monogram}" alt="BookRise Centre emblem" width="32" height="32"></span>
             <strong>BOOKRISE CENTRE</strong>
           </a>
-          <p class="footer-tagline">Where books gain visibility and authors gain recognition. Coordinated editorial, design, and promotional support with full author ownership.</p>
+          <p class="footer-tagline">Where books gain visibility and authors gain recognition. Detailed editorial, design, video promotion, and outreach support with 100% author ownership.</p>
           <div class="footer-location">Brooklyn, New York, United States</div>
         </div>
 
@@ -2937,18 +2780,18 @@ function renderShell(currentPath, title, desc, body) {
           <div class="footer-links">
             <a href="/about">About Us</a>
             <a href="/services">Our Services</a>
-            <a href="/pricing">Pricing &amp; Engagement</a>
-            <a href="/work">Our Work</a>
-            <a href="/team">Our Team</a>
-            <a href="/process">Our Process</a>
+            <a href="/pricing">Pricing &amp; Scope Estimator</a>
+            <a href="/work">Our Work &amp; Portfolio</a>
+            <a href="/team">Our Team (6 Specialists)</a>
+            <a href="/process">Our 5-Step Process</a>
           </div>
         </div>
 
         <div>
           <h4>Authors &amp; Policy</h4>
           <div class="footer-links">
-            <a href="/authors">For Authors</a>
-            <a href="/resources">Author Resources</a>
+            <a href="/authors">For Authors &amp; Platforms</a>
+            <a href="/resources">Resources &amp; Readiness Checklist</a>
             <a href="/why-choose-us">Why Choose Us</a>
             <a href="/faq">Frequently Asked Questions</a>
             <a href="/terms">Terms of Service</a>
@@ -2962,6 +2805,7 @@ function renderShell(currentPath, title, desc, body) {
           <div class="footer-links">
             <a href="mailto:hello@bookrisecentre.com">hello@bookrisecentre.com</a>
             <a href="https://wa.me/2349049497206" target="_blank" rel="noopener noreferrer">WhatsApp: +234 904 949 7206</a>
+            <a href="/admin">Team Enquiry Dashboard</a>
             <button type="button" data-open-settings>Display &amp; Reading Settings</button>
           </div>
           <div class="footer-social">
@@ -2992,7 +2836,7 @@ function renderShell(currentPath, title, desc, body) {
 
     <div class="setting-group">
       <div class="setting-label">Color Theme</div>
-      <p class="setting-desc">Switch between editorial daylight paper, dark nocturnal slate, or your device preference.</p>
+      <p class="setting-desc">Switch between editorial daylight paper, dark nocturnal slate, or device preference.</p>
       <div class="segmented" role="group" aria-label="Color theme">
         <button type="button" class="seg-opt" data-setting="theme" data-value="light">Light</button>
         <button type="button" class="seg-opt" data-setting="theme" data-value="dark">Dark</button>
@@ -3002,7 +2846,7 @@ function renderShell(currentPath, title, desc, body) {
 
     <div class="setting-group">
       <div class="setting-label">Reading Size</div>
-      <p class="setting-desc">Adjust base typography scale across articles, service guides, and legal terms.</p>
+      <p class="setting-desc">Adjust base typography scale across articles, guides, and team profiles.</p>
       <div class="segmented" role="group" aria-label="Reading text size">
         <button type="button" class="seg-opt" data-setting="textSize" data-value="standard">Standard</button>
         <button type="button" class="seg-opt" data-setting="textSize" data-value="comfortable">Medium</button>
@@ -3021,7 +2865,7 @@ function renderShell(currentPath, title, desc, body) {
 
     <div class="setting-group">
       <div class="setting-label">Text &amp; Border Contrast</div>
-      <p class="setting-desc">Increase ink density and hairline border clarity for higher legibility.</p>
+      <p class="setting-desc">Increase ink density and hairline border clarity.</p>
       <div class="segmented two-col" role="group" aria-label="Contrast preference">
         <button type="button" class="seg-opt" data-setting="contrast" data-value="standard">Standard</button>
         <button type="button" class="seg-opt" data-setting="contrast" data-value="high">High Contrast</button>
@@ -3045,16 +2889,16 @@ function renderShell(currentPath, title, desc, body) {
             <div class="eyebrow" id="case-meta"></div>
             <h3 id="case-title"></h3>
           </div>
-          <button class="settings-close" id="case-close" type="button" aria-label="Close case study">&times;</button>
+          <button class="settings-close" id="case-close" type="button" aria-label="Close inspection dialog">&times;</button>
         </div>
         <p id="case-brief" style="margin:0;color:var(--muted);font-size:0.9375rem"></p>
-        <div>
+        <div id="case-scope-wrap">
           <div class="setting-label" style="margin-bottom:6px">Scope Delivered</div>
           <ul id="case-deliverables"></ul>
         </div>
         <blockquote id="case-quote" style="margin:4px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:0.875rem;color:var(--ink)"></blockquote>
         <div style="margin-top:auto;padding-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btn-primary" href="/contact" id="case-cta">Discuss a Similar Project</a>
+          <a class="btn btn-primary" href="/contact">Discuss a Similar Project</a>
         </div>
       </div>
     </div>
@@ -3062,6 +2906,7 @@ function renderShell(currentPath, title, desc, body) {
 
   <script>
     window.__BOOKRISE_CASES__ = ${JSON.stringify(PROJECTS)};
+    window.__BOOKRISE_ADRIAN__ = ${JSON.stringify(ADRIAN_DELIVERABLES)};
   </script>
   <script>
     (function () {
@@ -3072,17 +2917,11 @@ function renderShell(currentPath, title, desc, body) {
         try {
           var raw = localStorage.getItem('bookrise-prefs');
           return raw ? Object.assign({}, DEFAULTS, JSON.parse(raw)) : Object.assign({}, DEFAULTS);
-        } catch (e) {
-          return Object.assign({}, DEFAULTS);
-        }
+        } catch (e) { return Object.assign({}, DEFAULTS); }
       }
-
       function savePrefs(prefs) {
-        try {
-          localStorage.setItem('bookrise-prefs', JSON.stringify(prefs));
-        } catch (e) {}
+        try { localStorage.setItem('bookrise-prefs', JSON.stringify(prefs)); } catch (e) {}
       }
-
       function applyPrefs(prefs) {
         var resolvedTheme = prefs.theme === 'system'
           ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
@@ -3091,19 +2930,14 @@ function renderShell(currentPath, title, desc, body) {
         root.setAttribute('data-text-size', prefs.textSize);
         root.setAttribute('data-motion', prefs.motion);
         root.setAttribute('data-contrast', prefs.contrast);
-
         document.querySelectorAll('[data-setting]').forEach(function (btn) {
-          var key = btn.getAttribute('data-setting');
-          var val = btn.getAttribute('data-value');
-          var active = prefs[key] === val;
+          var active = prefs[btn.getAttribute('data-setting')] === btn.getAttribute('data-value');
           btn.classList.toggle('is-selected', active);
           btn.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
       }
-
       var prefs = loadPrefs();
       applyPrefs(prefs);
-
       if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
           if (prefs.theme === 'system') applyPrefs(prefs);
@@ -3128,38 +2962,26 @@ function renderShell(currentPath, title, desc, body) {
         });
         if (closeBtn) closeBtn.focus();
       }
-
       function closeSettings() {
-        if (!drawer || !backdrop) return;
+        if (!drawer || !backdrop || drawer.hidden) return;
         backdrop.classList.remove('is-open');
         drawer.classList.remove('is-open');
-        setTimeout(function () {
-          backdrop.hidden = true;
-          drawer.hidden = true;
-        }, 220);
+        setTimeout(function () { backdrop.hidden = true; drawer.hidden = true; }, 220);
       }
-
       if (trigger) trigger.addEventListener('click', openSettings);
       document.querySelectorAll('[data-open-settings]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          closeMobileMenu();
-          openSettings();
-        });
+        el.addEventListener('click', function () { closeMobileMenu(); openSettings(); });
       });
       if (closeBtn) closeBtn.addEventListener('click', closeSettings);
       if (doneBtn) doneBtn.addEventListener('click', closeSettings);
       if (backdrop) backdrop.addEventListener('click', closeSettings);
-
       document.querySelectorAll('[data-setting]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var key = btn.getAttribute('data-setting');
-          var val = btn.getAttribute('data-value');
-          prefs[key] = val;
+          prefs[btn.getAttribute('data-setting')] = btn.getAttribute('data-value');
           savePrefs(prefs);
           applyPrefs(prefs);
         });
       });
-
       if (resetBtn) {
         resetBtn.addEventListener('click', function () {
           prefs = Object.assign({}, DEFAULTS);
@@ -3171,7 +2993,6 @@ function renderShell(currentPath, title, desc, body) {
       // Mobile Navigation Drawer
       var menuBtn = document.getElementById('mobile-menu-btn');
       var mobileDrawer = document.getElementById('mobile-drawer');
-
       function closeMobileMenu() {
         if (!menuBtn || !mobileDrawer) return;
         mobileDrawer.classList.remove('is-open');
@@ -3179,101 +3000,102 @@ function renderShell(currentPath, title, desc, body) {
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.querySelector('span').textContent = 'Menu';
       }
-
       if (menuBtn && mobileDrawer) {
         menuBtn.addEventListener('click', function () {
-          var opening = mobileDrawer.hidden;
-          if (opening) {
+          if (mobileDrawer.hidden) {
             mobileDrawer.hidden = false;
-            requestAnimationFrame(function () {
-              mobileDrawer.classList.add('is-open');
-            });
+            requestAnimationFrame(function () { mobileDrawer.classList.add('is-open'); });
             menuBtn.setAttribute('aria-expanded', 'true');
             menuBtn.querySelector('span').textContent = 'Close';
-          } else {
-            closeMobileMenu();
-          }
+          } else { closeMobileMenu(); }
         });
       }
 
-      // Case Study Modal
+      // Case Study & Adrian Lightbox Modal
       var caseBackdrop = document.getElementById('case-backdrop');
       var caseClose = document.getElementById('case-close');
       var casesData = window.__BOOKRISE_CASES__ || [];
+      var adrianData = window.__BOOKRISE_ADRIAN__ || [];
 
-      function openCase(id) {
+      function showModal(imgSrc, imgAlt, meta, title, brief, deliverables, quote) {
         if (!caseBackdrop) return;
-        var item = casesData.find(function (c) { return c.id === id; });
-        if (!item) return;
-        document.getElementById('case-img').src = item.image;
-        document.getElementById('case-img').alt = item.title + ' by ' + item.author;
-        document.getElementById('case-meta').textContent = item.genre + ' · ' + item.author;
-        document.getElementById('case-title').textContent = item.title;
-        document.getElementById('case-brief').textContent = item.brief;
-        document.getElementById('case-quote').textContent = '“' + item.quote + '” — ' + item.author;
+        document.getElementById('case-img').src = imgSrc;
+        document.getElementById('case-img').alt = imgAlt;
+        document.getElementById('case-meta').textContent = meta;
+        document.getElementById('case-title').textContent = title;
+        document.getElementById('case-brief').textContent = brief;
+        var scopeWrap = document.getElementById('case-scope-wrap');
         var list = document.getElementById('case-deliverables');
         list.innerHTML = '';
-        (item.deliverables || []).forEach(function (d) {
-          var li = document.createElement('li');
-          li.textContent = d;
-          list.appendChild(li);
-        });
+        if (deliverables && deliverables.length) {
+          scopeWrap.style.display = '';
+          deliverables.forEach(function (d) {
+            var li = document.createElement('li');
+            li.textContent = d;
+            list.appendChild(li);
+          });
+        } else {
+          scopeWrap.style.display = 'none';
+        }
+        var qEl = document.getElementById('case-quote');
+        if (quote) {
+          qEl.style.display = '';
+          qEl.textContent = quote;
+        } else {
+          qEl.style.display = 'none';
+        }
         caseBackdrop.hidden = false;
-        requestAnimationFrame(function () {
-          caseBackdrop.classList.add('is-open');
-        });
+        requestAnimationFrame(function () { caseBackdrop.classList.add('is-open'); });
         if (caseClose) caseClose.focus();
       }
 
       function closeCase() {
         if (!caseBackdrop || caseBackdrop.hidden) return;
         caseBackdrop.classList.remove('is-open');
-        setTimeout(function () {
-          caseBackdrop.hidden = true;
-        }, 220);
+        setTimeout(function () { caseBackdrop.hidden = true; }, 220);
       }
 
       document.querySelectorAll('[data-case-id]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          openCase(btn.getAttribute('data-case-id'));
+          var item = casesData.find(function (c) { return c.id === btn.getAttribute('data-case-id'); });
+          if (item) showModal(item.image, item.title, item.genre + ' · ' + item.author, item.title, item.brief, item.deliverables, '“' + item.quote + '” — ' + item.author);
         });
       });
+
+      document.querySelectorAll('[data-lightbox-id]').forEach(function (el) {
+        function openAdrian() {
+          var item = adrianData.find(function (d) { return d.id === el.getAttribute('data-lightbox-id'); });
+          if (item) showModal(item.image, item.title, 'Adrian Emery · ' + item.volume, item.title, item.description, ['Client: Adrian Emery (The Temple of Understanding)', 'Deliverable Category: ' + item.categoryLabel, 'Produced by BookRise Centre'], '');
+        }
+        el.addEventListener('click', openAdrian);
+        el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openAdrian(); } });
+      });
+
       if (caseClose) caseClose.addEventListener('click', closeCase);
-      if (caseBackdrop) {
-        caseBackdrop.addEventListener('click', function (e) {
-          if (e.target === caseBackdrop) closeCase();
-        });
-      }
+      if (caseBackdrop) caseBackdrop.addEventListener('click', function (e) { if (e.target === caseBackdrop) closeCase(); });
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          closeSettings();
-          closeMobileMenu();
-          closeCase();
-        }
+        if (e.key === 'Escape') { closeSettings(); closeMobileMenu(); closeCase(); }
       });
 
       // Scroll Progress + Back-to-Top
       var progressBar = document.getElementById('scroll-progress');
       var toTopBtn = document.getElementById('to-top-btn');
-
       function onScroll() {
         var docH = document.documentElement.scrollHeight - window.innerHeight;
         var ratio = docH > 0 ? Math.min(1, Math.max(0, window.scrollY / docH)) : 0;
         if (progressBar) progressBar.style.transform = 'scaleX(' + ratio.toFixed(4) + ')';
         if (toTopBtn) toTopBtn.classList.toggle('is-visible', window.scrollY > 420);
       }
-
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
-
       if (toTopBtn) {
         toTopBtn.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: prefs.motion === 'reduced' ? 'auto' : 'smooth' });
         });
       }
 
-      // Progressive Reveal Observer for below-the-fold elements
+      // Reveal Observer
       var revealItems = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window && prefs.motion !== 'reduced') {
         var observer = new IntersectionObserver(function (entries) {
@@ -3284,18 +3106,16 @@ function renderShell(currentPath, title, desc, body) {
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
+        }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
         revealItems.forEach(function (el) {
-          var rect = el.getBoundingClientRect();
-          if (rect.top > window.innerHeight * 0.95) {
+          if (el.getBoundingClientRect().top > window.innerHeight * 0.95) {
             el.classList.add('is-pending');
             observer.observe(el);
           }
         });
       }
 
-      // Services Page Filter Tabs
+      // Services Filter
       var filterBtns = document.querySelectorAll('[data-filter]');
       var serviceItems = document.querySelectorAll('.service-item');
       if (filterBtns.length && serviceItems.length) {
@@ -3308,11 +3128,150 @@ function renderShell(currentPath, title, desc, body) {
               b.setAttribute('aria-selected', active ? 'true' : 'false');
             });
             serviceItems.forEach(function (item) {
-              var match = cat === 'all' || item.getAttribute('data-category') === cat;
-              item.style.display = match ? '' : 'none';
+              item.style.display = (cat === 'all' || item.getAttribute('data-category') === cat) ? '' : 'none';
             });
           });
         });
+      }
+
+      // Adrian Emery Portfolio Filter
+      var adrianBtns = document.querySelectorAll('[data-adrian-filter]');
+      var adrianCards = document.querySelectorAll('[data-adrian-cat]');
+      if (adrianBtns.length && adrianCards.length) {
+        adrianBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var cat = btn.getAttribute('data-adrian-filter');
+            adrianBtns.forEach(function (b) {
+              var active = b === btn;
+              b.classList.toggle('is-active', active);
+              b.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            adrianCards.forEach(function (card) {
+              card.style.display = (cat === 'all' || card.getAttribute('data-adrian-cat') === cat) ? '' : 'none';
+            });
+          });
+        });
+      }
+
+      // Before / After Samples Toggle
+      document.querySelectorAll('[data-sample-tab]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-sample-tab');
+          var box = btn.closest('.sample-compare-box');
+          if (!box) return;
+          box.querySelectorAll('[data-sample-tab]').forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          box.querySelectorAll('[data-sample-pane]').forEach(function (pane) {
+            pane.classList.toggle('is-active', pane.getAttribute('data-sample-pane') === target);
+          });
+        });
+      });
+
+      // Pricing Scope Estimator
+      var estServices = document.getElementById('est-services');
+      var estWords = document.getElementById('est-words');
+      var estPace = document.getElementById('est-pace');
+      if (estServices && estWords && estPace) {
+        function updateEstimator() {
+          var checked = Array.prototype.slice.call(estServices.querySelectorAll('input:checked'));
+          var modelEl = document.getElementById('est-model');
+          var durEl = document.getElementById('est-duration');
+          var sumEl = document.getElementById('est-summary');
+          var listEl = document.getElementById('est-milestones');
+          var linkEl = document.getElementById('est-apply-link');
+          listEl.innerHTML = '';
+
+          if (!checked.length) {
+            modelEl.textContent = 'Select one or more services';
+            durEl.textContent = 'Estimated duration: —';
+            sumEl.textContent = 'Choose at least one service on the left to generate a recommended delivery sequence.';
+            linkEl.href = '/contact';
+            return;
+          }
+
+          var names = checked.map(function (c) { return c.value; });
+          var wordFactor = Number(estWords.value) || 2;
+          var paceFactor = Number(estPace.value) || 1;
+          var baseWeeks = checked.length * 1.6 + wordFactor * 0.8;
+          var minW = Math.max(1, Math.round(baseWeeks * paceFactor));
+          var maxW = Math.max(minW + 1, Math.round((baseWeeks + 2) * paceFactor));
+
+          modelEl.textContent = checked.length === 1
+            ? 'Single-Discipline Scope'
+            : checked.length <= 3
+              ? 'Coordinated Multi-Service Scope'
+              : 'Comprehensive Full-Launch Campaign';
+          durEl.textContent = 'Estimated duration: ' + minW + ' to ' + maxW + ' weeks';
+          sumEl.textContent = 'Selected focus: ' + names.join(', ') + '.';
+
+          var milestones = [
+            'Phase 1: Discovery review & formal written quotation',
+            'Phase 2: Primary production (' + names.slice(0, 2).join(' & ') + ')',
+            'Phase 3: Author review checkpoint & agreed revisions',
+            'Phase 4: Final export handover & next-step roadmap',
+          ];
+          milestones.forEach(function (m) {
+            var li = document.createElement('li');
+            li.textContent = m;
+            listEl.appendChild(li);
+          });
+
+          var serviceParam = checked.length === 1 ? names[0] : 'Multiple Services / Not Sure';
+          var note = 'Scope Estimator Brief: Services [' + names.join(', ') + '], ' +
+            'Length [' + estWords.options[estWords.selectedIndex].text + '], ' +
+            'Pace [' + estPace.options[estPace.selectedIndex].text + '], ' +
+            'Est. Window [' + minW + '-' + maxW + ' weeks].';
+          linkEl.href = '/contact?service=' + encodeURIComponent(serviceParam) + '&brief=' + encodeURIComponent(note);
+        }
+        estServices.addEventListener('change', updateEstimator);
+        estWords.addEventListener('change', updateEstimator);
+        estPace.addEventListener('change', updateEstimator);
+      }
+
+      // Resources Readiness Checklist
+      var checklistRoot = document.getElementById('checklist-root');
+      if (checklistRoot) {
+        var chks = Array.prototype.slice.call(checklistRoot.querySelectorAll('.readiness-chk'));
+        var scoreEl = document.getElementById('chk-score');
+        var stageEl = document.getElementById('chk-stage-label');
+        var barEl = document.getElementById('chk-bar');
+        var carryBtn = document.getElementById('chk-carry-btn');
+
+        function loadChecklist() {
+          try {
+            var saved = JSON.parse(localStorage.getItem('bookrise-checklist') || '{}');
+            chks.forEach(function (c) { c.checked = Boolean(saved[c.value]); });
+          } catch (e) {}
+        }
+        function updateChecklist() {
+          var state = {};
+          var done = 0;
+          var missing = [];
+          chks.forEach(function (c) {
+            state[c.value] = c.checked;
+            if (c.checked) done++;
+            else missing.push(c.getAttribute('data-label'));
+          });
+          try { localStorage.setItem('bookrise-checklist', JSON.stringify(state)); } catch (e) {}
+          var pct = Math.round((done / chks.length) * 100);
+          scoreEl.textContent = pct + '% Ready (' + done + ' / ' + chks.length + ')';
+          barEl.style.width = pct + '%';
+          var stageLabel = pct < 30 ? 'Early preparation stage' : pct < 70 ? 'Mid-production stage' : pct < 100 ? 'Pre-launch refinement stage' : 'Publication & outreach ready';
+          stageEl.textContent = stageLabel;
+          var brief = 'Readiness Checklist Summary: ' + pct + '% complete (' + done + '/' + chks.length + ', ' + stageLabel + '). Remaining items: ' + (missing.slice(0, 4).join('; ') || 'None — ready for launch support.');
+          carryBtn.href = '/contact?service=' + encodeURIComponent('Publishing Support') + '&brief=' + encodeURIComponent(brief);
+        }
+        loadChecklist();
+        updateChecklist();
+        chks.forEach(function (c) { c.addEventListener('change', updateChecklist); });
+        document.getElementById('chk-reset-btn').addEventListener('click', function () {
+          chks.forEach(function (c) { c.checked = false; });
+          updateChecklist();
+        });
+        document.getElementById('chk-print-btn').addEventListener('click', function () { window.print(); });
       }
 
       // FAQ Live Filter
@@ -3324,46 +3283,41 @@ function renderShell(currentPath, title, desc, body) {
           var q = faqSearch.value.trim().toLowerCase();
           var visible = 0;
           faqItems.forEach(function (item) {
-            var text = item.textContent.toLowerCase();
-            var match = !q || text.indexOf(q) !== -1;
+            var match = !q || item.textContent.toLowerCase().indexOf(q) !== -1;
             item.style.display = match ? '' : 'none';
-            if (match) {
-              visible++;
-              if (q.length >= 2) item.open = true;
-            }
+            if (match) { visible++; if (q.length >= 2) item.open = true; }
           });
-          if (faqCount) {
-            faqCount.textContent = 'Showing ' + visible + ' of ' + faqItems.length + ' questions';
-          }
+          if (faqCount) faqCount.textContent = 'Showing ' + visible + ' of ' + faqItems.length + ' questions';
         });
       }
 
-      // Contact Form Pre-select, Counter & Submission
+      // Contact Form
       var enquiryForm = document.getElementById('enquiry-form');
       if (enquiryForm) {
         var serviceSelect = document.getElementById('service-select');
-        var params = new URLSearchParams(window.location.search);
-        var requestedService = params.get('service');
-        if (requestedService && serviceSelect) {
-          for (var i = 0; i < serviceSelect.options.length; i++) {
-            if (serviceSelect.options[i].text === requestedService) {
-              serviceSelect.selectedIndex = i;
-              break;
-            }
-          }
-        }
-
         var msgInput = document.getElementById('message-input');
         var charCount = document.getElementById('char-count');
+        var params = new URLSearchParams(window.location.search);
+        var reqService = params.get('service');
+        var reqBrief = params.get('brief');
+
+        if (reqService && serviceSelect) {
+          for (var i = 0; i < serviceSelect.options.length; i++) {
+            if (serviceSelect.options[i].text === reqService) { serviceSelect.selectedIndex = i; break; }
+          }
+        }
+        if (reqBrief && msgInput && !msgInput.value) {
+          msgInput.value = reqBrief + '\\n\\nAdditional project notes: ';
+        }
         if (msgInput && charCount) {
-          msgInput.addEventListener('input', function () {
-            charCount.textContent = msgInput.value.length + ' / 5000';
-          });
+          charCount.textContent = msgInput.value.length + ' / 5000';
+          msgInput.addEventListener('input', function () { charCount.textContent = msgInput.value.length + ' / 5000'; });
         }
 
         enquiryForm.addEventListener('submit', async function (e) {
           e.preventDefault();
           var statusEl = document.getElementById('form-status');
+          var receiptEl = document.getElementById('enquiry-receipt');
           var submitBtn = enquiryForm.querySelector('button[type="submit"]');
           var fd = new FormData(enquiryForm);
           var payload = {
@@ -3374,14 +3328,17 @@ function renderShell(currentPath, title, desc, body) {
             service: fd.get('service'),
             projectStage: fd.get('projectStage'),
             timeline: fd.get('timeline'),
+            contactMethod: fd.get('contactMethod'),
+            preferredWindow: fd.get('preferredWindow'),
+            timezone: fd.get('timezone'),
             message: fd.get('message'),
             consent: fd.get('consent') === 'on',
             website: fd.get('website'),
           };
-
           submitBtn.disabled = true;
           statusEl.className = 'form-status';
           statusEl.textContent = 'Submitting your enquiry...';
+          receiptEl.hidden = true;
 
           try {
             var resp = await fetch('/api/enquiry', {
@@ -3394,15 +3351,192 @@ function renderShell(currentPath, title, desc, body) {
             enquiryForm.reset();
             if (charCount) charCount.textContent = '0 / 5000';
             statusEl.className = 'form-status success';
-            statusEl.textContent =
-              'Thank you. Your enquiry has been received. Our team will follow up using your email address.';
+            statusEl.textContent = 'Thank you. Your enquiry has been received.';
+            receiptEl.innerHTML =
+              '<div class="eyebrow" style="margin-bottom:6px">Enquiry Confirmation Receipt</div>' +
+              '<p style="margin:0 0 8px;font-weight:700;color:var(--ink-strong)">Reference #' + (data.referenceId || 'BR-' + Date.now()) + '</p>' +
+              '<p style="margin:0 0 8px;font-size:0.875rem;color:var(--muted)">Service: ' + payload.service + ' · Consultation: ' + payload.contactMethod + ' (' + payload.preferredWindow + ', ' + payload.timezone + ')</p>' +
+              '<button type="button" class="btn btn-outline" onclick="window.print()" style="min-height:36px;padding:6px 14px">Print Confirmation Receipt</button>';
+            receiptEl.hidden = false;
           } catch (err) {
             statusEl.className = 'form-status error';
-            statusEl.textContent =
-              err.message || 'Please try again or email hello@bookrisecentre.com.';
+            statusEl.textContent = err.message || 'Please try again or email hello@bookrisecentre.com.';
           } finally {
             submitBtn.disabled = false;
           }
+        });
+      }
+
+      // Admin Enquiries Dashboard
+      var adminLoadingCard = document.getElementById('admin-loading-card');
+      var adminSetupCard = document.getElementById('admin-setup-card');
+      var adminAuthCard = document.getElementById('admin-auth-card');
+      var adminBoard = document.getElementById('admin-board');
+      if (adminAuthCard && adminBoard && adminSetupCard) {
+        var adminToken = '';
+        var setupForm = document.getElementById('admin-setup-form');
+        var setupStatus = document.getElementById('admin-setup-status');
+        var loginForm = document.getElementById('admin-login-form');
+        var authStatus = document.getElementById('admin-auth-status');
+        var authHint = document.getElementById('admin-auth-hint');
+        var listEl = document.getElementById('admin-list');
+        var filterSel = document.getElementById('admin-status-filter');
+        var countLbl = document.getElementById('admin-count-label');
+        var allRows = [];
+
+        function renderRows() {
+          var f = filterSel.value;
+          var rows = f === 'all' ? allRows : allRows.filter(function (r) { return r.status === f; });
+          countLbl.textContent = 'Showing ' + rows.length + ' of ' + allRows.length + ' enquiries';
+          listEl.innerHTML = '';
+          if (!rows.length) {
+            listEl.innerHTML = '<div class="card"><p>No enquiries match this filter yet.</p></div>';
+            return;
+          }
+          rows.forEach(function (row) {
+            var card = document.createElement('article');
+            card.className = 'card';
+            var head = document.createElement('div');
+            head.style.cssText = 'display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px';
+            var title = document.createElement('strong');
+            title.textContent = row.full_name + ' (' + row.email + ')';
+            var sel = document.createElement('select');
+            sel.className = 'field-input';
+            sel.style.cssText = 'width:auto;min-height:36px;padding:4px 10px';
+            ['new', 'in_review', 'quoted', 'archived'].forEach(function (st) {
+              var opt = document.createElement('option');
+              opt.value = st;
+              opt.textContent = st;
+              if (row.status === st) opt.selected = true;
+              sel.appendChild(opt);
+            });
+            sel.addEventListener('change', async function () {
+              await fetch('/api/enquiries/' + row.id, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + adminToken },
+                body: JSON.stringify({ status: sel.value }),
+              });
+              row.status = sel.value;
+            });
+            head.appendChild(title);
+            head.appendChild(sel);
+            var meta = document.createElement('div');
+            meta.style.cssText = 'font-size:0.8125rem;color:var(--gold);margin-bottom:8px';
+            meta.textContent = row.service + ' · ' + (row.book_title || 'Untitled') + ' · ' + new Date(row.created_at).toLocaleString();
+            var msg = document.createElement('p');
+            msg.style.whiteSpace = 'pre-wrap';
+            msg.textContent = row.message;
+            card.appendChild(head);
+            card.appendChild(meta);
+            card.appendChild(msg);
+            listEl.appendChild(card);
+          });
+        }
+
+        async function loadEnquiries() {
+          var resp = await fetch('/api/enquiries', { headers: { 'Authorization': 'Bearer ' + adminToken } });
+          if (!resp.ok) {
+            var errData = await resp.json().catch(function () { return {}; });
+            throw new Error(errData.error || 'Authentication failed');
+          }
+          var data = await resp.json();
+          allRows = data.enquiries || [];
+          adminSetupCard.hidden = true;
+          adminAuthCard.hidden = true;
+          adminBoard.hidden = false;
+          renderRows();
+        }
+
+        async function initAdminView() {
+          try {
+            var res = await fetch('/api/admin/status');
+            var info = await res.json();
+            if (adminLoadingCard) adminLoadingCard.hidden = true;
+            if (info.mode === 'unclaimed') {
+              adminSetupCard.hidden = false;
+              adminAuthCard.hidden = true;
+            } else {
+              if (authHint) {
+                authHint.textContent = info.mode === 'env'
+                  ? 'Enter your configured environment ADMIN_PASSCODE to view and manage enquiries.'
+                  : 'Enter your team admin passcode to view and manage submitted author enquiries.';
+              }
+              adminSetupCard.hidden = true;
+              adminAuthCard.hidden = false;
+            }
+          } catch (_e) {
+            if (adminLoadingCard) adminLoadingCard.hidden = true;
+            adminAuthCard.hidden = false;
+          }
+        }
+
+        initAdminView();
+
+        setupForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          var p1 = document.getElementById('admin-setup-passcode').value;
+          var p2 = document.getElementById('admin-setup-confirm').value;
+          if (p1 !== p2) {
+            setupStatus.className = 'form-status error';
+            setupStatus.textContent = 'Passcodes do not match. Please enter the same passcode twice.';
+            return;
+          }
+          setupStatus.className = 'form-status';
+          setupStatus.textContent = 'Securing passcode...';
+          try {
+            var claimResp = await fetch('/api/admin/claim', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ passcode: p1 }),
+            });
+            var claimData = await claimResp.json().catch(function () { return {}; });
+            if (!claimResp.ok || !claimData.token) {
+              throw new Error(claimData.error || 'Unable to save passcode.');
+            }
+            adminToken = claimData.token;
+            setupForm.reset();
+            await loadEnquiries();
+          } catch (err) {
+            setupStatus.className = 'form-status error';
+            setupStatus.textContent = err.message;
+          }
+        });
+
+        loginForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          var pass = document.getElementById('admin-passcode-input').value;
+          authStatus.className = 'form-status';
+          authStatus.textContent = 'Verifying...';
+          try {
+            var loginResp = await fetch('/api/admin/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ passcode: pass }),
+            });
+            var loginData = await loginResp.json().catch(function () { return {}; });
+            if (!loginResp.ok || !loginData.token) {
+              throw new Error(loginData.error || 'Invalid admin passcode.');
+            }
+            adminToken = loginData.token;
+            loginForm.reset();
+            await loadEnquiries();
+          } catch (err) {
+            authStatus.className = 'form-status error';
+            authStatus.textContent = err.message;
+          }
+        });
+
+        filterSel.addEventListener('change', renderRows);
+        document.getElementById('admin-refresh-btn').addEventListener('click', function () {
+          if (adminToken) loadEnquiries();
+        });
+        document.getElementById('admin-logout-btn').addEventListener('click', function () {
+          adminToken = '';
+          allRows = [];
+          adminBoard.hidden = true;
+          authStatus.className = 'form-status';
+          authStatus.textContent = '';
+          adminAuthCard.hidden = false;
         });
       }
     })();
@@ -3411,17 +3545,133 @@ function renderShell(currentPath, title, desc, body) {
 </html>`;
 }
 
+let fallbackSessionSecret = '';
+
+function getSessionSecret(env) {
+  if (env && env.ADMIN_SESSION_SECRET) return env.ADMIN_SESSION_SECRET;
+  if (!fallbackSessionSecret) {
+    const bytes = new Uint8Array(32);
+    crypto.getRandomValues(bytes);
+    fallbackSessionSecret = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  }
+  return fallbackSessionSecret;
+}
+
+function toHex(buf) {
+  return Array.from(new Uint8Array(buf), (b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+function fromHex(hex) {
+  if (typeof hex !== 'string' || hex.length % 2 !== 0 || !/^[0-9a-f]+$/i.test(hex)) return null;
+  const out = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < out.length; i++) {
+    out[i] = parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+  }
+  return out;
+}
+
+async function constantTimeEqual(a, b) {
+  const enc = new TextEncoder();
+  const ha = await crypto.subtle.digest('SHA-256', enc.encode(String(a)));
+  const hb = await crypto.subtle.digest('SHA-256', enc.encode(String(b)));
+  const ba = new Uint8Array(ha);
+  const bb = new Uint8Array(hb);
+  let diff = 0;
+  for (let i = 0; i < ba.length; i++) diff |= ba[i] ^ bb[i];
+  return diff === 0;
+}
+
+async function hashPasscode(passcode) {
+  const salt = new Uint8Array(16);
+  crypto.getRandomValues(salt);
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(passcode), 'PBKDF2', false, ['deriveBits']);
+  const derived = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' }, key, 256);
+  return `pbkdf2_sha256:100000:${toHex(salt)}:${toHex(derived)}`;
+}
+
+async function verifyPasscodeHash(passcode, stored) {
+  if (typeof stored !== 'string') return false;
+  const parts = stored.split(':');
+  if (parts.length !== 4 || parts[0] !== 'pbkdf2_sha256') return false;
+  const iterations = Number(parts[1]);
+  const salt = fromHex(parts[2]);
+  const expected = fromHex(parts[3]);
+  if (!Number.isInteger(iterations) || iterations < 10000 || !salt || !expected) return false;
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(passcode), 'PBKDF2', false, ['deriveBits']);
+  const derived = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations, hash: 'SHA-256' }, key, 256));
+  if (derived.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < derived.length; i++) diff |= derived[i] ^ expected[i];
+  return diff === 0;
+}
+
+async function signAdminToken(env, mode) {
+  const exp = Date.now() + 8 * 60 * 60 * 1000;
+  const payload = `${mode}.${exp}`;
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(getSessionSecret(env)),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
+  return `${payload}.${toHex(sig)}`;
+}
+
+async function verifyAdminToken(env, token, currentMode) {
+  const parts = String(token || '').split('.');
+  if (parts.length !== 3) return false;
+  const [mode, expStr, sigHex] = parts;
+  const exp = Number(expStr);
+  if (mode !== currentMode || !Number.isFinite(exp) || Date.now() > exp) return false;
+  const sigBytes = fromHex(sigHex);
+  if (!sigBytes) return false;
+  const payload = `${mode}.${expStr}`;
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(getSessionSecret(env)),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const expected = new Uint8Array(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload)));
+  if (sigBytes.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < sigBytes.length; i++) diff |= sigBytes[i] ^ expected[i];
+  return diff === 0;
+}
+
+async function getAdminAuthState(env) {
+  const envPasscode = env && env.ADMIN_PASSCODE ? String(env.ADMIN_PASSCODE) : '';
+  if (envPasscode) {
+    return { mode: 'env', envPasscode, storedHash: '' };
+  }
+  if (env && env.DB) {
+    try {
+      const row = await env.DB.prepare('SELECT value FROM admin_settings WHERE key=?')
+        .bind('admin_passcode_hash')
+        .first();
+      if (row && row.value) {
+        return { mode: 'claimed', envPasscode: '', storedHash: row.value };
+      }
+    } catch {
+      // Fallback if admin_settings table is not yet migrated in D1
+    }
+  }
+  return { mode: 'unclaimed', envPasscode: '', storedHash: '' };
+}
+
 export default {
   async fetch(request, env) {
     const u = new URL(request.url);
+    const json = (v, s) =>
+      new Response(JSON.stringify(v), {
+        status: s,
+        headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
+      });
 
     if (u.pathname === '/api/enquiry') {
-      const json = (v, s) =>
-        new Response(JSON.stringify(v), {
-          status: s,
-          headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
-        });
-
       if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 
       const origin = request.headers.get('Origin');
@@ -3430,10 +3680,7 @@ export default {
       }
 
       if (!env.DB) {
-        return json(
-          { error: 'Enquiry service temporarily unavailable. Please email hello@bookrisecentre.com.' },
-          503
-        );
+        return json({ error: 'Enquiry service temporarily unavailable. Please email hello@bookrisecentre.com.' }, 503);
       }
 
       let d;
@@ -3451,13 +3698,22 @@ export default {
       const service = v(d.service, 120);
       const stage = v(d.projectStage, 100);
       const timeline = v(d.timeline, 100);
-      const message = v(d.message, 5000);
+      const contactMethod = v(d.contactMethod, 80);
+      const preferredWindow = v(d.preferredWindow, 80);
+      const timezone = v(d.timezone, 80);
+      const rawMessage = v(d.message, 4600);
 
       if (d.website) return json({ ok: true }, 200);
 
-      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !service || message.length < 10 || d.consent !== true) {
+      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !service || rawMessage.length < 10 || d.consent !== true) {
         return json({ error: 'Please complete required fields and provide a valid email address.' }, 400);
       }
+
+      const consultationMeta =
+        contactMethod || preferredWindow || timezone
+          ? `\n\n[Consultation Preference: ${contactMethod || 'Email'} | ${preferredWindow || 'Flexible'} | ${timezone || 'Unspecified'}]`
+          : '';
+      const message = (rawMessage + consultationMeta).slice(0, 5000);
 
       const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
       const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip));
@@ -3475,13 +3731,147 @@ export default {
         return json({ error: 'Please wait before submitting another enquiry.' }, 429);
       }
 
-      await env.DB.prepare(
+      const result = await env.DB.prepare(
         'INSERT INTO enquiries (created_at,full_name,email,book_title,genre,service,project_stage,timeline,message,consent,source_ip_hash) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
       )
         .bind(new Date().toISOString(), name, email, title, genre, service, stage, timeline, message, 1, ipHash)
         .run();
 
-      return json({ ok: true }, 201);
+      const referenceId = `BR-${String((result && result.meta && result.meta.last_row_id) || Date.now()).padStart(4, '0')}`;
+
+      // Optional automated email alert hook when RESEND_API_KEY is configured
+      if (env.RESEND_API_KEY) {
+        const notifyTo = env.ENQUIRY_NOTIFY_EMAIL || 'hello@bookrisecentre.com';
+        const fromAddr = env.ENQUIRY_FROM_EMAIL || 'noreply@bookrisecentre.com';
+        try {
+          await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${env.RESEND_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: fromAddr,
+              to: [notifyTo],
+              reply_to: email,
+              subject: `[BookRise Enquiry ${referenceId}] ${service} — ${name}`,
+              text: `Reference: ${referenceId}\nAuthor: ${name} (${email})\nTitle: ${title || 'Not specified'}\nGenre: ${genre || 'Not specified'}\nService: ${service}\nStage: ${stage || 'Not specified'}\nTimeline: ${timeline || 'Not specified'}\n\n${message}`,
+            }),
+          });
+        } catch (err) {
+          console.warn('Email notification failed:', err.message);
+        }
+      }
+
+      return json({ ok: true, referenceId }, 201);
+    }
+
+    if (u.pathname === '/api/admin/status') {
+      if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
+      const state = await getAdminAuthState(env);
+      return json({ configured: state.mode !== 'unclaimed', mode: state.mode }, 200);
+    }
+
+    if (u.pathname === '/api/admin/claim') {
+      if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+      const origin = request.headers.get('Origin');
+      if (origin && new URL(origin).host !== u.host) {
+        return json({ error: 'Origin not allowed' }, 403);
+      }
+      if (!env.DB) return json({ error: 'Database unavailable.' }, 503);
+      const state = await getAdminAuthState(env);
+      if (state.mode !== 'unclaimed') {
+        return json({ error: 'Admin passcode is already configured.' }, 409);
+      }
+      let bodyData;
+      try {
+        bodyData = await request.json();
+      } catch {
+        return json({ error: 'Invalid request body.' }, 400);
+      }
+      const passcode = typeof bodyData.passcode === 'string' ? bodyData.passcode : '';
+      if (passcode.length < 8 || passcode.length > 128) {
+        return json({ error: 'Passcode must be between 8 and 128 characters.' }, 400);
+      }
+      const hashed = await hashPasscode(passcode);
+      const res = await env.DB.prepare(
+        'INSERT OR IGNORE INTO admin_settings (key, value, updated_at) VALUES (?, ?, ?)'
+      )
+        .bind('admin_passcode_hash', hashed, new Date().toISOString())
+        .run();
+      if (!res || !res.meta || res.meta.changes !== 1) {
+        return json({ error: 'Admin passcode was already claimed.' }, 409);
+      }
+      const token = await signAdminToken(env, 'claimed');
+      return json({ ok: true, token }, 201);
+    }
+
+    if (u.pathname === '/api/admin/login') {
+      if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+      const origin = request.headers.get('Origin');
+      if (origin && new URL(origin).host !== u.host) {
+        return json({ error: 'Origin not allowed' }, 403);
+      }
+      const state = await getAdminAuthState(env);
+      if (state.mode === 'unclaimed') {
+        return json({ error: 'Set your initial admin passcode first.' }, 409);
+      }
+      let bodyData;
+      try {
+        bodyData = await request.json();
+      } catch {
+        return json({ error: 'Invalid request body.' }, 400);
+      }
+      const passcode = typeof bodyData.passcode === 'string' ? bodyData.passcode : '';
+      if (!passcode) return json({ error: 'Passcode is required.' }, 400);
+
+      let valid = false;
+      if (state.mode === 'env') {
+        valid = await constantTimeEqual(passcode, state.envPasscode);
+      } else if (state.mode === 'claimed') {
+        valid = await verifyPasscodeHash(passcode, state.storedHash);
+      }
+      if (!valid) {
+        return json({ error: 'Invalid admin passcode.' }, 401);
+      }
+      const token = await signAdminToken(env, state.mode);
+      return json({ ok: true, token }, 200);
+    }
+
+    if (u.pathname === '/api/enquiries' || u.pathname.startsWith('/api/enquiries/')) {
+      const state = await getAdminAuthState(env);
+      if (state.mode === 'unclaimed') {
+        return json({ error: 'Admin passcode must be configured before viewing enquiries.' }, 503);
+      }
+      const auth = request.headers.get('Authorization') || '';
+      const provided = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
+      const ok = provided ? await verifyAdminToken(env, provided, state.mode) : false;
+      if (!ok) {
+        return json({ error: 'Unauthorized or expired session.' }, 401);
+      }
+
+      if (u.pathname === '/api/enquiries' && request.method === 'GET') {
+        const rows = await env.DB.prepare('SELECT * FROM enquiries ORDER BY created_at DESC').all();
+        return json({ enquiries: (rows && rows.results) || [] }, 200);
+      }
+
+      if (u.pathname.startsWith('/api/enquiries/') && request.method === 'PATCH') {
+        const id = Number(u.pathname.split('/').pop());
+        let d;
+        try {
+          d = await request.json();
+        } catch {
+          return json({ error: 'Invalid body.' }, 400);
+        }
+        const allowed = ['new', 'in_review', 'quoted', 'archived'];
+        if (!Number.isInteger(id) || !allowed.includes(d.status)) {
+          return json({ error: 'Invalid status or ID.' }, 400);
+        }
+        await env.DB.prepare('UPDATE enquiries SET status=? WHERE id=?').bind(d.status, id).run();
+        return json({ ok: true }, 200);
+      }
+
+      return json({ error: 'Method not allowed' }, 405);
     }
 
     if (u.pathname === '/healthz') {
