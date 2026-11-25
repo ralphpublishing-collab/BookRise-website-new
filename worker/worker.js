@@ -3452,6 +3452,16 @@ function renderShell(currentPath, title, desc, body) {
             var res = await fetch('/api/admin/status');
             var info = await res.json();
             if (adminLoadingCard) adminLoadingCard.hidden = true;
+            if (info.sessionReady === false) {
+              adminSetupCard.hidden = true;
+              adminAuthCard.hidden = false;
+              if (setupForm) setupForm.hidden = true;
+              if (loginForm) loginForm.hidden = true;
+              if (authHint) {
+                authHint.textContent = 'The admin dashboard is not ready yet. The site administrator must configure ADMIN_SESSION_SECRET as a stable secret of at least 32 characters in Cloudflare Worker secrets.';
+              }
+              return;
+            }
             if (info.mode === 'unclaimed') {
               adminSetupCard.hidden = false;
               adminAuthCard.hidden = true;
