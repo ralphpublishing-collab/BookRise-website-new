@@ -1,0 +1,7 @@
+*
+!public/
+!public/assets/
+!public/assets/**
+!src/
+!src/assets/
+!src/assets/**
