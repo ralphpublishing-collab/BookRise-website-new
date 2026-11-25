@@ -7,7 +7,7 @@ const workerSource = await fs.readFile(workerPath, 'utf8');
 const failures = [];
 const checked = new Set();
 
-for (const match of workerSource.matchAll(/['"](\/(?:assets|src\/assets)\/[^'"]+)['"]/g)) {
+for (const match of workerSource.matchAll(/['"](\/(?:public\/assets|src\/assets)\/[^'"]+)['"]/g)) {
   const publicPath = match[1];
   if (checked.has(publicPath)) continue;
   checked.add(publicPath);
