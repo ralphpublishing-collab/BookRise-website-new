@@ -2542,17 +2542,7 @@ const adminPage = `
         <p style="margin:0;color:var(--muted)">Checking team workspace status...</p>
       </div>
 
-      <div class="card" id="admin-setup-card" style="max-width:480px" hidden>
-        <div class="eyebrow" style="margin-bottom:8px">First-Time Setup</div>
-        <h3 style="margin-top:0">Set Your Team Admin Passcode</h3>
-        <p style="margin-bottom:16px">No environment passcode is configured yet. Create your private team passcode now—it is hashed securely on the server and locks setup immediately once saved.</p>
-        <form id="admin-setup-form" style="display:grid;gap:12px">
-          <input class="field-input" type="password" id="admin-setup-passcode" placeholder="Create admin passcode (min. 8 characters)" minlength="8" maxlength="128" required>
-          <input class="field-input" type="password" id="admin-setup-confirm" placeholder="Confirm admin passcode" minlength="8" maxlength="128" required>
-          <button type="submit" class="btn btn-navy">Save Passcode &amp; Unlock Dashboard</button>
-        </form>
-        <p class="form-status" id="admin-setup-status"></p>
-      </div>
+      <div id="admin-setup-card" hidden></div>
 
       <div class="card" id="admin-auth-card" style="max-width:480px" hidden>
         <h3 style="margin-top:0">Sign in with Team Passcode</h3>
@@ -3376,8 +3366,6 @@ function renderShell(currentPath, title, desc, body) {
       var adminBoard = document.getElementById('admin-board');
       if (adminAuthCard && adminBoard && adminSetupCard) {
         var adminToken = '';
-        var setupForm = document.getElementById('admin-setup-form');
-        var setupStatus = document.getElementById('admin-setup-status');
         var loginForm = document.getElementById('admin-login-form');
         var authStatus = document.getElementById('admin-auth-status');
         var authHint = document.getElementById('admin-auth-hint');
@@ -3464,18 +3452,13 @@ function renderShell(currentPath, title, desc, body) {
               }
               return;
             }
-            if (info.mode === 'unclaimed') {
-              adminSetupCard.hidden = false;
-              adminAuthCard.hidden = true;
-            } else {
-              if (authHint) {
-                authHint.textContent = info.mode === 'env'
-                  ? 'Enter your configured environment ADMIN_PASSCODE to view and manage enquiries.'
-                  : 'Enter your team admin passcode to view and manage submitted author enquiries.';
-              }
-              adminSetupCard.hidden = true;
-              adminAuthCard.hidden = false;
+            adminSetupCard.hidden = true;
+            if (authHint) {
+              authHint.textContent = info.mode === 'env'
+                ? 'Enter your configured environment ADMIN_PASSCODE to view and manage enquiries.'
+                : 'Enter your team admin passcode to view and manage submitted author enquiries.';
             }
+            adminAuthCard.hidden = false;
           } catch (_e) {
             if (adminLoadingCard) adminLoadingCard.hidden = true;
             adminAuthCard.hidden = false;
@@ -3483,36 +3466,6 @@ function renderShell(currentPath, title, desc, body) {
         }
 
         initAdminView();
-
-        setupForm.addEventListener('submit', async function (e) {
-          e.preventDefault();
-          var p1 = document.getElementById('admin-setup-passcode').value;
-          var p2 = document.getElementById('admin-setup-confirm').value;
-          if (p1 !== p2) {
-            setupStatus.className = 'form-status error';
-            setupStatus.textContent = 'Passcodes do not match. Please enter the same passcode twice.';
-            return;
-          }
-          setupStatus.className = 'form-status';
-          setupStatus.textContent = 'Securing passcode...';
-          try {
-            var claimResp = await fetch('/api/admin/claim', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ passcode: p1 }),
-            });
-            var claimData = await claimResp.json().catch(function () { return {}; });
-            if (!claimResp.ok || !claimData.token) {
-              throw new Error(claimData.error || 'Unable to save passcode.');
-            }
-            adminToken = claimData.token;
-            setupForm.reset();
-            await loadEnquiries();
-          } catch (err) {
-            setupStatus.className = 'form-status error';
-            setupStatus.textContent = err.message;
-          }
-        });
 
         loginForm.addEventListener('submit', async function (e) {
           e.preventDefault();
@@ -3686,6 +3639,28 @@ export default {
         headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
       });
 
+    // Serve repository image assets through the Worker so every page uses a stable same-origin URL.
+    if (u.pathname.startsWith('/public/assets/') || u.pathname.startsWith('/src/assets/images/')) {
+      const assetUrl = 'https://raw.githubusercontent.com/ralphpublishing-collab/BookRise-website-new/main' + u.pathname;
+      const assetResponse = await fetch(assetUrl, {
+        headers: { 'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8' },
+      });
+      if (!assetResponse.ok) {
+        return new Response('Image asset not found', {
+          status: assetResponse.status,
+          headers: { 'cache-control': 'public, max-age=60', 'x-content-type-options': 'nosniff' },
+        });
+      }
+      const headers = new Headers(assetResponse.headers);
+      headers.set('cache-control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+      headers.set('x-content-type-options', 'nosniff');
+      headers.delete('content-security-policy');
+      return new Response(request.method === 'HEAD' ? null : assetResponse.body, {
+        status: 200,
+        headers,
+      });
+    }
+
     if (u.pathname === '/api/enquiry') {
       if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 
@@ -3788,38 +3763,7 @@ export default {
     }
 
     if (u.pathname === '/api/admin/claim') {
-      if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
-      const origin = request.headers.get('Origin');
-      if (origin && new URL(origin).host !== u.host) {
-        return json({ error: 'Origin not allowed' }, 403);
-      }
-      if (!hasSessionSecret(env)) return json({ error: 'Admin session signing is not configured. Set ADMIN_SESSION_SECRET in Cloudflare Worker secrets before claiming the dashboard.' }, 503);
-      if (!env.DB) return json({ error: 'Database unavailable.' }, 503);
-      const state = await getAdminAuthState(env);
-      if (state.mode !== 'unclaimed') {
-        return json({ error: 'Admin passcode is already configured.' }, 409);
-      }
-      let bodyData;
-      try {
-        bodyData = await request.json();
-      } catch {
-        return json({ error: 'Invalid request body.' }, 400);
-      }
-      const passcode = typeof bodyData.passcode === 'string' ? bodyData.passcode : '';
-      if (passcode.length < 8 || passcode.length > 128) {
-        return json({ error: 'Passcode must be between 8 and 128 characters.' }, 400);
-      }
-      const hashed = await hashPasscode(passcode);
-      const res = await env.DB.prepare(
-        'INSERT OR IGNORE INTO admin_settings (key, value, updated_at) VALUES (?, ?, ?)'
-      )
-        .bind('admin_passcode_hash', hashed, new Date().toISOString())
-        .run();
-      if (!res || !res.meta || res.meta.changes !== 1) {
-        return json({ error: 'Admin passcode was already claimed.' }, 409);
-      }
-      const token = await signAdminToken(env, 'claimed');
-      return json({ ok: true, token }, 201);
+      return json({ error: 'First-time admin setup has been disabled. Use the existing team admin passcode sign-in.' }, 410);
     }
 
     if (u.pathname === '/api/admin/login') {
