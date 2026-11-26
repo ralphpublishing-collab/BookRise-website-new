@@ -3,9 +3,9 @@ const ASSETS = {
   crest: '/public/assets/aistudio/92B26B15-F4AB-4BBD-B068-79601753C31D_bdc8dd35.png',
   heroAtelier: '/src/assets/images/hero_publishing_atelier_1795615010303.jpg',
   books: {
-    executive: '/src/assets/images/work_executive_edge_1795616446357.jpg',
-    whispers: '/src/assets/images/work_whispers_wind_1795616449440.jpg',
-    purpose: '/src/assets/images/work_lead_purpose_1795616447765.jpg',
+    executive: '/public/assets/bookrise-executive-edge.svg',
+    whispers: '/public/assets/bookrise-whispers-wind.svg',
+    purpose: '/public/assets/bookrise-lead-purpose.svg',
   },
   team: {
     gracious: '/public/assets/aistudio/IMG_0010_55a5f7f9.jpeg',
@@ -1695,7 +1695,7 @@ const VIDEO_PROMO_SHOWCASE = `
 <div class="card" style="margin-top:32px">
   <div class="eyebrow" style="margin-bottom:6px">Video Promotion &amp; Book Trailers</div>
   <h3 style="margin-top:0">Adrian Emery — Video Promotion Campaign Architecture</h3>
-  <p style="margin-bottom:18px">Alongside these eight selected print and digital design deliverables, BookRise Centre can structure video promotion campaigns around four purpose-built formats, ready to incorporate once the client’s video assets are approved and supplied.</p>
+  <p style="margin-bottom:18px">Alongside these eight selected print and digital design deliverables, BookRise Centre also produced video content for Adrian Emery’s campaign. The finished videos will be added to this showcase once the original files are uploaded to Cloudflare Stream.</p>
   <div class="grid-2" style="gap:16px">
     <div class="editorial-callout" style="padding:20px">
       <div class="card-index tabular">01. 60-Second Narrative Book Trailer (16:9)</div>
@@ -1790,7 +1790,7 @@ const homePage = `
         <div>
           <div class="eyebrow">Featured Client Campaign &middot; Adrian Emery</div>
           <h2>The Temple of Understanding — Vol. I &amp; II Showcase</h2>
-          <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II)—spanning full print wraps, author spotlight cards, and multi-format launch graphics.</p>
+          <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II)—spanning full print wraps, author spotlight cards, multi-format launch graphics, and video production.</p>
         </div>
         <a class="text-link" href="/work">View all 8 selected campaign designs &rarr;</a>
       </div>
@@ -2033,7 +2033,7 @@ const workPage = `
         <div>
           <div class="eyebrow">Featured Client Portfolio &middot; Adrian Emery</div>
           <h2>The Temple of Understanding (Vol. I &amp; Vol. II)</h2>
-          <p class="lead">A complete multi-volume visual and promotional campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Click any deliverable to inspect the full-resolution design.</p>
+          <p class="lead">A complete multi-volume visual, promotional, and video-production campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Click any design deliverable to inspect the full-resolution artwork; video pieces will be added to this portfolio after upload.</p>
         </div>
         <div class="filter-bar" role="tablist" aria-label="Filter Adrian Emery deliverables">
           <button type="button" class="filter-btn is-active" data-adrian-filter="all" role="tab" aria-selected="true">All Deliverables (8)</button>
