@@ -1167,13 +1167,35 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 .team-portrait-frame {
   position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  aspect-ratio: 4 / 5;
+  border-radius: 7px;
   overflow: hidden;
-  background: var(--surface-alt);
+  background: #eef0f3;
   border: 1px solid var(--line);
 }
-.team-portrait-frame img { display: block; width: 100%; height: auto; object-fit: contain; transition: none; }
+.team-portrait-frame img { display:block; width:100%; height:100%; object-fit:cover; transition:none; }
+.team-portrait-frame .team-photo-cropped { object-fit:cover; }
+.team-mini .team-portrait-frame { aspect-ratio: 4 / 5; margin-bottom:14px; }
+.team-mini { min-width:0; padding:16px; }
+.team-mini h3 { font-size:1rem; line-height:1.3; margin:0 0 6px; }
+.team-mini p { font-size:.78rem; line-height:1.45; }
+.team-strip-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.team-detailed-card { grid-template-columns:minmax(190px,240px) minmax(0,1fr); gap:30px; align-items:start; }
+@media (max-width:920px) {
+  .team-detailed-card { grid-template-columns:minmax(180px,220px) minmax(0,1fr); gap:22px; }
+  .team-strip-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:640px) {
+  .team-detailed-card { grid-template-columns:1fr; padding:18px; gap:18px; }
+  .team-detailed-card .team-portrait-frame { width:min(100%,320px); }
+  .team-strip-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .team-mini { padding:10px; }
+}
+@media (max-width:420px) {
+  .team-strip-grid { grid-template-columns:1fr; }
+  .team-mini { display:grid; grid-template-columns:112px minmax(0,1fr); column-gap:14px; align-items:center; }
+  .team-mini .team-portrait-frame { grid-row:span 2; width:112px; margin:0; }
+}
 .team-fallback {
   position: absolute;
   inset: 0;
@@ -1552,7 +1574,9 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 `;
 
 function renderPortrait(member, eager = false) {
-  const imgStyle = `width:100%;height:auto;object-fit:contain;object-position:center;`;
+  const imgStyle = member.framedScreenshot
+    ? `display:block;width:100%;height:100%;object-fit:cover;object-position:${member.focus || '50% 8%'};transform:scale(${member.scale || '1.08'});transform-origin:center top;`
+    : `display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;`;
   const cls = member.framedScreenshot ? 'team-photo-cropped' : 'team-photo-native';
   return `<div class="team-portrait-frame">
     <img class="${cls}" src="${member.photo}" alt="${esc(member.name)} — ${esc(member.role)}" referrerpolicy="no-referrer" loading="${eager ? 'eager' : 'lazy'}" decoding="async" style="${imgStyle}" onerror="this.style.display='none';this.parentElement.classList.add('is-broken');">
