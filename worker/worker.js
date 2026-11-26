@@ -62,15 +62,6 @@ const ADRIAN_DELIVERABLES = [
     image: ASSETS.adrian.duologyMinimalist,
   },
   {
-    id: 'adrian-duology-invite',
-    category: 'covers',
-    categoryLabel: 'Cover Spreads & Editions',
-    title: 'Reader Invitation — Two-Book Reflection Graphic',
-    volume: 'Volumes I & II · Campaign Collateral',
-    description: 'Editorial invitation asset framing both volumes around reflection, purpose, and self-discovery for newsletters and reader landing pages.',
-    image: ASSETS.adrian.duologyInvitation,
-  },
-  {
     id: 'adrian-vol1-feature',
     category: 'spotlights',
     categoryLabel: 'Author & Duology Spotlights',
@@ -89,33 +80,6 @@ const ADRIAN_DELIVERABLES = [
     image: ASSETS.adrian.meetAuthorArched,
   },
   {
-    id: 'adrian-meet-transform',
-    category: 'spotlights',
-    categoryLabel: 'Author & Duology Spotlights',
-    title: 'Meet the Author — Two Books, One Journey Feature',
-    volume: 'Volumes I & II · Hero Campaign Asset',
-    description: 'High-impact author showcase positioning Adrian Emery holding both printed volumes for launch-week awareness campaigns.',
-    image: ASSETS.adrian.meetAuthorTransformation,
-  },
-  {
-    id: 'adrian-duology-vision',
-    category: 'spotlights',
-    categoryLabel: 'Author & Duology Spotlights',
-    title: 'Two Powerful Books, One Vision — Comparative Display',
-    volume: 'Volumes I & II · Dual-Title Showcase',
-    description: 'Side-by-side book positioning graphic contrasting the core themes of Personal Sovereignty and Tao Tuning.',
-    image: ASSETS.adrian.duologySideBySide,
-  },
-  {
-    id: 'adrian-vol1-vision',
-    category: 'posters',
-    categoryLabel: 'Promotional Posters',
-    title: 'Personal Sovereignty — Two Books, One Vision Poster',
-    volume: 'Volume I · Launch Awareness Creative',
-    description: 'Promotional poster combining Adrian Emery’s portrait, key thematic icons, and direct purchase call-to-action.',
-    image: ASSETS.adrian.vol1VisionBanner,
-  },
-  {
     id: 'adrian-vol2-ocean',
     category: 'posters',
     categoryLabel: 'Promotional Posters',
@@ -125,15 +89,6 @@ const ADRIAN_DELIVERABLES = [
     image: ASSETS.adrian.vol2OceanPoster,
   },
   {
-    id: 'adrian-vol2-landscape',
-    category: 'posters',
-    categoryLabel: 'Promotional Posters',
-    title: 'Tao Tuning — Widescreen Book Promotion Banner',
-    volume: 'Volume II · Horizontal Campaign Format',
-    description: '16:10 horizontal display graphic designed for web banners, social headers, and newsletter feature placements.',
-    image: ASSETS.adrian.vol2LandscapePromo,
-  },
-  {
     id: 'adrian-vol2-availability',
     category: 'posters',
     categoryLabel: 'Promotional Posters',
@@ -141,15 +96,6 @@ const ADRIAN_DELIVERABLES = [
     volume: 'Volume II · Kindle, eBook & Print',
     description: 'Retail-ready promotional sheet highlighting Kindle, eBook, and Print availability alongside thematic icons.',
     image: ASSETS.adrian.vol2Availability,
-  },
-  {
-    id: 'adrian-vol2-callout',
-    category: 'posters',
-    categoryLabel: 'Promotional Posters',
-    title: 'Tao Tuning — Annotated Book Value Breakdown',
-    volume: 'Volume II · Reader Benefit Callout',
-    description: 'Studio-lit book display surrounded by five concise callouts summarizing the book’s practical message.',
-    image: ASSETS.adrian.vol2CalloutDiagram,
   },
   {
     id: 'adrian-vol2-desk',
@@ -1846,7 +1792,7 @@ const homePage = `
           <h2>The Temple of Understanding — Vol. I &amp; II Showcase</h2>
           <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II)—spanning full print wraps, author spotlight cards, and multi-format launch graphics.</p>
         </div>
-        <a class="text-link" href="/work">View all 14 campaign designs &rarr;</a>
+        <a class="text-link" href="/work">View all 8 selected campaign designs &rarr;</a>
       </div>
       <div class="gallery-grid">${renderAdrianShowcaseGrid(6)}</div>
     </div>
@@ -1911,55 +1857,88 @@ const aboutPage = `
   <section class="page-intro">
     <div class="wrap">
       <div class="eyebrow">About BookRise Centre</div>
-      <h1>A coordinated author-services centre built on craft, clarity, and independence.</h1>
-      <p>Learn how our team operates, who we serve, and why authors trust BookRise Centre to guide their books from draft to marketplace visibility without surrendering creative rights.</p>
+      <h1>A thoughtful publishing partner for authors who want their work presented with purpose.</h1>
+      <p>BookRise Centre brings editorial care, publishing preparation, design, discoverability, and reader outreach into one coordinated service experience. We help authors make informed decisions at every stage while protecting the rights, voice, and independence that make each book their own.</p>
     </div>
   </section>
-
   <section class="section">
     <div class="wrap split-editorial">
       <div>
         <div class="eyebrow">Who We Are</div>
-        <h2>One connected team replacing fragmented guesswork.</h2>
-        <p class="lead" style="margin-bottom:16px">Independent and thought-leader authors often struggle when forced to hire separate, disconnected freelancers for editing, cover artwork, distribution formatting, storefront metadata, and reader outreach—with no one ensuring the parts fit together.</p>
-        <p class="lead">Led by Gracious J. Literary from Brooklyn, New York, BookRise Centre brings six specialized professionals under one coordinated roof. Every stage—from structural editing and typesetting to cover wraps, trailer briefs, and reader outreach—is aligned to the same book identity and audience goal.</p>
+        <h2>One connected team. A clearer path from manuscript to reader.</h2>
+        <p class="lead" style="margin-bottom:16px">A book is more than a manuscript or a cover. It is a complete work that must be edited thoughtfully, prepared correctly, positioned clearly, and introduced to the readers it is intended to serve. When these activities are handled in isolation, important details can be missed and the author is left coordinating several separate providers.</p>
+        <p class="lead">BookRise Centre was structured to make that process more coherent. Coordinated from Brooklyn, New York, our six-specialist team brings together editorial and production operations, publishing support, visual design, book promotion, and reader-focused strategy. We look at the book as a whole while respecting the distinct expertise required at each stage.</p>
       </div>
-      <figure class="editorial-callout">
-        <blockquote>&ldquo;The author’s goals, creative voice, and intellectual property remain central to every recommendation we make and every deliverable we produce.&rdquo;</blockquote>
-        <figcaption>BookRise Centre Editorial Charter &middot; Brooklyn, New York</figcaption>
-      </figure>
+      <figure class="editorial-callout"><blockquote>&ldquo;The author’s goals, creative voice, and intellectual property remain central to every recommendation we make and every deliverable we produce.&rdquo;</blockquote><figcaption>BookRise Centre Editorial Charter &middot; Brooklyn, New York</figcaption></figure>
     </div>
   </section>
-
   <section class="section section-surface">
     <div class="wrap">
-      <div class="section-header">
-        <div class="eyebrow">Who We Serve</div>
-        <h2>Tailored support across genres and publishing stages.</h2>
-      </div>
+      <div class="section-header"><div class="eyebrow">Our Purpose</div><h2>Help good books move forward with clarity and care.</h2><p class="lead">Our purpose is to make professional publishing support easier to understand and easier to coordinate. We help authors identify what their book needs now, what can wait, and which services will make a meaningful contribution to the finished work.</p></div>
       <div class="grid-3">
-        <article class="card"><div class="card-index tabular">01. First-Time Authors</div><h3>Guided debut launches</h3><p>Writers completing their first manuscript who need clear answers on editing sequence, ISBN registration, print/ebook setup, cover standards, and realistic launch planning.</p></article>
-        <article class="card"><div class="card-index tabular">02. Thought Leaders &amp; Memoirists</div><h3>Authority and personal story</h3><p>Executives, founders, educators, and memoirists seeking refined developmental editing and distinguished hardcover presentation that respects their lived voice.</p></article>
-        <article class="card"><div class="card-index tabular">03. Published &amp; Series Authors</div><h3>Refreshes and sequel continuity</h3><p>Authors with live titles or multi-volume series looking for cohesive cover redesigns, sharper retail descriptions, trailer assets, and targeted reader outreach.</p></article>
+        <article class="card"><div class="card-index tabular">01. Clarity</div><h3>Informed decisions</h3><p>We explain the work involved, the available options, the expected deliverables, and the practical limits of each service before an author commits.</p></article>
+        <article class="card"><div class="card-index tabular">02. Craft</div><h3>Careful execution</h3><p>Editorial, design, and promotional decisions should serve the book rather than follow a generic formula. We work to preserve its voice while improving its presentation.</p></article>
+        <article class="card"><div class="card-index tabular">03. Independence</div><h3>Author control</h3><p>Authors retain their copyright, royalties, and publishing-account control. Our role is to provide agreed professional services, not to take ownership of the work.</p></article>
       </div>
     </div>
   </section>
-
   <section class="section">
     <div class="wrap">
-      <div class="section-header">
-        <div class="eyebrow">What Guides Our Work</div>
-        <h2>Our operating standards and honest boundaries.</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card"><h3>Written scope before payment</h3><p>Every engagement details exact deliverables, file formats, included revision rounds, author responsibilities, and milestone timing in writing before work commences.</p></article>
-        <article class="card"><h3>100% rights &amp; royalties retained</h3><p>We charge solely for professional services rendered. Authors keep full copyright, distribution control, and 100% of book royalties.</p></article>
-        <article class="card"><h3>Zero fabricated guarantees</h3><p>We do not promise bestseller rankings, guaranteed sales figures, or paid review outcomes. Instead, we guarantee disciplined craft and transparent activity reporting.</p></article>
-        <article class="card"><h3>Confidentiality &amp; respect</h3><p>Unpublished manuscripts and author communications are handled strictly within the assigned project team under clear confidentiality practices.</p></article>
+      <div class="section-header"><div class="eyebrow">Who We Serve</div><h2>Support shaped around the author’s stage and objectives.</h2><p class="lead">Different books need different kinds of attention. We begin by understanding the project rather than assuming every author needs the same package.</p></div>
+      <div class="grid-3">
+        <article class="card"><div class="card-index tabular">01. First-Time Authors</div><h3>A guided first publication</h3><p>For writers completing a debut manuscript who need help understanding editing priorities, book structure, ISBN and imprint considerations, cover requirements, production files, and release planning.</p></article>
+        <article class="card"><div class="card-index tabular">02. Thought Leaders &amp; Memoirists</div><h3>Ideas and lived experience</h3><p>For executives, founders, educators, and memoirists who want their arguments, expertise, or personal stories shaped with clarity while retaining the perspective and voice that make the work distinctive.</p></article>
+        <article class="card"><div class="card-index tabular">03. Published &amp; Series Authors</div><h3>Stronger presentation over time</h3><p>For authors refreshing an existing title, preparing a sequel, aligning a series, improving retailer information, or planning a new campaign for a book already in circulation.</p></article>
       </div>
     </div>
   </section>
-
+  <section class="section section-surface">
+    <div class="wrap">
+      <div class="section-header"><div class="eyebrow">How We Work</div><h2>A considered process, not a one-size-fits-all package.</h2><p class="lead">We match the scope to the book, the author’s priorities, and the stage of publication. Some projects need one specialist service; others benefit from several connected stages.</p></div>
+      <div class="grid-2">
+        <article class="card"><div class="card-index tabular">01. Understand</div><h3>Start with the book and its goals</h3><p>We review the information shared in the enquiry: the book’s genre, manuscript stage, approximate length, intended audience, timeline, and the questions the author wants answered.</p></article>
+        <article class="card"><div class="card-index tabular">02. Recommend</div><h3>Identify the right scope</h3><p>We discuss the services that are relevant, explain the sequence where several stages are involved, and distinguish essential work from optional additions.</p></article>
+        <article class="card"><div class="card-index tabular">03. Agree</div><h3>Put the details in writing</h3><p>Before work begins, the author receives a written quotation and project scope describing deliverables, formats, revision arrangements, responsibilities, timing, and payment milestones.</p></article>
+        <article class="card"><div class="card-index tabular">04. Deliver</div><h3>Work to agreed milestones</h3><p>The assigned specialists complete the approved work, communicate at agreed checkpoints, address the included revision rounds, and hand over the final agreed files.</p></article>
+      </div>
+      <p style="margin-top:22px"><a class="text-link" href="/process">Read the complete five-step project process &rarr;</a></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header"><div class="eyebrow">Our Service Disciplines</div><h2>The practical parts of bringing a book to market.</h2><p class="lead">Our services connect where useful, while remaining available as individual engagements when an author only needs a specific area of support.</p></div>
+      <div class="grid-2">
+        <article class="card"><h3>Editorial &amp; manuscript development</h3><p>Developmental feedback, copy editing, proofreading, writing support, and attention to structure, consistency, readability, and author voice.</p></article>
+        <article class="card"><h3>Publishing &amp; production support</h3><p>Publishing-readiness guidance, interior preparation, print and ebook considerations, ISBN and imprint planning, and distribution-platform guidance.</p></article>
+        <article class="card"><h3>Cover design &amp; visual presentation</h3><p>Genre-aware cover concepts, typography and visual direction, full print wraps, and digital artwork prepared to the agreed platform specifications.</p></article>
+        <article class="card"><h3>Promotion &amp; reader visibility</h3><p>Campaign planning, promotional graphics, book trailers, storefront descriptions, category and keyword research, and individualized reader outreach.</p></article>
+      </div>
+      <p style="margin-top:22px"><a class="text-link" href="/services">Explore service workflows and deliverables &rarr;</a></p>
+    </div>
+  </section>
+  <section class="section section-surface">
+    <div class="wrap split-editorial">
+      <div><div class="eyebrow">Our Standards</div><h2>Professional boundaries are part of good service.</h2><p class="lead">Trust is built by being specific about what a service includes and honest about what no provider can promise. We aim to make expectations clear before a project starts and to keep communication grounded in the agreed work.</p></div>
+      <div class="grid-2">
+        <article class="card"><h3>Written scope before work</h3><p>Deliverables, formats, revision rounds, responsibilities, and milestone timing are documented and approved before commencement.</p></article>
+        <article class="card"><h3>Full author ownership</h3><p>Authors retain 100% of their copyright, intellectual property, royalties, and control of their publishing accounts.</p></article>
+        <article class="card"><h3>No sales or ranking promises</h3><p>We do not guarantee sales figures, bestseller rankings, independent reviews, or media coverage. Those outcomes depend on readers, platforms, and third parties.</p></article>
+        <article class="card"><h3>Respect for confidential work</h3><p>Project information is handled within the agreed working relationship. Complete manuscripts should only be shared through the submission channel agreed with the team.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap split-editorial">
+      <div><div class="eyebrow">The People Behind the Work</div><h2>Specialists with defined responsibilities.</h2><p class="lead">The team brings together literary direction, publishing and promotional coordination, editorial operations, and author-visibility strategy. Each project is assigned a lead contact and only the specialists needed for its approved scope.</p><p>That structure helps keep communication clear: authors know who is coordinating the work, which stages are underway, and what is expected at each handover. It also allows focused single-service projects to receive attention without being pushed into an unnecessary bundle.</p><a class="text-link" href="/team">Meet the BookRise Centre team &rarr;</a></div>
+      <figure class="editorial-callout"><blockquote>&ldquo;A good publishing experience should leave the author better informed, confident about the work completed, and in control of the next decision.&rdquo;</blockquote><figcaption>Our approach to author collaboration</figcaption></figure>
+    </div>
+  </section>
+  <section class="section section-surface">
+    <div class="wrap">
+      <div class="section-header"><div class="eyebrow">Location &amp; Collaboration</div><h2>Brooklyn-coordinated. Built for clear communication.</h2><p class="lead">BookRise Centre is coordinated from Brooklyn, New York. Initial enquiries and project discussions can be handled remotely, allowing authors to share their goals, review written scopes, and collaborate with the team without needing to attend an in-person meeting.</p></div>
+      <div class="grid-2"><article class="card"><h3>Communication around your schedule</h3><p>We agree on practical communication channels and milestone updates at the start of the engagement. Consultation arrangements are confirmed directly rather than assumed.</p></article><article class="card"><h3>Clear next steps</h3><p>Whether you are still planning a book or preparing files for release, the first step is a focused enquiry. We will review the details and explain the appropriate next step.</p></article></div>
+    </div>
+  </section>
   ${CTA_SECTION}
 </main>`;
 
@@ -2044,7 +2023,7 @@ const workPage = `
     <div class="wrap">
       <div class="eyebrow">Our Work &amp; Client Showcase</div>
       <h1>Real publishing, design, and promotional campaigns built around each author’s vision.</h1>
-      <p>Explore our recent 14-asset campaign for Adrian Emery’s <em>The Temple of Understanding</em> duology alongside additional selected author editions.</p>
+      <p>Explore a curated selection of eight distinct campaign designs for Adrian Emery’s <em>The Temple of Understanding</em> duology alongside additional selected author editions.</p>
     </div>
   </section>
 
@@ -2057,10 +2036,10 @@ const workPage = `
           <p class="lead">A complete multi-volume visual and promotional campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Click any deliverable to inspect the full-resolution design.</p>
         </div>
         <div class="filter-bar" role="tablist" aria-label="Filter Adrian Emery deliverables">
-          <button type="button" class="filter-btn is-active" data-adrian-filter="all" role="tab" aria-selected="true">All Deliverables (14)</button>
-          <button type="button" class="filter-btn" data-adrian-filter="covers" role="tab" aria-selected="false">Cover Spreads (4)</button>
-          <button type="button" class="filter-btn" data-adrian-filter="posters" role="tab" aria-selected="false">Promo Posters (6)</button>
-          <button type="button" class="filter-btn" data-adrian-filter="spotlights" role="tab" aria-selected="false">Author Spotlights (4)</button>
+          <button type="button" class="filter-btn is-active" data-adrian-filter="all" role="tab" aria-selected="true">All Deliverables (8)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="covers" role="tab" aria-selected="false">Cover Spreads (3)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="posters" role="tab" aria-selected="false">Promo Posters (3)</button>
+          <button type="button" class="filter-btn" data-adrian-filter="spotlights" role="tab" aria-selected="false">Author Spotlights (2)</button>
         </div>
       </div>
 
