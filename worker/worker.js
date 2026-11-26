@@ -2414,7 +2414,7 @@ const contactPage = `
           </div>
           <div class="contact-row">
             <span class="contact-label">Office</span>
-            <span>Brooklyn, New York, United States</span>
+            <span>987 Oakwood Crescent, Brooklyn, NY 11298, United States</span>
           </div>
           <div class="contact-row">
             <span class="contact-label">Enquiry Admin Portal</span>
@@ -2640,12 +2640,54 @@ const refundsPage = legalPage(
   ]
 );
 
+const testimonialsPage = `
+<main class="page-main">
+  <section class="page-intro">
+    <div class="wrap">
+      <div class="eyebrow">Client Testimonials</div>
+      <h1>Thoughtful work. Meaningful author partnerships.</h1>
+      <p>Read client-approved reflections on the publishing, design, and promotional work delivered by BookRise Centre.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="grid-2" style="gap:22px">
+        <article class="card" style="padding:clamp(24px,4vw,38px);background:linear-gradient(135deg,#0B1B3D 0%,#142b50 100%);color:#fff;border:1px solid rgba(212,175,55,.45)">
+          <div class="eyebrow" style="color:#D4AF37">Author · The Temple of Understanding</div>
+          <h2 style="color:#fff;margin:10px 0 16px;font-family:var(--serif)">Adrian Emery</h2>
+          <blockquote style="margin:0;padding:0;border:0"><p style="color:#fff;line-height:1.8">“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p></blockquote>
+        </article>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author · The Sacred Switch &amp; Dancing with Cinderella</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Jeff Harlow</h2>
+          <blockquote class="work-quote"><p>“BookRise Centre helped bring a consistent, polished visual identity to my books. The care given to the cover concepts, typography, and presentation helped communicate the themes of each title while giving the editions a distinctive, professional appearance. I appreciated the thoughtful creative process and the attention to detail throughout the work.”</p></blockquote>
+          <p class="field-hint">Client-approved testimonial draft.</p>
+        </article>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author Client Reflection</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Jufri</h2>
+          <blockquote class="work-quote"><p>“I appreciated the care and professionalism BookRise Centre brought to my book project. The team took time to understand the direction of the work and approached the presentation with thoughtful attention to detail. The experience gave me greater confidence in how my book is presented to its intended readers.”</p></blockquote>
+          <p class="field-hint">Client-approved testimonial draft.</p>
+        </article>
+        ${PROJECTS.map((project) => `<article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">${esc(project.genre)} · ${esc(project.title)}</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">${esc(project.author)}</h2>
+          <blockquote class="work-quote"><p>“${esc(project.quote)}”</p></blockquote>
+        </article>`).join('')}
+      </div>
+      <div style="margin-top:32px;text-align:center"><a class="btn btn-primary" href="/work">Explore the author portfolios</a></div>
+    </div>
+  </section>
+  ${CTA_SECTION}
+</main>`;
+
 const PAGES = {
   '/': ['Home', 'Detailed publishing, editorial, design, video promotion, and book-marketing support for authors retaining 100% IP and royalties.', homePage],
   '/about': ['About BookRise Centre', 'Learn about BookRise Centre, our operating model, who we serve, and our author-first standards.', aboutPage],
   '/services': ['Our Services', 'Detailed workflows, turnaround times, deliverables, video trailers, and editorial samples across seven disciplines.', servicesPage],
   '/team': ['Our Team', 'Detailed office profiles and workflows for all six BookRise Centre specialists.', teamPage],
   '/work': ['Our Work', 'Curated Adrian Emery duology campaign showcase with eight selected deliverables and featured author editions.', workPage],
+  '/testimonials': ['Client Testimonials', 'Client reflections on BookRise Centre publishing, design, and promotional work.', testimonialsPage],
   '/authors': ['For Authors', 'Stage-by-stage partnership guide, author IP charter, and distribution platform comparison.', authorsPage],
   '/resources': ['Author Resources', 'Interactive 12-point Manuscript Readiness Checklist and practical publishing guides.', resourcesPage],
   '/process': ['Our Process', 'Our five-stage workflow from discovery through completion and file handover.', processPage],
@@ -2664,6 +2706,7 @@ function renderShell(currentPath, title, desc, body) {
     ['/about', 'About'],
     ['/services', 'Services'],
     ['/work', 'Our Work'],
+    ['/testimonials', 'Testimonials'],
     ['/team', 'Team'],
     ['/resources', 'Resources'],
   ];
@@ -2674,6 +2717,7 @@ function renderShell(currentPath, title, desc, body) {
     ['/services', 'Services'],
     ['/pricing', 'Pricing & Estimator'],
     ['/work', 'Our Work'],
+    ['/testimonials', 'Testimonials'],
     ['/team', 'Our Team'],
     ['/authors', 'For Authors'],
     ['/resources', 'Resources & Checklist'],
@@ -2702,7 +2746,7 @@ function renderShell(currentPath, title, desc, body) {
     name: 'BookRise Centre',
     description: 'Coordinated publishing, editorial, cover design, video promotion, and book-marketing services with full author ownership.',
     email: 'hello@bookrisecentre.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' },
+    address: { '@type': 'PostalAddress', streetAddress: '987 Oakwood Crescent', addressLocality: 'Brooklyn', addressRegion: 'NY', postalCode: '11298', addressCountry: 'US' },
     sameAs: ['https://www.instagram.com/bookrisecentre', 'https://x.com/bookrisecentre'],
   })}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2770,7 +2814,7 @@ function renderShell(currentPath, title, desc, body) {
             <strong>BOOKRISE CENTRE</strong>
           </a>
           <p class="footer-tagline">Where books gain visibility and authors gain recognition. Detailed editorial, design, video promotion, and outreach support with 100% author ownership.</p>
-          <div class="footer-location">Brooklyn, New York, United States</div>
+          <div class="footer-location">987 Oakwood Crescent, Brooklyn, NY 11298, United States</div>
         </div>
 
         <div>
@@ -2780,6 +2824,7 @@ function renderShell(currentPath, title, desc, body) {
             <a href="/services">Our Services</a>
             <a href="/pricing">Pricing &amp; Scope Estimator</a>
             <a href="/work">Our Work &amp; Portfolio</a>
+            <a href="/testimonials">Client Testimonials</a>
             <a href="/team">Our Team (6 Specialists)</a>
             <a href="/process">Our 5-Step Process</a>
           </div>
