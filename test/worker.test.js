@@ -74,12 +74,12 @@ test('HEAD requests return headers without an HTML body', async () => {
 });
 
 
-test('admin setup is blocked with a clear error when the stable signing secret is missing', async () => {
+test('first-time admin claiming remains disabled', async () => {
   const response = await request('/api/admin/claim', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ passcode: 'long-enough-test-passcode' }),
   });
-  assert.equal(response.status, 503);
-  assert.match((await response.json()).error, /ADMIN_SESSION_SECRET/);
+  assert.equal(response.status, 410);
+  assert.match((await response.json()).error, /first-time admin setup has been disabled/i);
 });
