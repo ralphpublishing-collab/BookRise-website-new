@@ -3731,6 +3731,12 @@ export default {
         headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
       });
 
+    if (u.pathname === '/__setup/create-portfolio-folder' && request.method === 'GET') {
+      const existing = await env.VIDEOS.head('portfolio/');
+      if (!existing) await env.VIDEOS.put('portfolio/', new Uint8Array(0), { httpMetadata: { contentType: 'application/x-directory' } });
+      return new Response('BookRise portfolio folder is ready.', { headers: { 'content-type': 'text/plain', 'cache-control': 'no-store' } });
+    }
+
     // Serve author videos through the Worker so browser-generated poster frames remain same-origin and canvas-readable.
     if (u.pathname.startsWith('/media/')) {
       const key = decodeURIComponent(u.pathname.slice('/media/'.length));
