@@ -1175,27 +1175,6 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 }
 .team-portrait-frame img { display:block; width:100%; height:100%; object-fit:cover; transition:none; }
 .team-portrait-frame .team-photo-cropped { object-fit:cover; }
-.team-mini .team-portrait-frame { aspect-ratio: 4 / 5; margin-bottom:14px; }
-.team-mini { min-width:0; padding:16px; }
-.team-mini h3 { font-size:1rem; line-height:1.3; margin:0 0 6px; }
-.team-mini p { font-size:.78rem; line-height:1.45; }
-.team-strip-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
-.team-detailed-card { grid-template-columns:minmax(190px,240px) minmax(0,1fr); gap:30px; align-items:start; }
-@media (max-width:920px) {
-  .team-detailed-card { grid-template-columns:minmax(180px,220px) minmax(0,1fr); gap:22px; }
-  .team-strip-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
-@media (max-width:640px) {
-  .team-detailed-card { grid-template-columns:1fr; padding:18px; gap:18px; }
-  .team-detailed-card .team-portrait-frame { width:min(100%,320px); }
-  .team-strip-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .team-mini { padding:10px; }
-}
-@media (max-width:420px) {
-  .team-strip-grid { grid-template-columns:1fr; }
-  .team-mini { display:grid; grid-template-columns:112px minmax(0,1fr); column-gap:14px; align-items:center; }
-  .team-mini .team-portrait-frame { grid-row:span 2; width:112px; margin:0; }
-}
 .team-fallback {
   position: absolute;
   inset: 0;
@@ -1234,7 +1213,10 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 .team-contact-row a:hover { color: var(--gold); }
 
 /* Home compact team strip */
-.team-strip-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.team-strip-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:16px; align-items:stretch; }
+.team-mini { min-width:0; display:flex; flex-direction:column; align-items:stretch; text-align:left; }
+.team-mini .team-portrait-frame { width:100%; aspect-ratio:4 / 5; margin:0 0 12px; }
+.team-mini h3, .team-mini p { width:100%; text-align:left; overflow-wrap:anywhere; }
 .team-mini {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1246,6 +1228,15 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 .team-mini .team-portrait-frame { margin-bottom: 12px; }
 .team-mini h3 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 4px; line-height: 1.3; }
 .team-mini p { font-size: 0.75rem; color: var(--muted); margin: 0; line-height: 1.4; }
+
+.video-thumb-card { min-width:0; }
+.video-thumb-link { position:relative; display:block; overflow:hidden; aspect-ratio:16 / 9; border-radius:12px; background:#0b1b3d; border:1px solid var(--line); }
+.video-thumb-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 220ms ease; }
+.video-thumb-link:hover .video-thumb-image { transform:scale(1.025); }
+.video-thumb-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:58px; height:58px; display:grid; place-items:center; padding-left:4px; border-radius:50%; color:#0b1b3d; background:#D4AF37; font-size:22px; box-shadow:0 5px 22px rgba(0,0,0,.28); }
+.video-thumb-card h4 { margin:12px 0 0; }
+.video-thumb-single { max-width:760px; }
+@media(max-width:640px){ .video-thumb-play { width:48px; height:48px; font-size:18px; } }
 
 /* Interactive Tools (Before/After, Estimator, Checklist, Comparison Table) */
 .filter-bar {
@@ -1461,6 +1452,7 @@ html[data-theme="dark"] .form-status.error { color: #fca5a5; }
 .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .footer-brand strong { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.08em; color: #ffffff; }
 .footer-tagline { font-size: 0.875rem; color: #aab6c8; max-width: 34ch; margin: 0 0 14px; }
+.footer-legal { margin-top:10px; max-width:440px; color:var(--muted); font-size:.72rem; line-height:1.55; }
 .footer-location { font-size: 0.8125rem; color: #8e9cb2; }
 .site-footer h4 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-bright); margin: 0 0 14px; }
 .footer-links { display: grid; gap: 9px; }
@@ -1541,7 +1533,7 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 }
 
 @media (max-width: 1080px) {
-  .team-strip-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-strip-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .bento-span-2 { grid-column: span 3; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1566,7 +1558,7 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
   .header-inner { min-height: 64px; }
   .section { padding: 56px 0; }
   .hero { padding: 48px 0; }
-  .team-strip-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-strip-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .gallery-grid, .form-grid, .estimator-options, .footer-grid { grid-template-columns: 1fr; }
   .process-row { grid-template-columns: 1fr; gap: 8px; }
   .utility-dock { right: 14px; bottom: 14px; }
@@ -1714,29 +1706,29 @@ const BEFORE_AFTER_SECTION = `
 </div>`;
 
 const VIDEO_PROMO_SHOWCASE = `
-<section class="card" style="margin-top:32px;padding:clamp(22px,4vw,34px)">
+<section class="card video-showcase" style="margin-top:32px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Adrian Emery · Video Portfolio</div>
-  <h3 style="margin-top:6px">The Temple of Understanding — Video Campaign</h3>
+  <h3 style="margin-top:6px">The Temple of Understanding Video Campaign</h3>
   <p>Five campaign films supporting <em>Personal Sovereignty</em> and <em>Tao Tuning: The Art of Flow</em>.</p>
-  <div class="grid-2" style="gap:18px">
+  <div class="grid-2 video-thumb-grid" style="gap:18px">
     ${[
-      ['7f110d2c-177a-4208-b589-168e46f9d66c.MP4','Atmospheric Series Film'],
-      ['65589b32-5ed2-4172-9364-4931ed240a06.MP4','Flow &amp; Reflection Film'],
-      ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
-      ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
-      ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
-    ].map(([file,title],i)=>`<article><div class="eyebrow">Film 0${i+1}</div><h4>${title}</h4><video controls playsinline preload="metadata" style="display:block;width:100%;height:auto;max-height:72vh;aspect-ratio:auto;object-fit:contain;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}"></video></article>`).join('')}
+      ['7f110d2c-177a-4208-b589-168e46f9d66c.MP4','Atmospheric Series Film',ASSETS.adrian.duologySideBySide],
+      ['65589b32-5ed2-4172-9364-4931ed240a06.MP4','Flow &amp; Reflection Film',ASSETS.adrian.vol2OceanPoster],
+      ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight',ASSETS.adrian.meetAuthorArched],
+      ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film',ASSETS.adrian.vol2DeskLifestyle],
+      ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film',ASSETS.adrian.vol1VisionBanner]
+    ].map(([file,title,poster])=>`<article class="video-thumb-card"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}" target="_blank" rel="noopener" aria-label="Open ${title}"><img class="video-thumb-image" src="${poster}" alt="${title} video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a><h4>${title}</h4></article>`).join('')}
   </div>
 </section>
-<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+<section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;height:auto;max-height:72vh;aspect-ratio:auto;object-fit:contain;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4"></video>
+  <article class="video-thumb-card video-thumb-single"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4" target="_blank" rel="noopener" aria-label="Open The Sacred Switch video"><img class="video-thumb-image" src="${ASSETS.books.whispers}" alt="The Sacred Switch video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a></article>
 </section>
-<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+<section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jufri · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <video controls playsinline preload="metadata" style="width:100%;max-width:760px;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4"></video>
+  <article class="video-thumb-card video-thumb-single"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" target="_blank" rel="noopener" aria-label="Open The Life of Jesus video"><img class="video-thumb-image" src="${ASSETS.books.purpose}" alt="The Life of Jesus video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a></article>
 </section>`;
 
 const CTA_SECTION = `
@@ -1851,6 +1843,22 @@ const homePage = `
         </div>
         <a class="text-link" href="/team">Read full office profiles &rarr;</a>
       </div>
+      <section class="section section-surface" aria-labelledby="kdp-support-title">
+    <div class="wrap split-editorial">
+      <div>
+        <div class="eyebrow">Amazon Kindle Direct Publishing</div>
+        <h2 id="kdp-support-title">Confident publishing support for Amazon KDP</h2>
+        <p class="lead">BookRise Centre helps authors prepare, publish, and manage their books through Amazon Kindle Direct Publishing. From manuscript formatting and cover specifications to listing preparation and launch guidance, our team helps authors navigate the process with clarity while retaining control of their work and royalties.</p>
+        <p>We provide independent author services for writers choosing KDP as their publishing platform. Amazon KDP is a self-publishing service operated by Amazon.</p>
+        <a class="text-link" href="/services">Explore our publishing support &rarr;</a>
+      </div>
+      <div class="card" style="padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
+        <div style="font-size:1.8rem;font-weight:800;letter-spacing:-.04em;color:var(--ink-strong)">amazon <span style="color:#F90">KDP</span></div>
+        <div class="eyebrow" style="margin-top:10px">Kindle Direct Publishing</div>
+        <p style="margin:14px 0 0;color:var(--muted);font-size:.875rem">Independent publishing preparation and author support for the KDP platform.</p>
+      </div>
+    </div>
+  </section>
       <div class="team-strip-grid">${renderMiniTeamStrip()}</div>
     </div>
   </section>
@@ -2684,7 +2692,7 @@ const testimonialsPage = `
           <div class="eyebrow">Author · The Sacred Switch &amp; Dancing with Cinderella</div>
           <h2 style="margin:10px 0 16px;font-family:var(--serif)">Jeff Harlow</h2>
           <blockquote class="work-quote"><p>“BookRise Centre helped bring a consistent, polished visual identity to my books. The care given to the cover concepts, typography, and presentation helped communicate the themes of each title while giving the editions a distinctive, professional appearance. I appreciated the thoughtful creative process and the attention to detail throughout the work.”</p></blockquote>
-          <p class="field-hint">Client-approved testimonial draft.</p>
+          
         </article>
         <article class="card" style="padding:clamp(24px,4vw,38px)">
           <div class="eyebrow">Author Client Reflection</div>
@@ -2837,6 +2845,7 @@ function renderShell(currentPath, title, desc, body) {
             <strong>BOOKRISE CENTRE</strong>
           </a>
           <p class="footer-tagline">Where books gain visibility and authors gain recognition. Detailed editorial, design, video promotion, and outreach support with 100% author ownership.</p>
+          <p class="footer-legal">Amazon and Kindle Direct Publishing are trademarks of Amazon.com, Inc. or its affiliates. BookRise Centre is an independent author-services provider and is not affiliated with or endorsed by Amazon.</p>
           <div class="footer-location">987 Oakwood Crescent, Brooklyn, NY 11298, United States</div>
         </div>
 
