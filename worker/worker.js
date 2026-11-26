@@ -1229,7 +1229,7 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 .team-mini h3 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 4px; line-height: 1.3; }
 .team-mini p { font-size: 0.75rem; color: var(--muted); margin: 0; line-height: 1.4; }
 
-.video-thumb-card { min-width:0; }
+.video-thumb-card { min-width:0; }\n.video-native { display:block; width:100%; height:auto; max-height:560px; aspect-ratio:auto; object-fit:contain; background:#07152b; border-radius:10px; border:1px solid var(--line); }\n.video-feature { max-width:920px; margin:0 auto; }
 .video-thumb-link { position:relative; display:block; overflow:hidden; aspect-ratio:16 / 9; border-radius:12px; background:#0b1b3d; border:1px solid var(--line); }
 .video-thumb-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 220ms ease; }
 .video-thumb-link:hover .video-thumb-image { transform:scale(1.025); }
@@ -1712,24 +1712,33 @@ const VIDEO_PROMO_SHOWCASE = `
   <p>Five campaign films supporting <em>Personal Sovereignty</em> and <em>Tao Tuning: The Art of Flow</em>.</p>
   <div class="grid-2 video-thumb-grid" style="gap:18px">
     ${[
-      ['7f110d2c-177a-4208-b589-168e46f9d66c.MP4','Atmospheric Series Film',ASSETS.adrian.duologySideBySide],
-      ['65589b32-5ed2-4172-9364-4931ed240a06.MP4','Flow &amp; Reflection Film',ASSETS.adrian.vol2OceanPoster],
-      ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight',ASSETS.adrian.meetAuthorArched],
-      ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film',ASSETS.adrian.vol2DeskLifestyle],
-      ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film',ASSETS.adrian.vol1VisionBanner]
-    ].map(([file,title,poster])=>`<article class="video-thumb-card"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}" target="_blank" rel="noopener" aria-label="Open ${title}"><img class="video-thumb-image" src="${poster}" alt="${title} video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a><h4>${title}</h4></article>`).join('')}
+      ['7f110d2c-177a-4208-b589-168e46f9d66c.MP4','Atmospheric Series Film'],
+      ['65589b32-5ed2-4172-9364-4931ed240a06.MP4','Flow &amp; Reflection Film'],
+      ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
+      ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
+      ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
+    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
   </div>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <article class="video-thumb-card video-thumb-single"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4" target="_blank" rel="noopener" aria-label="Open The Sacred Switch video"><img class="video-thumb-image" src="${ASSETS.books.whispers}" alt="The Sacred Switch video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a></article>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jufri · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <article class="video-thumb-card video-thumb-single"><a class="video-thumb-link" href="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" target="_blank" rel="noopener" aria-label="Open The Life of Jesus video"><img class="video-thumb-image" src="${ASSETS.books.purpose}" alt="The Life of Jesus video thumbnail" loading="lazy" decoding="async"><span class="video-thumb-play" aria-hidden="true">▶</span></a></article>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
+</section>
+<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+  <div class="eyebrow">Jeff Harlow · Additional Book Designs</div>
+  <h3 style="margin-top:6px">The Sacred Switch &amp; Dancing with Cinderella</h3>
+  <div class="grid-2" style="gap:18px">
+    <figure class="gallery-mat"><img src="/public/assets/bookrise-sacred-switch-wrap.svg" alt="The Sacred Switch book cover spread for Jeff Harlow and Jennifer Freeman" loading="lazy" decoding="async"></figure>
+    <figure class="gallery-mat"><img src="/public/assets/bookrise-dancing-cinderella-wrap.svg" alt="Dancing with Cinderella book cover spread by Jeff Harlow" loading="lazy" decoding="async"></figure>
+  </div>
 </section>`;
+
 
 const CTA_SECTION = `
 <section class="cta-band">
