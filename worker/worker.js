@@ -894,16 +894,16 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
   overflow: hidden;
   border: 1px solid rgba(212, 175, 98, 0.35);
   background: #0d1b32;
-  min-height: 360px;
+  min-height: 0;
 }
 .hero-media img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
-  transition: transform 420ms var(--ease);
 }
-.hero-media:hover img { transform: scale(1.025); }
+.hero-media:hover img { transform: none; }
 .hero-media-caption {
   position: absolute;
   left: 0;
@@ -1084,9 +1084,9 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
   transition: transform 200ms var(--ease), border-color 200ms var(--ease);
 }
 .work-card:hover { transform: translateY(-2px); border-color: var(--gold); }
-.work-media { aspect-ratio: 3 / 4; overflow: hidden; background: var(--surface-alt); border-bottom: 1px solid var(--line); }
-.work-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 320ms var(--ease); }
-.work-card:hover .work-media img { transform: scale(1.025); }
+.work-media { width: 100%; height: auto; overflow: hidden; background: var(--surface-alt); border-bottom: 1px solid var(--line); }
+.work-media img { display: block; width: 100%; height: auto; object-fit: contain; object-position: center; transition: none; }
+.work-card:hover .work-media img { transform: none; }
 .work-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
 .work-meta { font-size: 0.8125rem; color: var(--muted); margin-bottom: 8px; }
 .work-body h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink-strong); margin: 0 0 8px; }
@@ -1167,13 +1167,13 @@ html[data-theme="dark"] .btn-navy { background: var(--gold); color: #091322; bor
 .team-portrait-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
   border-radius: 6px;
   overflow: hidden;
   background: var(--surface-alt);
   border: 1px solid var(--line);
 }
-.team-portrait-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 320ms var(--ease); }
+.team-portrait-frame img { display: block; width: 100%; height: auto; object-fit: contain; transition: none; }
 .team-fallback {
   position: absolute;
   inset: 0;
@@ -1552,9 +1552,7 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 `;
 
 function renderPortrait(member, eager = false) {
-  const imgStyle = member.framedScreenshot
-    ? `object-fit:cover;object-position:${member.focus};transform:scale(${member.scale});transform-origin:50% 4%;`
-    : `object-fit:cover;object-position:${member.focus};`;
+  const imgStyle = `width:100%;height:auto;object-fit:contain;object-position:center;`;
   const cls = member.framedScreenshot ? 'team-photo-cropped' : 'team-photo-native';
   return `<div class="team-portrait-frame">
     <img class="${cls}" src="${member.photo}" alt="${esc(member.name)} — ${esc(member.role)}" referrerpolicy="no-referrer" loading="${eager ? 'eager' : 'lazy'}" decoding="async" style="${imgStyle}" onerror="this.style.display='none';this.parentElement.classList.add('is-broken');">
@@ -1703,13 +1701,13 @@ const VIDEO_PROMO_SHOWCASE = `
       ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
       ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
       ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
-    ].map(([file,title],i)=>`<article><div class="eyebrow">Film 0${i+1}</div><h4>${title}</h4><video controls playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}"></video></article>`).join('')}
+    ].map(([file,title],i)=>`<article><div class="eyebrow">Film 0${i+1}</div><h4>${title}</h4><video controls playsinline preload="metadata" style="display:block;width:100%;height:auto;max-height:72vh;aspect-ratio:auto;object-fit:contain;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}"></video></article>`).join('')}
   </div>
 </section>
 <section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <video controls playsinline preload="metadata" style="width:100%;max-width:760px;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4"></video>
+  <video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;height:auto;max-height:72vh;aspect-ratio:auto;object-fit:contain;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4"></video>
 </section>
 <section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jufri · Author Video Portfolio</div>
