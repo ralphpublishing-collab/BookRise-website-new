@@ -2045,6 +2045,18 @@ const workPage = `
 
       <div class="gallery-grid" id="adrian-gallery">${renderAdrianShowcaseGrid()}</div>
 
+      <section class="card" aria-labelledby="adrian-testimonial-title" style="margin-top:32px;padding:clamp(24px,4vw,42px);background:linear-gradient(135deg,#0B1B3D 0%,#142b50 100%);color:#fff;border:1px solid rgba(212,175,55,.45)">
+        <div class="eyebrow" style="color:#D4AF37">Client Testimonial · Adrian Emery</div>
+        <h3 id="adrian-testimonial-title" style="color:#fff;margin:10px 0 18px">A positive experience bringing a two-volume series together.</h3>
+        <blockquote style="margin:0;padding:0;border:0">
+          <p style="font-family:Georgia,serif;font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.8;color:#fff">“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p>
+        </blockquote>
+        <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2)">
+          <strong style="color:#fff">Adrian Emery</strong>
+          <div style="font-size:.875rem;color:#D4AF37">Author · The Temple of Understanding</div>
+        </div>
+      </section>
+
       ${VIDEO_PROMO_SHOWCASE}
     </div>
   </section>
