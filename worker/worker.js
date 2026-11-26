@@ -38,7 +38,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol1-wrap',
     category: 'covers',
     categoryLabel: 'Cover Spreads & Editions',
-    title: 'Personal Sovereignty — Full Print Wrap & Standing Edition',
+    title: 'Personal Sovereignty, Full Print Wrap & Standing Edition',
     volume: 'Volume I · Front, Spine & Back Cover',
     description: 'Complete hardcover and paperback wrap featuring full-bleed planetary artwork, spine alignment, barcode/ISBN integration, and back-cover editorial copy.',
     image: ASSETS.adrian.vol1CoverWrap,
@@ -47,7 +47,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol2-wrap',
     category: 'covers',
     categoryLabel: 'Cover Spreads & Editions',
-    title: 'Tao Tuning: The Art of Flow — Full Print Wrap',
+    title: 'Tao Tuning: The Art of Flow, Full Print Wrap',
     volume: 'Volume II · Front, Spine & Back Cover',
     description: 'Coordinated sequel wrap layout pairing bold crimson cover typography with wave illustration, spine branding, and structured bulleted back-cover copy.',
     image: ASSETS.adrian.vol2CoverWrap,
@@ -56,7 +56,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-duology-minimal',
     category: 'covers',
     categoryLabel: 'Cover Spreads & Editions',
-    title: 'The Temple of Understanding — Duology Edition Card',
+    title: 'The Temple of Understanding, Duology Edition Card',
     volume: 'Volumes I & II · Series Presentation',
     description: 'Clean editorial presentation uniting both covers under a cohesive series masthead for retail, press kits, and author landing pages.',
     image: ASSETS.adrian.duologyMinimalist,
@@ -65,7 +65,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol1-feature',
     category: 'spotlights',
     categoryLabel: 'Author & Duology Spotlights',
-    title: 'Personal Sovereignty — Author Feature Banner',
+    title: 'Personal Sovereignty, Author Feature Banner',
     volume: 'Volume I · Author Portrait & Benefit Triad',
     description: 'Flagship promotional banner pairing Adrian Emery’s portrait with Volume I’s core reader takeaways and signature block.',
     image: ASSETS.adrian.vol1AuthorFeature,
@@ -74,7 +74,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-meet-arched',
     category: 'spotlights',
     categoryLabel: 'Author & Duology Spotlights',
-    title: 'Meet Adrian Emery — Author Spotlight Card',
+    title: 'Meet Adrian Emery, Author Spotlight Card',
     volume: 'Series · Arched Editorial Portrait',
     description: 'Vertical social and reader-outreach spotlight introducing Adrian Emery as author of The Temple of Understanding duology.',
     image: ASSETS.adrian.meetAuthorArched,
@@ -83,7 +83,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol2-ocean',
     category: 'posters',
     categoryLabel: 'Promotional Posters',
-    title: 'Tao Tuning — Cliffside Reader Benefit Poster',
+    title: 'Tao Tuning, Cliffside Reader Benefit Poster',
     volume: 'Volume II · Campaign Creative',
     description: 'Coastal atmospheric promotional card pairing Volume II with four structured reader outcome pillars.',
     image: ASSETS.adrian.vol2OceanPoster,
@@ -92,7 +92,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol2-availability',
     category: 'posters',
     categoryLabel: 'Promotional Posters',
-    title: 'Tao Tuning — Multi-Format Storefront Availability Graphic',
+    title: 'Tao Tuning, Multi-Format Storefront Availability Graphic',
     volume: 'Volume II · Kindle, eBook & Print',
     description: 'Retail-ready promotional sheet highlighting Kindle, eBook, and Print availability alongside thematic icons.',
     image: ASSETS.adrian.vol2Availability,
@@ -101,7 +101,7 @@ const ADRIAN_DELIVERABLES = [
     id: 'adrian-vol2-desk',
     category: 'posters',
     categoryLabel: 'Promotional Posters',
-    title: 'Tao Tuning — Editorial Desk Lifestyle Promo',
+    title: 'Tao Tuning, Editorial Desk Lifestyle Promo',
     volume: 'Volume II · Warm Studio Scene',
     description: 'Warm desk lifestyle creative staging Volume II beside manuscript notebook and fountain pen for reader engagement.',
     image: ASSETS.adrian.vol2DeskLifestyle,
@@ -140,7 +140,7 @@ const SERVICES = [
     bestFor: 'Writers seeking structural clarity, stronger narrative flow, line-level polish, or collaborative manuscript development.',
     turnaround: '2 to 6 weeks based on word count and editorial depth',
     summary:
-      'Careful editorial and writing support—from big-picture developmental feedback to meticulous copy editing and final proofreading—while safeguarding the author’s distinctive voice.',
+      'Careful editorial and writing support, from big-picture developmental feedback to meticulous copy editing and final proofreading, while safeguarding the author’s distinctive voice.',
     workflow: [
       'Complete an initial sample read to calibrate editorial depth, tone preservation, and revision scope.',
       'Deliver chapter-by-chapter structural or developmental notes addressing pacing, clarity, and argument arc.',
@@ -255,7 +255,7 @@ const SERVICES = [
     bestFor: 'Authors seeking genuine outreach to genre book clubs, independent reviewers, podcast hosts, and niche newsletters.',
     turnaround: '3 to 6 week outreach cycles',
     summary:
-      'Thoughtful, human-written outreach to relevant reader communities, podcasts, and editorial platforms—respecting every publication’s submission rules and independent editorial judgment.',
+      'Thoughtful, human-written outreach to relevant reader communities, podcasts, and editorial platforms, respecting every publication’s submission rules and independent editorial judgment.',
     workflow: [
       'Research aligned podcasts, book bloggers, literary newsletters, and genre communities matching your readership.',
       'Draft individualized pitch letters, review-copy invitations, and concise author press notes.',
@@ -285,7 +285,7 @@ const TEAM = [
     scale: '1.34',
     bio: 'Leads overall literary direction and team coordination at BookRise Centre, ensuring every author project is structured around sound editorial judgment, clear written agreements, and realistic publishing goals.',
     officeSummary:
-      'In the office, Gracious oversees initial manuscript evaluations, chairs weekly project-alignment reviews across all six specialists, and personally guides authors through complex publishing decisions—from structural editorial roadmaps to imprint and distribution strategy.',
+      'In the office, Gracious oversees initial manuscript evaluations, chairs weekly project-alignment reviews across all six specialists, and personally guides authors through complex publishing decisions, from structural editorial roadmaps to imprint and distribution strategy.',
     workflow: [
       'Reviews incoming project briefs and evaluates manuscript readiness before formal scoping begins.',
       'Leads literary direction and assigns editorial, design, and promotion milestones across the specialist team.',
@@ -306,10 +306,10 @@ const TEAM = [
     scale: '1.28',
     bio: 'Combines hands-on publishing preparation with practical campaign execution, helping authors bridge the gap between finishing a manuscript and presenting it persuasively to the marketplace.',
     officeSummary:
-      'Day-to-day at BookRise Centre, Rapheal translates a book’s core themes into clear promotional messaging, builds campaign rollouts, and manages visual and written promotion assets—ensuring the book’s positioning stays consistent across cover design, listings, and outreach.',
+      'Day-to-day at BookRise Centre, Rapheal translates a book’s core themes into clear promotional messaging, builds campaign rollouts, and manages visual and written promotion assets, ensuring the book’s positioning stays consistent across cover design, listings, and outreach.',
     workflow: [
       'Audits manuscript positioning and identifies the strongest hooks for target reader segments.',
-      'Coordinates promotional asset production—including launch banners, author spotlights, and trailer briefs.',
+      'Coordinates promotional asset production, including launch banners, author spotlights, and trailer briefs.',
       'Manages multi-week promotional schedules and keeps authors informed at each campaign checkpoint.',
       'Compiles post-campaign performance notes and clear next-step recommendations after launch.',
     ],
@@ -457,7 +457,7 @@ const PROJECTS = [
 
 const FAQS = [
   ['What services does BookRise Centre provide?', 'We provide seven connected author services: publishing support, editing and writing, cover design, book promotion, video promotion and book trailers, visibility and discoverability optimization, and reader outreach. Services can be commissioned individually or combined under a coordinated written plan.'],
-  ['Can I request just one service?', 'Yes. Authors frequently engage us for a single focused discipline—such as cover design, copy editing, or storefront metadata optimization—without being pushed into a bundled package.'],
+  ['Can I request just one service?', 'Yes. Authors frequently engage us for a single focused discipline, such as cover design, copy editing, or storefront metadata optimization, without being pushed into a bundled package.'],
   ['How much do your services cost?', 'We prepare project-based quotations rather than flat one-size-fits-all pricing. Fees depend on manuscript word count, file condition, editorial depth, design deliverables, turnaround timeline, and any approved external costs. You receive a full written quotation before making any commitment.'],
   ['Do you offer fixed packages?', 'Defined multi-service scopes can be structured when a book genuinely needs several stages (for example, editing plus cover design plus launch visibility), and every inclusion and exclusion is stated clearly in writing.'],
   ['Does BookRise Centre take ownership of my book?', 'No. Authors retain 100% of their copyright and intellectual property. Our written agreements confirm that any limited access granted to BookRise Centre is solely for executing the agreed project deliverables.'],
@@ -1571,7 +1571,7 @@ function renderPortrait(member, eager = false) {
     : `display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;`;
   const cls = member.framedScreenshot ? 'team-photo-cropped' : 'team-photo-native';
   return `<div class="team-portrait-frame">
-    <img class="${cls}" src="${member.photo}" alt="${esc(member.name)} — ${esc(member.role)}" referrerpolicy="no-referrer" loading="${eager ? 'eager' : 'lazy'}" decoding="async" style="${imgStyle}" onerror="this.style.display='none';this.parentElement.classList.add('is-broken');">
+    <img class="${cls}" src="${member.photo}" alt="${esc(member.name)}, ${esc(member.role)}" referrerpolicy="no-referrer" loading="${eager ? 'eager' : 'lazy'}" decoding="async" style="${imgStyle}" onerror="this.style.display='none';this.parentElement.classList.add('is-broken');">
     <div class="team-fallback" aria-hidden="true">${esc(member.initials)}</div>
   </div>`;
 }
@@ -1598,7 +1598,7 @@ function renderAdrianShowcaseGrid(limit = null) {
     .map(
       (item, idx) => `<article class="gallery-card reveal" data-adrian-cat="${item.category}">
       <div class="gallery-mat" data-lightbox-id="${item.id}" role="button" tabindex="0" aria-label="Inspect ${esc(item.title)} full size">
-        <img src="${item.image}" alt="${esc(item.title)} — ${esc(item.volume)}" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+        <img src="${item.image}" alt="${esc(item.title)}, ${esc(item.volume)}" referrerpolicy="no-referrer" loading="lazy" decoding="async">
       </div>
       <div class="gallery-body">
         <div class="gallery-meta tabular">${String(idx + 1).padStart(2, '0')}. ${esc(item.volume)}</div>
@@ -1615,7 +1615,7 @@ function renderProjectCards() {
   return PROJECTS.map(
     (project) => `<article class="work-card reveal">
       <div class="work-media">
-        <img src="${project.image}" alt="${esc(project.title)} by ${esc(project.author)} — BookRise Centre portfolio edition" referrerpolicy="no-referrer" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="${project.image}" alt="${esc(project.title)} by ${esc(project.author)}, BookRise Centre portfolio edition" referrerpolicy="no-referrer" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="work-body">
         <div class="work-meta tabular">${project.number}. ${esc(project.genre)} &middot; ${esc(project.author)}</div>
@@ -1804,8 +1804,8 @@ const homePage = `
       <div class="section-header-split">
         <div>
           <div class="eyebrow">Featured Client Campaign &middot; Adrian Emery</div>
-          <h2>The Temple of Understanding — Vol. I &amp; II Showcase</h2>
-          <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II)—spanning full print wraps, author spotlight cards, multi-format launch graphics, and video production.</p>
+          <h2>The Temple of Understanding, Vol. I &amp; II Showcase</h2>
+          <p class="lead">Recent visual and promotional work produced for author Adrian Emery across <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II), spanning full print wraps, author spotlight cards, multi-format launch graphics, and video production.</p>
         </div>
         <a class="text-link" href="/work">View all 8 selected campaign designs &rarr;</a>
       </div>
@@ -1875,7 +1875,7 @@ const homePage = `
         </div>
       </div>
       <div class="crest-panel">
-        <img src="${ASSETS.crest}" alt="BookRise Centre official emblem — Where Books Gain Visibility and Authors Gain Recognition" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+        <img src="${ASSETS.crest}" alt="BookRise Centre official emblem, Where Books Gain Visibility and Authors Gain Recognition" referrerpolicy="no-referrer" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -2032,7 +2032,7 @@ const teamPage = `
     <div class="wrap">
       <div class="eyebrow">Our Team</div>
       <h1>Six specialists. Clearly defined roles inside our office.</h1>
-      <p>Meet the full BookRise Centre team and read exactly how each specialist operates day-to-day—from manuscript evaluation and typesetting to cover positioning, storefront discoverability, and reader outreach.</p>
+      <p>Meet the full BookRise Centre team and read exactly how each specialist operates day-to-day, from manuscript evaluation and typesetting to cover positioning, storefront discoverability, and reader outreach.</p>
     </div>
   </section>
 
@@ -2040,7 +2040,7 @@ const teamPage = `
     <div class="wrap">
       <div style="display:grid;gap:24px">${renderTeamDetailedProfiles()}</div>
       <div class="editorial-callout" style="margin-top:36px">
-        <p style="margin:0;color:var(--ink);font-size:0.9375rem"><strong>How projects are staffed:</strong> Every engagement is assigned a lead point of contact alongside the specific specialists required for your agreed deliverables—so your editorial, design, and promotional work stays unified.</p>
+        <p style="margin:0;color:var(--ink);font-size:0.9375rem"><strong>How projects are staffed:</strong> Every engagement is assigned a lead point of contact alongside the specific specialists required for your agreed deliverables, so your editorial, design, and promotional work stays unified.</p>
       </div>
     </div>
   </section>
@@ -2202,7 +2202,7 @@ const processPage = `
         <div class="process-row"><div class="process-num tabular">01</div><div><h3>Discovery &amp; Manuscript Understanding</h3><p>We review your enquiry, learn about your book’s genre, word count, stage, target audience, and goals, and hold an introductory email or consultation discussion to identify genuine priorities.</p></div></div>
         <div class="process-row"><div class="process-num tabular">02</div><div><h3>Editorial &amp; Service Scoping</h3><p>Gracious J. Literary and the relevant specialists evaluate sample pages or existing assets to map a tailored sequence of tasks, review points, and realistic turnaround estimates.</p></div></div>
         <div class="process-row"><div class="process-num tabular">03</div><div><h3>Written Quotation &amp; Agreement</h3><p>You receive a formal written scope detailing exact deliverables, included revision rounds, payment schedule, third-party cost transparency, cancellation terms, and explicit author IP retention.</p></div></div>
-        <div class="process-row"><div class="process-num tabular">04</div><div><h3>Coordinated Execution &amp; Checkpoints</h3><p>Our team executes each milestone—sharing editorial notes, cover concepts, metadata drafts, or trailer cuts at agreed checkpoints for your feedback and sign-off.</p></div></div>
+        <div class="process-row"><div class="process-num tabular">04</div><div><h3>Coordinated Execution &amp; Checkpoints</h3><p>Our team executes each milestone, sharing editorial notes, cover concepts, metadata drafts, or trailer cuts at agreed checkpoints for your feedback and sign-off.</p></div></div>
         <div class="process-row"><div class="process-num tabular">05</div><div><h3>Final Delivery, Handover &amp; Next Steps</h3><p>Upon approval, final print-ready files, digital exports, style sheets, or campaign reports are delivered directly to you. Any follow-on phase is discussed separately with zero obligation.</p></div></div>
       </div>
     </div>
@@ -2227,7 +2227,7 @@ const whyPage = `
         <article class="card"><div class="card-index tabular">01. Integrated Team</div><h3>Six aligned specialists</h3><p>Editorial operations, cover direction, visibility strategy, and reader outreach collaborate under one roof so your book’s message never fractures between vendors.</p></article>
         <article class="card"><div class="card-index tabular">02. Author Rights</div><h3>100% ownership retained</h3><p>You never assign copyright, publishing control, or royalty shares to BookRise Centre. Your accounts and files stay completely yours.</p></article>
         <article class="card"><div class="card-index tabular">03. Written Clarity</div><h3>Detailed upfront scopes</h3><p>Deliverables, revision allowances, timelines, and payment milestones are documented in plain language before any work begins.</p></article>
-        <article class="card"><div class="card-index tabular">04. Honest Boundaries</div><h3>Zero misleading promises</h3><p>We never sell guaranteed bestseller lists or fabricated review promises—our focus is verifiable editorial, design, and outreach craft.</p></article>
+        <article class="card"><div class="card-index tabular">04. Honest Boundaries</div><h3>Zero misleading promises</h3><p>We never sell guaranteed bestseller lists or fabricated review promises, our focus is verifiable editorial, design, and outreach craft.</p></article>
         <article class="card"><div class="card-index tabular">05. Tailored Recommendations</div><h3>No forced packages</h3><p>Request a single focused service or combine disciplines into a phased roadmap tailored to your manuscript’s true condition.</p></article>
         <article class="card"><div class="card-index tabular">06. Consistent Communication</div><h3>Structured review checkpoints</h3><p>Clear milestone updates and direct specialist accountability ensure you are never left wondering where your project stands.</p></article>
       </div>
@@ -2308,7 +2308,7 @@ const pricingPage = `
         <article class="card"><h3>Manuscript length &amp; condition</h3><p>Total word count, structural state, presence of tables, citations, or illustrations, and the depth of editing required.</p></article>
         <article class="card"><h3>Deliverables &amp; revision rounds</h3><p>Number of concepts, interior/print formats (paperback, hardcover, ebook), and agreed review iterations.</p></article>
         <article class="card"><h3>Schedule &amp; multi-service sequencing</h3><p>Target release date and whether editorial, cover design, and promotional phases run sequentially or in parallel.</p></article>
-        <article class="card"><h3>External third-party costs</h3><p>Any optional external costs—such as ISBN blocks, paid advertising spend, or author proof printing—are itemized separately before approval.</p></article>
+        <article class="card"><h3>External third-party costs</h3><p>Any optional external costs, such as ISBN blocks, paid advertising spend, or author proof printing, are itemized separately before approval.</p></article>
       </div>
     </div>
   </section>
@@ -2661,7 +2661,7 @@ const refundsPage = legalPage(
     ['1. The written project agreement comes first', 'Every engagement should have a written quotation or agreement stating the approved services, deliverables, fee and currency, payment milestones, expected schedule, revision arrangements, third-party costs, and project-specific cancellation terms. This policy should be read together with that agreement. If a project-specific term differs, the written agreement applies to the extent permitted by applicable law. Nothing in this policy removes a consumer right that cannot lawfully be excluded.'],
     ['2. Before work begins', 'If you decide not to proceed after receiving a quotation, notify us in writing before approving the scope or making a payment. If a payment has already been made but work has not started, any refund will be assessed against the written agreement, any clearly disclosed and applicable costs, and the legal rights that apply to the transaction. A payment is not automatically treated as forfeited merely because it was paid in advance.'],
     ['3. Cancellation after work has started', 'If you ask to cancel after work has begun, we will review the project status against its agreed milestones. The account may take into consideration deliverables already completed, work in progress where the agreement provides for it, and third-party costs that were approved in advance and have become non-recoverable. The basis for any amount retained or refunded should be explained by reference to the agreed scope and work performed; we do not apply an undisclosed blanket cancellation charge.'],
-    ['4. Third-party and external costs', 'Costs paid to or committed with external providers—such as advertising platforms, printing services, ISBN agencies, stock-asset providers, or distribution services—are subject to those providers’ terms. Where such a cost is non-refundable or cannot be recovered, it may be excluded from a refund only where it was disclosed and approved as part of the project, and where applicable law permits. External costs should be itemised separately in the quotation wherever practical.'],
+    ['4. Third-party and external costs', 'Costs paid to or committed with external providers, such as advertising platforms, printing services, ISBN agencies, stock-asset providers, or distribution services, are subject to those providers’ terms. Where such a cost is non-refundable or cannot be recovered, it may be excluded from a refund only where it was disclosed and approved as part of the project, and where applicable law permits. External costs should be itemised separately in the quotation wherever practical.'],
     ['5. Revisions, approvals, and concerns', 'If a delivered item does not match the approved brief or written scope, contact the assigned specialist with a clear description of the issue and the relevant file or milestone. We will review the concern against the agreed deliverables and revision allowance. Requests that change the approved direction or add new work may require a revised quotation. A difference in personal preference, by itself, does not automatically establish that agreed work was not delivered; concerns will be considered against the actual scope and applicable rights.'],
     ['6. Delays and paused projects', 'If a project is delayed because information, approvals, or materials are outstanding, the team will discuss a revised schedule. If you need to pause a project, contact us in writing so the status of completed work, reserved time, outstanding payments, and any external commitments can be reviewed under the agreement.'],
     ['7. If BookRise Centre cannot continue', 'If circumstances prevent us from completing an agreed engagement, we will communicate the position and review the completed work, any transferable deliverables, and any unearned amounts in line with the written agreement and applicable law.'],
@@ -2698,7 +2698,7 @@ const testimonialsPage = `
           <div class="eyebrow">Author Client Reflection</div>
           <h2 style="margin:10px 0 16px;font-family:var(--serif)">Jufri</h2>
           <blockquote class="work-quote"><p>“I appreciated the care and professionalism BookRise Centre brought to my book project. The team took time to understand the direction of the work and approached the presentation with thoughtful attention to detail. The experience gave me greater confidence in how my book is presented to its intended readers.”</p></blockquote>
-          <p class="field-hint">Client-approved testimonial draft.</p>
+          
         </article>
         ${PROJECTS.map((project) => `<article class="card" style="padding:clamp(24px,4vw,38px)">
           <div class="eyebrow">${esc(project.genre)} · ${esc(project.title)}</div>
@@ -2845,7 +2845,7 @@ function renderShell(currentPath, title, desc, body) {
             <strong>BOOKRISE CENTRE</strong>
           </a>
           <p class="footer-tagline">Where books gain visibility and authors gain recognition. Detailed editorial, design, video promotion, and outreach support with 100% author ownership.</p>
-          <p class="footer-legal">Amazon and Kindle Direct Publishing are trademarks of Amazon.com, Inc. or its affiliates. BookRise Centre is an independent author-services provider and is not affiliated with or endorsed by Amazon.</p>
+          
           <div class="footer-location">987 Oakwood Crescent, Brooklyn, NY 11298, United States</div>
         </div>
 
@@ -3133,7 +3133,7 @@ function renderShell(currentPath, title, desc, body) {
       document.querySelectorAll('[data-case-id]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var item = casesData.find(function (c) { return c.id === btn.getAttribute('data-case-id'); });
-          if (item) showModal(item.image, item.title, item.genre + ' · ' + item.author, item.title, item.brief, item.deliverables, '“' + item.quote + '” — ' + item.author);
+          if (item) showModal(item.image, item.title, item.genre + ' · ' + item.author, item.title, item.brief, item.deliverables, '“' + item.quote + '”, ' + item.author);
         });
       });
 
@@ -3261,7 +3261,7 @@ function renderShell(currentPath, title, desc, body) {
 
           if (!checked.length) {
             modelEl.textContent = 'Select one or more services';
-            durEl.textContent = 'Estimated duration: —';
+            durEl.textContent = 'Estimated duration: , ';
             sumEl.textContent = 'Choose at least one service on the left to generate a recommended delivery sequence.';
             linkEl.href = '/contact';
             return;
@@ -3336,7 +3336,7 @@ function renderShell(currentPath, title, desc, body) {
           barEl.style.width = pct + '%';
           var stageLabel = pct < 30 ? 'Early preparation stage' : pct < 70 ? 'Mid-production stage' : pct < 100 ? 'Pre-launch refinement stage' : 'Publication & outreach ready';
           stageEl.textContent = stageLabel;
-          var brief = 'Readiness Checklist Summary: ' + pct + '% complete (' + done + '/' + chks.length + ', ' + stageLabel + '). Remaining items: ' + (missing.slice(0, 4).join('; ') || 'None — ready for launch support.');
+          var brief = 'Readiness Checklist Summary: ' + pct + '% complete (' + done + '/' + chks.length + ', ' + stageLabel + '). Remaining items: ' + (missing.slice(0, 4).join('; ') || 'None, ready for launch support.');
           carryBtn.href = '/contact?service=' + encodeURIComponent('Publishing Support') + '&brief=' + encodeURIComponent(brief);
         }
         loadChecklist();
@@ -3827,7 +3827,7 @@ export default {
               from: fromAddr,
               to: [notifyTo],
               reply_to: email,
-              subject: `[BookRise Enquiry ${referenceId}] ${service} — ${name}`,
+              subject: `[BookRise Enquiry ${referenceId}] ${service}, ${name}`,
               text: `Reference: ${referenceId}\nAuthor: ${name} (${email})\nTitle: ${title || 'Not specified'}\nGenre: ${genre || 'Not specified'}\nService: ${service}\nStage: ${stage || 'Not specified'}\nTimeline: ${timeline || 'Not specified'}\n\n${message}`,
             }),
           });
