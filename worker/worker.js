@@ -1692,29 +1692,30 @@ const BEFORE_AFTER_SECTION = `
 </div>`;
 
 const VIDEO_PROMO_SHOWCASE = `
-<div class="card" style="margin-top:32px">
-  <div class="eyebrow" style="margin-bottom:6px">Video Promotion &amp; Book Trailers</div>
-  <h3 style="margin-top:0">Adrian Emery — Video Promotion Campaign Architecture</h3>
-  <p style="margin-bottom:18px">Alongside these eight selected print and digital design deliverables, BookRise Centre also produced video content for Adrian Emery’s campaign. The finished videos will be added to this showcase once the original files are uploaded to Cloudflare Stream.</p>
-  <div class="grid-2" style="gap:16px">
-    <div class="editorial-callout" style="padding:20px">
-      <div class="card-index tabular">01. 60-Second Narrative Book Trailer (16:9)</div>
-      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Opening hook question, atmospheric motion visuals aligned to Volume I &amp; Volume II covers, voiceover/on-screen title cards, and clear availability end-slate.</p>
-    </div>
-    <div class="editorial-callout" style="padding:20px">
-      <div class="card-index tabular">02. 30-Second Vertical Launch Reels (9:16)</div>
-      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Short-form vertical cuts tailored for Instagram Reels, TikTok, and YouTube Shorts with crisp burned-in captions and quick 3D hardcover reveals.</p>
-    </div>
-    <div class="editorial-callout" style="padding:20px">
-      <div class="card-index tabular">03. Author Spotlight Introduction Clip</div>
-      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Author-led story clip introducing Adrian Emery’s philosophy behind <em>Personal Sovereignty</em> and <em>Tao Tuning</em> to build direct reader trust.</p>
-    </div>
-    <div class="editorial-callout" style="padding:20px">
-      <div class="card-index tabular">04. Storefront &amp; Social Square Teasers (1:1)</div>
-      <p style="margin:0;font-size:0.875rem;color:var(--muted)">Looping 15-second thematic quote animations linking readers directly to Kindle, eBook, and print editions.</p>
-    </div>
+<section class="card" style="margin-top:32px;padding:clamp(22px,4vw,34px)">
+  <div class="eyebrow">Adrian Emery · Video Portfolio</div>
+  <h3 style="margin-top:6px">The Temple of Understanding — Video Campaign</h3>
+  <p>Five campaign films supporting <em>Personal Sovereignty</em> and <em>Tao Tuning: The Art of Flow</em>.</p>
+  <div class="grid-2" style="gap:18px">
+    ${[
+      ['7f110d2c-177a-4208-b589-168e46f9d66c.MP4','Atmospheric Series Film'],
+      ['65589b32-5ed2-4172-9364-4931ed240a06.MP4','Flow &amp; Reflection Film'],
+      ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
+      ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
+      ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
+    ].map(([file,title],i)=>`<article><div class="eyebrow">Film 0${i+1}</div><h4>${title}</h4><video controls playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}"></video></article>`).join('')}
   </div>
-</div>`;
+</section>
+<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+  <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
+  <h3 style="margin-top:6px">The Sacred Switch</h3>
+  <video controls playsinline preload="metadata" style="width:100%;max-width:760px;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4"></video>
+</section>
+<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+  <div class="eyebrow">Jufri · Author Video Portfolio</div>
+  <h3 style="margin-top:6px">The Life of Jesus</h3>
+  <video controls playsinline preload="metadata" style="width:100%;max-width:760px;aspect-ratio:16/9;background:#071326;border-radius:12px" src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4"></video>
+</section>`;
 
 const CTA_SECTION = `
 <section class="cta-band">
@@ -2033,7 +2034,7 @@ const workPage = `
         <div>
           <div class="eyebrow">Featured Client Portfolio &middot; Adrian Emery</div>
           <h2>The Temple of Understanding (Vol. I &amp; Vol. II)</h2>
-          <p class="lead">A complete multi-volume visual, promotional, and video-production campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Click any design deliverable to inspect the full-resolution artwork; video pieces will be added to this portfolio after upload.</p>
+          <p class="lead">A complete multi-volume visual, promotional, and video-production campaign covering <em>Personal Sovereignty</em> (Volume I) and <em>Tao Tuning: The Art of Flow</em> (Volume II). Explore the design gallery and watch the campaign films directly on this page.</p>
         </div>
         <div class="filter-bar" role="tablist" aria-label="Filter Adrian Emery deliverables">
           <button type="button" class="filter-btn is-active" data-adrian-filter="all" role="tab" aria-selected="true">All Deliverables (8)</button>
