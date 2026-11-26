@@ -1695,7 +1695,7 @@ const VIDEO_PROMO_SHOWCASE = `
 <div class="card" style="margin-top:32px">
   <div class="eyebrow" style="margin-bottom:6px">Video Promotion &amp; Book Trailers</div>
   <h3 style="margin-top:0">Adrian Emery — Video Promotion Campaign Architecture</h3>
-  <p style="margin-bottom:18px">Alongside the 14 print and digital design deliverables above, BookRise Centre structures video promotion campaigns around four purpose-built formats ready to embed directly once client video files are uploaded.</p>
+  <p style="margin-bottom:18px">Alongside these eight selected print and digital design deliverables, BookRise Centre can structure video promotion campaigns around four purpose-built formats, ready to incorporate once the client’s video assets are approved and supplied.</p>
   <div class="grid-2" style="gap:16px">
     <div class="editorial-callout" style="padding:20px">
       <div class="card-index tabular">01. 60-Second Narrative Book Trailer (16:9)</div>
