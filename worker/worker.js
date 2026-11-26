@@ -3,9 +3,9 @@ const ASSETS = {
   crest: '/public/assets/aistudio/92B26B15-F4AB-4BBD-B068-79601753C31D_bdc8dd35.png',
   heroAtelier: '/src/assets/images/hero_publishing_atelier_1795615010303.jpg',
   books: {
-    executive: '/public/assets/bookrise-executive-edge.svg',
-    whispers: '/public/assets/bookrise-whispers-wind.svg',
-    purpose: '/public/assets/bookrise-lead-purpose.svg',
+    executive: '/public/assets/bookrise-executive-edge-v2.svg',
+    whispers: '/public/assets/bookrise-whispers-wind-v2.svg',
+    purpose: '/public/assets/bookrise-lead-purpose-v2.svg',
   },
   team: {
     gracious: '/public/assets/aistudio/IMG_0010_55a5f7f9.jpeg',
