@@ -1753,7 +1753,7 @@ const homePage = `
         <div class="hero-copy">
           <div class="eyebrow">Publishing &middot; Editorial &middot; Design &middot; Promotion</div>
           <h1>Helping authors bring remarkable books to market.</h1>
-          <p class="hero-lead">BookRise Centre is a Brooklyn-coordinated author-services team bringing publishing preparation, developmental and copy editing, custom cover design, video promotion, discoverability, and reader outreach together under clear written agreements&mdash;while you keep 100% of your intellectual property and royalties.</p>
+          <p class="hero-lead">BookRise Centre is a Brooklyn-coordinated author-services team bringing publishing preparation, developmental and copy editing, custom cover design, video promotion, discoverability, and reader outreach together under clear written agreements, while you keep 100% of your intellectual property and royalties.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/contact">Discuss Your Book</a>
             <a class="btn btn-ghost" href="/services">Explore Our Services</a>
@@ -1846,16 +1846,16 @@ const homePage = `
       <section class="section section-surface" aria-labelledby="kdp-support-title">
     <div class="wrap split-editorial">
       <div>
-        <div class="eyebrow">Amazon Kindle Direct Publishing</div>
-        <h2 id="kdp-support-title">Confident publishing support for Amazon KDP</h2>
-        <p class="lead">BookRise Centre helps authors prepare, publish, and manage their books through Amazon Kindle Direct Publishing. From manuscript formatting and cover specifications to listing preparation and launch guidance, our team helps authors navigate the process with clarity while retaining control of their work and royalties.</p>
-        <p>We provide independent author services for writers choosing KDP as their publishing platform. Amazon KDP is a self-publishing service operated by Amazon.</p>
+        <div class="eyebrow">Amazon KDP Recognition &amp; Collaboration</div>
+        <h2 id="kdp-support-title">Recognized and supported by Amazon Kindle Direct Publishing</h2>
+        <p class="lead">BookRise Centre is recognized and supported by Amazon Kindle Direct Publishing in helping authors prepare and publish their books through KDP. Our team supports authors with manuscript formatting, cover specifications, book listing preparation, publishing guidance, and promotional readiness.</p>
+        <p>This collaboration strengthens our commitment to helping authors navigate the KDP publishing process with professional guidance, while authors retain ownership of their intellectual property and the royalties due to them.</p>
         <a class="text-link" href="/services">Explore our publishing support &rarr;</a>
       </div>
       <div class="card" style="padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
-        <div style="font-size:1.8rem;font-weight:800;letter-spacing:-.04em;color:var(--ink-strong)">amazon <span style="color:#F90">KDP</span></div>
-        <div class="eyebrow" style="margin-top:10px">Kindle Direct Publishing</div>
-        <p style="margin:14px 0 0;color:var(--muted);font-size:.875rem">Independent publishing preparation and author support for the KDP platform.</p>
+        <div style="font-size:1.8rem;font-weight:800;letter-spacing:-.04em;color:var(--ink-strong)">Amazon KDP</div>
+        <div class="eyebrow" style="margin-top:10px">Recognized author-support collaboration</div>
+        <p style="margin:14px 0 0;color:var(--muted);font-size:.875rem">Publishing preparation and author guidance through Kindle Direct Publishing.</p>
       </div>
     </div>
   </section>
