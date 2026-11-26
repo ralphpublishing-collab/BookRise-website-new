@@ -1717,18 +1717,18 @@ const VIDEO_PROMO_SHOWCASE = `
       ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
       ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
       ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
-    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
+    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
   </div>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jufri · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="https://pub-631e1e0c3ca94255a01242a6aaf8f881.r2.dev/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
 </section>
 <section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Additional Book Designs</div>
@@ -3730,6 +3730,35 @@ export default {
         status: s,
         headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
       });
+
+    // Serve author videos through the Worker so browser-generated poster frames remain same-origin and canvas-readable.
+    if (u.pathname.startsWith('/media/')) {
+      const key = decodeURIComponent(u.pathname.slice('/media/'.length));
+      if (!key || key.includes('..') || key.includes('/')) return new Response('Not found', { status: 404 });
+      if (!env.VIDEOS) return new Response('Video storage unavailable', { status: 503 });
+      const rangeHeader = request.headers.get('Range');
+      let object;
+      let status = 200;
+      const headers = new Headers({ 'content-type': 'video/mp4', 'accept-ranges': 'bytes', 'cache-control': 'public, max-age=86400' });
+      if (rangeHeader) {
+        const match = /^bytes=(\\d+)-(\\d*)$/.exec(rangeHeader);
+        if (!match) return new Response('Invalid range', { status: 416 });
+        const start = Number(match[1]);
+        const end = match[2] ? Math.min(Number(match[2]), (await env.VIDEOS.head(key))?.size - 1) : (await env.VIDEOS.head(key))?.size - 1;
+        const size = (await env.VIDEOS.head(key))?.size;
+        if (!size || start >= size || end < start) return new Response('Range not satisfiable', { status: 416 });
+        object = await env.VIDEOS.get(key, { range: { offset: start, length: end - start + 1 } });
+        if (!object) return new Response('Not found', { status: 404 });
+        headers.set('content-range', `bytes ${start}-${end}/${size}`);
+        headers.set('content-length', String(end - start + 1));
+        status = 206;
+      } else {
+        object = await env.VIDEOS.get(key);
+        if (!object) return new Response('Not found', { status: 404 });
+        headers.set('content-length', String(object.size));
+      }
+      return new Response(request.method === 'HEAD' ? null : object.body, { status, headers });
+    }
 
     // Serve repository image assets through the Worker so every page uses a stable same-origin URL.
     if (u.pathname.startsWith('/public/assets/') || u.pathname.startsWith('/src/assets/images/')) {
