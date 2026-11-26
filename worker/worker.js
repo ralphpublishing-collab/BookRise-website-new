@@ -1794,7 +1794,7 @@ const homePage = `
         </div>
         <a class="text-link" href="/work">View all 8 selected campaign designs &rarr;</a>
       </div>
-      <div class="gallery-grid">${renderAdrianShowcaseGrid(6)}</div>
+      <div class="gallery-grid">${renderAdrianShowcaseGrid(3)}</div>
     </div>
   </section>
 
