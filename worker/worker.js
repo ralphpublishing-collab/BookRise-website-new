@@ -1544,6 +1544,21 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
   animation-duration: 0.01ms !important;
   transition-duration: 0.01ms !important;
 }
+@media print {
+  @page { margin: 14mm; }
+  body { background:#fff !important; color:#111 !important; }
+  body * { visibility:hidden !important; }
+  .print-checklist-area, .print-checklist-area * { visibility:visible !important; }
+  .print-checklist-area { position:absolute !important; inset:0 auto auto 0 !important; width:100% !important; padding:0 !important; margin:0 !important; background:#fff !important; }
+  .print-checklist-area .wrap { width:100% !important; max-width:none !important; }
+  .print-checklist-area .section-header-split { display:block !important; }
+  .print-checklist-area #chk-carry-btn, .print-checklist-area #chk-print-btn, .print-checklist-area #chk-reset-btn, .print-checklist-area .checklist-progress-bar { display:none !important; }
+  .print-checklist-area .grid-2 { display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px !important; }
+  .print-checklist-area .checklist-group, .print-checklist-area .checklist-row { break-inside:avoid !important; }
+  .print-checklist-area h2, .print-checklist-area h3 { color:#111 !important; }
+  .print-checklist-area .checklist-row { color:#111 !important; }
+  .print-checklist-area input[type="checkbox"] { print-color-adjust:exact; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
@@ -1843,16 +1858,13 @@ const homePage = `
   </section>
 
   <section class="section section-surface">
-    <div class="wrap">
-      <div class="section-header-split">
-        <div>
-          <div class="eyebrow">Selected Author Editions &amp; Perspectives</div>
-          <h2>Crafted editions paired with client feedback.</h2>
-          <p class="lead">Explore additional featured client editions alongside perspectives from the authors behind each book.</p>
-        </div>
-        <a class="text-link" href="/work">Explore full portfolio &rarr;</a>
+    <div class="wrap section-header-split">
+      <div>
+        <div class="eyebrow">Selected Author Editions</div>
+        <h2>Explore the complete author portfolio.</h2>
+        <p class="lead">View the selected book editions, campaign designs, and author videos in one organised portfolio, with each project presented in its dedicated section.</p>
       </div>
-      <div class="grid-3">${renderProjectCards()}</div>
+      <a class="btn btn-primary" href="/work">Explore the portfolio &rarr;</a>
     </div>
   </section>
 
@@ -2349,11 +2361,11 @@ const resourcesPage = `
     </div>
   </section>
 
-  <section class="section">
+  <section class="section print-checklist-area">
     <div class="wrap">
       <div class="section-header-split" style="margin-bottom:20px">
         <div>
-          <div class="eyebrow">Interactive Readiness Tool</div>
+          <div class="eyebrow">BookRise Centre · Author Resource</div>
           <h2>Manuscript &amp; Launch Readiness Checklist</h2>
           <p class="lead">Check off completed steps below. Your progress saves automatically in your browser and can be attached straight to a consultation request.</p>
         </div>
@@ -2710,6 +2722,21 @@ const testimonialsPage = `
           <div class="eyebrow" style="color:#D4AF37">Author · The Temple of Understanding</div>
           <h2 style="color:#fff;margin:10px 0 16px;font-family:var(--serif)">Adrian Emery</h2>
           <blockquote style="margin:0;padding:0;border:0"><p style="color:#fff;line-height:1.8">“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p></blockquote>
+        </article>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author · The Executive Edge</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">James Sterling</h2>
+          <blockquote class="work-quote"><p>“BookRise Centre completely transformed my manuscript. Their developmental editing was sharp, and the cover design for The Executive Edge gave it the premium, authoritative look I needed for the business market.”</p></blockquote>
+        </article>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author · Whispers of the Wind</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Sarah Mitchell</h2>
+          <blockquote class="work-quote"><p>“As a memoirist, I was nervous about sharing my personal story. The team at BookRise was incredibly supportive and respectful. The visibility and categorization they set up meant my book reached exactly the right readers.”</p></blockquote>
+        </article>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author · Lead with Purpose</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Robert Caldwell</h2>
+          <blockquote class="work-quote"><p>“They do not just design a cover; they position the whole book. The promotional strategy and metadata optimization they did for Lead with Purpose made my launch much smoother.”</p></blockquote>
         </article>
         <article class="card" style="padding:clamp(24px,4vw,38px)">
           <div class="eyebrow">Author · The Sacred Switch &amp; Dancing with Cinderella</div>
