@@ -1889,7 +1889,7 @@ const homePage = `
         <a class="text-link" href="/services">Explore our publishing support &rarr;</a>
       </div>
       <div class="card" style="padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
-        <div style="font-size:1.8rem;font-weight:800;letter-spacing:-.04em;color:var(--ink-strong)">Amazon KDP</div>
+        <img src="/brand-assets/amazon-kdp-logo.jpg" alt="Amazon Kindle Direct Publishing (KDP)" width="256" height="107" style="display:block;width:min(100%,256px);height:auto;object-fit:contain" loading="lazy">
         <div class="eyebrow" style="margin-top:10px">Recognized author-support collaboration</div>
         <p style="margin:14px 0 0;color:var(--muted);font-size:.875rem">Publishing preparation and author guidance through Kindle Direct Publishing.</p>
       </div>
@@ -3799,6 +3799,15 @@ const status=document.getElementById('status');document.getElementById('go').onc
       const headers=new Headers({'content-type':entry[1],'cache-control':'public, max-age=31536000, immutable','x-content-type-options':'nosniff'});
       object.writeHttpMetadata(headers);
       return new Response(object.body,{headers});
+    }
+
+    if (u.pathname === '/brand-assets/amazon-kdp-logo.jpg') {
+      if (!env.VIDEOS) return new Response('Image storage unavailable', { status: 503 });
+      const object = await env.VIDEOS.get('brand-assets/amazon-kdp-logo.jpg');
+      if (!object) return new Response('Not found', { status: 404 });
+      const headers = new Headers({ 'content-type': 'image/jpeg', 'cache-control': 'public, max-age=31536000, immutable', 'x-content-type-options': 'nosniff' });
+      object.writeHttpMetadata(headers);
+      return new Response(request.method === 'HEAD' ? null : object.body, { headers });
     }
 
     // Serve author videos through the Worker so browser-generated poster frames remain same-origin and canvas-readable.
