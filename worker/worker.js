@@ -1570,6 +1570,9 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 }
 
 @media (max-width: 640px) {
+  .filter-bar { display:flex; flex-wrap:wrap; gap:8px; width:100%; }
+  .filter-btn { flex:1 1 auto; min-width:calc(50% - 8px); white-space:normal; }
+  .video-native { max-width:100%; }
   .wrap { width: calc(100% - 32px); }
   .header-inner { min-height: 64px; }
   .section { padding: 56px 0; }
@@ -1742,17 +1745,9 @@ const VIDEO_PROMO_SHOWCASE = `
   <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
-  <div class="eyebrow">Jufri · Author Video Portfolio</div>
+  <div class="eyebrow">Geoffrey Waugh · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
-</section>
-<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
-  <div class="eyebrow">Jeff Harlow · Additional Book Designs</div>
-  <h3 style="margin-top:6px">The Sacred Switch &amp; Dancing with Cinderella</h3>
-  <div class="grid-2" style="gap:18px">
-    <figure class="gallery-mat"><img src="/portfolio-image/the-sacred-switch" alt="The Sacred Switch book cover spread for Jeff Harlow and Jennifer Freeman" loading="lazy" decoding="async"></figure>
-    <figure class="gallery-mat"><img src="/portfolio-image/dancing-with-cinderella" alt="Dancing with Cinderella book cover spread by Jeff Harlow" loading="lazy" decoding="async"></figure>
-  </div>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
 </section>
 <section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Featured Author Editions</div>
@@ -1877,6 +1872,10 @@ const homePage = `
         </div>
         <a class="text-link" href="/team">Read full office profiles &rarr;</a>
       </div>
+      <div class="team-strip-grid">${renderMiniTeamStrip()}</div>
+    </div>
+  </section>
+
       <section class="section section-surface" aria-labelledby="kdp-support-title">
     <div class="wrap split-editorial">
       <div>
@@ -1893,10 +1892,6 @@ const homePage = `
       </div>
     </div>
   </section>
-      <div class="team-strip-grid">${renderMiniTeamStrip()}</div>
-    </div>
-  </section>
-
   <section class="section section-surface">
     <div class="wrap split-editorial">
       <div>
@@ -2088,7 +2083,7 @@ const workPage = `
     <div class="wrap">
       <div class="eyebrow">Our Work &amp; Client Showcase</div>
       <h1>Real publishing, design, and promotional campaigns built around each author’s vision.</h1>
-      <p>Explore a curated selection of eight distinct campaign designs for Adrian Emery’s <em>The Temple of Understanding</em> duology alongside additional selected author editions.</p>
+      <p>Explore Adrian Emery’s eight campaign designs and five films, alongside selected book editions and author videos for Jeff Harlow and Geoffrey Waugh.</p>
     </div>
   </section>
 
@@ -2129,9 +2124,9 @@ const workPage = `
   <section class="section section-surface">
     <div class="wrap">
       <div class="section-header">
-        <div class="eyebrow">Selected Portfolio Editions &amp; Testimonials</div>
-        <h2>Additional author engagements.</h2>
-        <p class="lead">Inspect edition details, delivered scope, and client feedback across business, memoir, and leadership titles.</p>
+        <div class="eyebrow">Selected Book Editions</div>
+        <h2>Book covers and publishing presentation.</h2>
+        <p class="lead">Explore selected editions across business, memoir, leadership, faith, and personal growth. Each project is presented once, with its title, author, and agreed creative scope.</p>
       </div>
       <div class="grid-3">${renderProjectCards()}</div>
     </div>
@@ -2307,7 +2302,7 @@ const pricingPage = `
                 <option value="2" selected>25,000 &ndash; 60,000 words (Standard Non-Fiction / Novella)</option>
                 <option value="3">60,000 &ndash; 95,000 words (Full-Length Trade Book)</option>
                 <option value="4">95,000+ words (Comprehensive / Epic)</option>
-                <option value="1">Already Published (Promotion / Refresh Only)</option>
+                <option value="5">Already Published (Promotion / Refresh Only)</option>
               </select>
             </label>
             <label class="field-label">3. Preferred pace
@@ -2711,7 +2706,7 @@ const testimonialsPage = `
     <div class="wrap">
       <div class="eyebrow">Client Testimonials</div>
       <h1>Thoughtful work. Meaningful author partnerships.</h1>
-      <p>Read client-approved reflections on the publishing, design, and promotional work delivered by BookRise Centre.</p>
+      <p>Read selected author reflections on their publishing, design, and promotional experience with BookRise Centre.</p>
     </div>
   </section>
   <section class="section">
@@ -2730,15 +2725,11 @@ const testimonialsPage = `
         </article>
         <article class="card" style="padding:clamp(24px,4vw,38px)">
           <div class="eyebrow">Author Client Reflection</div>
-          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Jufri</h2>
+          <h2 style="margin:10px 0 8px;font-family:var(--serif)">Geoffrey Waugh</h2>
+          <p style="margin:0 0 14px;color:var(--muted);font-size:.875rem">Author · The Life of Jesus</p>
           <blockquote class="work-quote"><p>“I appreciated the care and professionalism BookRise Centre brought to my book project. The team took time to understand the direction of the work and approached the presentation with thoughtful attention to detail. The experience gave me greater confidence in how my book is presented to its intended readers.”</p></blockquote>
           
         </article>
-        ${PROJECTS.map((project) => `<article class="card" style="padding:clamp(24px,4vw,38px)">
-          <div class="eyebrow">${esc(project.genre)} · ${esc(project.title)}</div>
-          <h2 style="margin:10px 0 16px;font-family:var(--serif)">${esc(project.author)}</h2>
-          <blockquote class="work-quote"><p>“${esc(project.quote)}”</p></blockquote>
-        </article>`).join('')}
       </div>
       <div style="margin-top:32px;text-align:center"><a class="btn btn-primary" href="/work">Explore the author portfolios</a></div>
     </div>
@@ -2770,10 +2761,11 @@ function renderShell(currentPath, title, desc, body) {
   const navItems = [
     ['/about', 'About'],
     ['/services', 'Services'],
+    ['/pricing', 'Pricing'],
     ['/work', 'Our Work'],
     ['/testimonials', 'Testimonials'],
     ['/team', 'Team'],
-    ['/resources', 'Resources'],
+    ['/contact', 'Contact'],
   ];
 
   const mobileLinks = [
@@ -3302,19 +3294,22 @@ function renderShell(currentPath, title, desc, body) {
           }
 
           var names = checked.map(function (c) { return c.value; });
+          var isPublished = estWords.value === "5";
           var wordFactor = Number(estWords.value) || 2;
           var paceFactor = Number(estPace.value) || 1;
-          var baseWeeks = checked.length * 1.6 + wordFactor * 0.8;
+          var baseWeeks = checked.length * 1.6 + (isPublished ? 0.5 : wordFactor * 0.8);
           var minW = Math.max(1, Math.round(baseWeeks * paceFactor));
           var maxW = Math.max(minW + 1, Math.round((baseWeeks + 2) * paceFactor));
 
-          modelEl.textContent = checked.length === 1
-            ? 'Single-Discipline Scope'
-            : checked.length <= 3
-              ? 'Coordinated Multi-Service Scope'
-              : 'Comprehensive Full-Launch Campaign';
+          modelEl.textContent = isPublished
+            ? (checked.length === 1 ? 'Published-Book Refresh Scope' : 'Published-Book Promotion & Refresh Scope')
+            : checked.length === 1
+              ? 'Single-Discipline Scope'
+              : checked.length <= 3
+                ? 'Coordinated Multi-Service Scope'
+                : 'Comprehensive Full-Launch Campaign';
           durEl.textContent = 'Estimated duration: ' + minW + ' to ' + maxW + ' weeks';
-          sumEl.textContent = 'Selected focus: ' + names.join(', ') + '.';
+          sumEl.textContent = (isPublished ? 'This estimate assumes the book is already published and does not include manuscript-production time. Selected focus: ' : 'Selected focus: ') + names.join(', ') + '.';
 
           var milestones = [
             'Phase 1: Discovery review & formal written quotation',
