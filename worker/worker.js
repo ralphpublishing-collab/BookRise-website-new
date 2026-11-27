@@ -2744,7 +2744,7 @@ const testimonialsPage = `
 </main>`;
 
 const PAGES = {
-  '/': ['Home', 'Detailed publishing, editorial, design, video promotion, and book-marketing support for authors retaining 100% IP and royalties.', homePage],
+  '/': ['Home', 'BookRise Centre helps authors publish, promote and position their books for greater visibility, recognition and success.', homePage],
   '/about': ['About BookRise Centre', 'Learn about BookRise Centre, our operating model, who we serve, and our author-first standards.', aboutPage],
   '/services': ['Our Services', 'Detailed workflows, turnaround times, deliverables, video trailers, and editorial samples across seven disciplines.', servicesPage],
   '/team': ['Our Team', 'Detailed office profiles and workflows for all six BookRise Centre specialists.', teamPage],
@@ -2798,9 +2798,17 @@ function renderShell(currentPath, title, desc, body) {
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0c1a32">
   <meta name="description" content="${esc(desc)}">
+  <link rel="canonical" href="https://bookrisecentre.com${currentPath === '/' ? '/' : currentPath}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BookRise Centre">
   <meta property="og:title" content="${esc(title)} | BookRise Centre">
   <meta property="og:description" content="${esc(desc)}">
+  <meta property="og:url" content="https://bookrisecentre.com${currentPath === '/' ? '/' : currentPath}">
+  <meta property="og:image" content="https://bookrisecentre.com${ASSETS.crest}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)} | BookRise Centre">
+  <meta name="twitter:description" content="${esc(desc)}">
+  <meta name="twitter:image" content="https://bookrisecentre.com${ASSETS.crest}">
   <title>${esc(title)} | BookRise Centre</title>
   <link rel="icon" type="image/png" href="${ASSETS.monogram}">
   <script type="application/ld+json">${JSON.stringify({
@@ -2917,6 +2925,21 @@ function renderShell(currentPath, title, desc, body) {
             <a href="https://www.instagram.com/bookrisecentre" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="https://x.com/bookrisecentre" target="_blank" rel="noopener noreferrer">X</a>
           </div>
+        </div>
+      </div>
+
+      <div class="newsletter-signup" style="margin-top:34px;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.035)">
+        <div style="max-width:620px">
+          <div class="eyebrow" style="color:var(--gold-bright)">The BookRise Newsletter</div>
+          <h4 style="font-family:var(--serif);font-size:1.35rem;letter-spacing:0;text-transform:none;color:#fff;margin:6px 0 8px">Publishing insight, author resources and book-marketing ideas.</h4>
+          <p style="font-size:.875rem;color:#aab6c8;margin:0 0 14px">Join our mailing list for thoughtful updates and practical guidance for your author journey.</p>
+          <form id="newsletter-form" style="display:flex;gap:10px;flex-wrap:wrap">
+            <label for="newsletter-email" style="position:absolute;left:-9999px">Email address</label>
+            <input id="newsletter-email" name="email" type="email" required maxlength="180" autocomplete="email" placeholder="Your email address" style="flex:1 1 240px;min-width:0;padding:12px 14px;border-radius:7px;border:1px solid rgba(255,255,255,.25);background:#fff;color:#13213a;font:inherit">
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+          <p id="newsletter-status" class="form-status" role="status" aria-live="polite" style="margin:10px 0 0"></p>
+          <p style="font-size:.75rem;color:#8e9cb2;margin:8px 0 0">By subscribing, you agree to receive BookRise Centre email updates. You can unsubscribe at any time.</p>
         </div>
       </div>
 
@@ -3474,6 +3497,39 @@ function renderShell(currentPath, title, desc, body) {
         });
       }
 
+      // Newsletter subscription
+      var newsletterForm = document.getElementById('newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          var status = document.getElementById('newsletter-status');
+          var button = newsletterForm.querySelector('button[type="submit"]');
+          var email = new FormData(newsletterForm).get('email');
+          button.disabled = true;
+          status.className = 'form-status';
+          status.textContent = 'Adding your subscription...';
+          try {
+            var response = await fetch('/api/newsletter/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: email })
+            });
+            var data = await response.json();
+            if (!response.ok) throw new Error(data.error || 'Subscription could not be completed.');
+            newsletterForm.reset();
+            status.className = 'form-status success';
+            status.textContent = data.alreadySubscribed
+              ? 'This email address is already on our newsletter list.'
+              : 'Thank you for subscribing. Your request has been received.';
+          } catch (error) {
+            status.className = 'form-status error';
+            status.textContent = error.message || 'Please try again later.';
+          } finally {
+            button.disabled = false;
+          }
+        });
+      }
+
       // Admin Enquiries Dashboard
       var adminLoadingCard = document.getElementById('admin-loading-card');
       var adminSetupCard = document.getElementById('admin-setup-card');
@@ -3858,6 +3914,47 @@ const status=document.getElementById('status');document.getElementById('go').onc
       });
     }
 
+    if (u.pathname === '/api/newsletter/subscribe') {
+      if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+      const origin = request.headers.get('Origin');
+      if (origin && new URL(origin).host !== u.host) return json({ error: 'Origin not allowed' }, 403);
+      if (!env.DB) return json({ error: 'Newsletter service is temporarily unavailable.' }, 503);
+      let d;
+      try { d = await request.json(); } catch { return json({ error: 'Invalid subscription request.' }, 400); }
+      const email = typeof d.email === 'string' ? d.email.trim().toLowerCase().slice(0, 180) : '';
+      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) return json({ error: 'Please enter a valid email address.' }, 400);
+      const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+      const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip));
+      const ipHash = Array.from(new Uint8Array(digest)).map(x => x.toString(16).padStart(2, '0')).join('');
+      const recent = await env.DB.prepare(
+        "SELECT COUNT(*) AS total FROM newsletter_subscribers WHERE source_ip_hash=? AND created_at>=datetime('now','-1 hour')"
+      ).bind(ipHash).first();
+      if (((recent && recent.total) || 0) >= 8) return json({ error: 'Please wait before submitting another subscription.' }, 429);
+      const result = await env.DB.prepare(
+        'INSERT OR IGNORE INTO newsletter_subscribers (created_at,email,status,source_ip_hash) VALUES (?,?,?,?)'
+      ).bind(new Date().toISOString(), email, 'active', ipHash).run();
+      const alreadySubscribed = !(result && result.meta && result.meta.changes);
+      if (!alreadySubscribed && env.RESEND_API_KEY) {
+        const fromAddr = env.NEWSLETTER_FROM_EMAIL || env.ENQUIRY_FROM_EMAIL || 'noreply@bookrisecentre.com';
+        const notifyTo = env.NEWSLETTER_NOTIFY_EMAIL || env.ENQUIRY_NOTIFY_EMAIL || 'hello@bookrisecentre.com';
+        const sendEmail = async (to, subject, textBody) => {
+          const response = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: { Authorization: 'Bearer ' + env.RESEND_API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ from: fromAddr, to: [to], subject, text: textBody })
+          });
+          if (!response.ok) throw new Error('Email provider rejected the message: ' + response.status);
+        };
+        try {
+          await sendEmail(email, 'Welcome to the BookRise Centre Newsletter', 'Welcome to BookRise Centre. Thank you for joining our newsletter. We look forward to sharing thoughtful publishing insights, author resources and practical book-marketing ideas with you.\n\nYou can reply to this email if you have a question.\n\nBookRise Centre\nhello@bookrisecentre.com');
+          await sendEmail(notifyTo, 'New BookRise Centre newsletter subscriber', 'A new newsletter subscription was received.\nEmail: ' + email + '\nSubscribed: ' + new Date().toISOString());
+        } catch (err) {
+          console.warn('Newsletter email automation failed:', err.message);
+        }
+      }
+      return json({ ok: true, alreadySubscribed }, 201);
+    }
+
     if (u.pathname === '/api/enquiry') {
       if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
 
@@ -3925,6 +4022,26 @@ const status=document.getElementById('status');document.getElementById('go').onc
         .run();
 
       const referenceId = `BR-${String((result && result.meta && result.meta.last_row_id) || Date.now()).padStart(4, '0')}`;
+
+      // Send the visitor a written acknowledgement and notify the BookRise team when email delivery is configured.
+      if (env.RESEND_API_KEY) {
+        const fromAddr = env.ENQUIRY_FROM_EMAIL || 'noreply@bookrisecentre.com';
+        try {
+          const customerEmail = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: { Authorization: 'Bearer ' + env.RESEND_API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              from: fromAddr,
+              to: [email],
+              subject: 'We have received your enquiry | BookRise Centre',
+              text: 'Dear ' + name + ',\\n\\nThank you for contacting BookRise Centre. We have received your enquiry and our team will review the details. Your reference number is ' + referenceId + '.\\n\\nRequested service: ' + service + '\\nBook title: ' + (title || 'Not specified') + '\\n\\nWe appreciate your interest and will follow up using the contact details you provided.\\n\\nBookRise Centre\\nhello@bookrisecentre.com'
+            })
+          });
+          if (!customerEmail.ok) console.warn('Customer acknowledgement email failed:', customerEmail.status);
+        } catch (err) {
+          console.warn('Customer acknowledgement email failed:', err.message);
+        }
+      }
 
       // Optional automated email alert hook when RESEND_API_KEY is configured
       if (env.RESEND_API_KEY) {
