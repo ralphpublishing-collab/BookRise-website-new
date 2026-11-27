@@ -1657,10 +1657,7 @@ function renderProjectCards() {
         <div class="work-meta tabular">${project.number}. ${esc(project.genre)} &middot; ${esc(project.author)}</div>
         <h3>${esc(project.title)}</h3>
         <div class="work-scope">${esc(project.scope)}</div>
-        ${project.quote ? `<blockquote class="work-quote">
-          &ldquo;${esc(project.quote)}&rdquo;
-          <cite>&mdash; ${esc(project.author)}, Author</cite>
-        </blockquote>` : ''}
+        
         <button type="button" class="work-inspect-btn" data-case-id="${project.id}">Inspect Edition &amp; Case Study &rarr;</button>
       </div>
     </article>`
@@ -1753,18 +1750,18 @@ const VIDEO_PROMO_SHOWCASE = `
       ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
       ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
       ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
-    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
+    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
   </div>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Geoffrey Waugh · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
 </section>
 `;
 
@@ -2110,18 +2107,6 @@ const workPage = `
       </div>
 
       <div class="gallery-grid" id="adrian-gallery">${renderAdrianShowcaseGrid()}</div>
-
-      <section class="card" aria-labelledby="adrian-testimonial-title" style="margin-top:32px;padding:clamp(24px,4vw,42px);background:linear-gradient(135deg,#0B1B3D 0%,#142b50 100%);color:#fff;border:1px solid rgba(212,175,55,.45)">
-        <div class="eyebrow" style="color:#D4AF37">Client Testimonial · Adrian Emery</div>
-        <h3 id="adrian-testimonial-title" style="color:#fff;margin:10px 0 18px">A positive experience bringing a two-volume series together.</h3>
-        <blockquote style="margin:0;padding:0;border:0">
-          <p style="font-family:Georgia,serif;font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.8;color:#fff">“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p>
-        </blockquote>
-        <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2)">
-          <strong style="color:#fff">Adrian Emery</strong>
-          <div style="font-size:.875rem;color:#D4AF37">Author · The Temple of Understanding</div>
-        </div>
-      </section>
 
       ${VIDEO_PROMO_SHOWCASE}
     </div>
@@ -2718,10 +2703,10 @@ const testimonialsPage = `
   <section class="section">
     <div class="wrap">
       <div class="grid-2" style="gap:22px">
-        <article class="card" style="padding:clamp(24px,4vw,38px);background:linear-gradient(135deg,#0B1B3D 0%,#142b50 100%);color:#fff;border:1px solid rgba(212,175,55,.45)">
-          <div class="eyebrow" style="color:#D4AF37">Author · The Temple of Understanding</div>
-          <h2 style="color:#fff;margin:10px 0 16px;font-family:var(--serif)">Adrian Emery</h2>
-          <blockquote style="margin:0;padding:0;border:0"><p style="color:#fff;line-height:1.8">“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p></blockquote>
+        <article class="card" style="padding:clamp(24px,4vw,38px)">
+          <div class="eyebrow">Author · The Temple of Understanding</div>
+          <h2 style="margin:10px 0 16px;font-family:var(--serif)">Adrian Emery</h2>
+          <blockquote class="work-quote"><p>“Working with BookRise Centre on The Temple of Understanding has been a positive experience. The team helped bring both volumes together with a consistent and professional visual presentation, from the book covers and print designs to the promotional materials. I appreciated the attention given to the identity of the books and the effort to ensure that the designs reflected their themes. The result is a more cohesive presentation of my work, giving me quality materials to introduce the series to readers.”</p></blockquote>
         </article>
         <article class="card" style="padding:clamp(24px,4vw,38px)">
           <div class="eyebrow">Author · The Executive Edge</div>
@@ -3826,7 +3811,7 @@ const status=document.getElementById('status');document.getElementById('go').onc
       let status = 200;
       const headers = new Headers({ 'content-type': 'video/mp4', 'accept-ranges': 'bytes', 'cache-control': 'public, max-age=86400' });
       if (rangeHeader) {
-        const match = /^bytes=(\\d+)-(\\d*)$/.exec(rangeHeader);
+        const match = /^bytes=(\d+)-(\d*)$/.exec(rangeHeader);
         if (!match) return new Response('Invalid range', { status: 416 });
         const start = Number(match[1]);
         const end = match[2] ? Math.min(Number(match[2]), (await env.VIDEOS.head(key))?.size - 1) : (await env.VIDEOS.head(key))?.size - 1;
