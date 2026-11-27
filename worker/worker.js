@@ -1549,6 +1549,8 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 }
 
 @media (max-width: 1080px) {
+  .primary-nav, .header-cta { display:none; }
+  .mobile-menu-btn { display:inline-flex; }
   .team-strip-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .bento-span-2 { grid-column: span 3; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
