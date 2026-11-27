@@ -1749,15 +1749,7 @@ const VIDEO_PROMO_SHOWCASE = `
   <h3 style="margin-top:6px">The Life of Jesus</h3>
   <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight;this.currentTime=Math.min(1.5,Math.max(.2,this.duration*.08))" onseeked="if(!this.dataset.posterReady){try{const c=document.createElement('canvas');c.width=this.videoWidth;c.height=this.videoHeight;c.getContext('2d').drawImage(this,0,0);this.poster=c.toDataURL('image/jpeg',.88);this.dataset.posterReady='1';this.currentTime=0}catch(e){this.dataset.posterReady='error'}}"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
 </section>
-<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
-  <div class="eyebrow">Featured Author Editions</div>
-  <h3 style="margin-top:6px">New Portfolio Covers</h3>
-  <div class="grid-3" style="gap:18px">
-    <figure class="gallery-mat"><img src="/portfolio-image/the-executive-edge" alt="The Executive Edge by James Sterling" loading="lazy" decoding="async"><figcaption> The Executive Edge · James Sterling</figcaption></figure>
-    <figure class="gallery-mat"><img src="/portfolio-image/whispers-of-the-wind" alt="Whispers of the Wind by Sarah Mitchell" loading="lazy" decoding="async"><figcaption>Whispers of the Wind · Sarah Mitchell</figcaption></figure>
-    <figure class="gallery-mat"><img src="/portfolio-image/lead-with-purpose" alt="Lead with Purpose by Robert Caldwell" loading="lazy" decoding="async"><figcaption>Lead with Purpose · Robert Caldwell</figcaption></figure>
-  </div>
-</section>`;
+`;
 
 
 const CTA_SECTION = `
