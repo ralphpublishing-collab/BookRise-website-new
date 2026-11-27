@@ -3,9 +3,9 @@ const ASSETS = {
   crest: '/public/assets/aistudio/92B26B15-F4AB-4BBD-B068-79601753C31D_bdc8dd35.png',
   heroAtelier: '/src/assets/images/hero_publishing_atelier_1795615010303.jpg',
   books: {
-    executive: '/public/assets/bookrise-executive-edge-v2.svg',
-    whispers: '/public/assets/bookrise-whispers-wind-v2.svg',
-    purpose: '/public/assets/bookrise-lead-purpose-v2.svg',
+    executive: '/portfolio-image/the-executive-edge',
+    whispers: '/portfolio-image/whispers-of-the-wind',
+    purpose: '/portfolio-image/lead-with-purpose',
   },
   team: {
     gracious: '/public/assets/aistudio/IMG_0010_55a5f7f9.jpeg',
@@ -452,6 +452,22 @@ const PROJECTS = [
     image: ASSETS.books.purpose,
     quote:
       'They do not just design a cover; they position the whole book. The promotional strategy and metadata optimization they did for Lead with Purpose made my launch much smoother.',
+  },
+  {
+    number: '04', id: 'the-sacred-switch', title: 'The Sacred Switch',
+    author: 'Jeff Harlow & Jennifer Freeman', genre: 'Faith & Personal Growth',
+    scope: 'Full Cover Design · Publishing Presentation',
+    brief: 'A faith-centred book presentation built around the visual contrast between grabbing and giving.',
+    deliverables: ['Custom front, spine, and back-cover design', 'Print presentation and promotional cover artwork'],
+    image: '/portfolio-image/the-sacred-switch', quote: '',
+  },
+  {
+    number: '05', id: 'dancing-with-cinderella', title: 'Dancing with Cinderella',
+    author: 'Jeff Harlow', genre: 'Church Leadership',
+    scope: 'Full Cover Design · Publishing Presentation',
+    brief: 'A leadership-transition title presented through a cinematic visual metaphor of change, healing, and legacy.',
+    deliverables: ['Custom front, spine, and back-cover design', 'Print presentation and promotional cover artwork'],
+    image: '/portfolio-image/dancing-with-cinderella', quote: '',
   },
 ];
 
@@ -1621,10 +1637,10 @@ function renderProjectCards() {
         <div class="work-meta tabular">${project.number}. ${esc(project.genre)} &middot; ${esc(project.author)}</div>
         <h3>${esc(project.title)}</h3>
         <div class="work-scope">${esc(project.scope)}</div>
-        <blockquote class="work-quote">
+        ${project.quote ? `<blockquote class="work-quote">
           &ldquo;${esc(project.quote)}&rdquo;
           <cite>&mdash; ${esc(project.author)}, Author</cite>
-        </blockquote>
+        </blockquote>` : ''}
         <button type="button" class="work-inspect-btn" data-case-id="${project.id}">Inspect Edition &amp; Case Study &rarr;</button>
       </div>
     </article>`
@@ -3755,6 +3771,24 @@ const status=document.getElementById('status');document.getElementById('go').onc
       const key='portfolio-images/'+slug+'.'+ext;
       await env.VIDEOS.put(key,data,{httpMetadata:{contentType:type,cacheControl:'public, max-age=31536000, immutable'}});
       return json({ok:true,key,size:data.byteLength},200);
+    }
+
+    if (u.pathname.startsWith('/portfolio-image/')) {
+      const slug=u.pathname.slice('/portfolio-image/'.length);
+      const files={
+        'the-executive-edge':['portfolio-images/the-executive-edge.png','image/png'],
+        'whispers-of-the-wind':['portfolio-images/whispers-of-the-wind.png','image/png'],
+        'lead-with-purpose':['portfolio-images/lead-with-purpose.png','image/png'],
+        'the-sacred-switch':['portfolio-images/the-sacred-switch.jpg','image/jpeg'],
+        'dancing-with-cinderella':['portfolio-images/dancing-with-cinderella.jpg','image/jpeg']
+      };
+      const entry=files[slug];
+      if(!entry || !env.VIDEOS) return new Response('Not found',{status:404});
+      const object=await env.VIDEOS.get(entry[0]);
+      if(!object) return new Response('Not found',{status:404});
+      const headers=new Headers({'content-type':entry[1],'cache-control':'public, max-age=31536000, immutable','x-content-type-options':'nosniff'});
+      object.writeHttpMetadata(headers);
+      return new Response(object.body,{headers});
     }
 
     // Serve author videos through the Worker so browser-generated poster frames remain same-origin and canvas-readable.
