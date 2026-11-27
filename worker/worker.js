@@ -2820,10 +2820,8 @@ function renderShell(currentPath, title, desc, body) {
       try {
         var raw = localStorage.getItem('bookrise-prefs');
         var prefs = raw ? JSON.parse(raw) : {};
-        var theme = prefs.theme || 'system';
-        var resolved = theme === 'system'
-          ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-          : theme;
+        var theme = prefs.theme || 'light';
+        var resolved = theme === 'dark' ? 'dark' : 'light';
         var root = document.documentElement;
         root.setAttribute('data-theme', resolved);
         root.setAttribute('data-text-size', prefs.textSize || 'standard');
@@ -3017,7 +3015,34 @@ function renderShell(currentPath, title, desc, body) {
   </script>
   <script>
     (function () {
-      var DEFAULTS = { theme: 'system', textSize: 'standard', motion: 'smooth', contrast: 'standard' };
+      document.querySelectorAll("video.video-native").forEach(function (video) {
+        if (video.dataset.posterReady) return;
+        video.dataset.posterReady = "pending";
+        video.addEventListener("loadeddata", function () {
+          var capture = function () {
+            if (!video.videoWidth || !video.videoHeight) return;
+            try {
+              var canvas = document.createElement("canvas");
+              var width = Math.min(video.videoWidth, 960);
+              var height = Math.round(width * video.videoHeight / video.videoWidth);
+              canvas.width = width; canvas.height = height;
+              canvas.getContext("2d").drawImage(video, 0, 0, width, height);
+              video.setAttribute("poster", canvas.toDataURL("image/jpeg", 0.82));
+              video.dataset.posterReady = "true";
+            } catch (e) { video.dataset.posterReady = "failed"; }
+            video.removeEventListener("seeked", capture);
+            try { video.currentTime = 0; } catch (e) {}
+          };
+          if (video.currentTime > 0.15) capture();
+          else { video.addEventListener("seeked", capture, { once: true }); try { video.currentTime = Math.min(1, Math.max(0.2, (video.duration || 2) / 4)); } catch (e) { video.dataset.posterReady = "failed"; } }
+        }, { once: true });
+        video.addEventListener("error", function () { video.dataset.posterReady = "failed"; }, { once: true });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var DEFAULTS = { theme: 'light', textSize: 'standard', motion: 'smooth', contrast: 'standard' };
       var root = document.documentElement;
 
       function loadPrefs() {
@@ -3030,9 +3055,7 @@ function renderShell(currentPath, title, desc, body) {
         try { localStorage.setItem('bookrise-prefs', JSON.stringify(prefs)); } catch (e) {}
       }
       function applyPrefs(prefs) {
-        var resolvedTheme = prefs.theme === 'system'
-          ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-          : prefs.theme;
+        var resolvedTheme = prefs.theme === 'dark' ? 'dark' : 'light';
         root.setAttribute('data-theme', resolvedTheme);
         root.setAttribute('data-text-size', prefs.textSize);
         root.setAttribute('data-motion', prefs.motion);
@@ -3044,6 +3067,7 @@ function renderShell(currentPath, title, desc, body) {
         });
       }
       var prefs = loadPrefs();
+      if (prefs.theme === 'system') { prefs.theme = 'light'; savePrefs(prefs); }
       applyPrefs(prefs);
       if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
