@@ -3731,6 +3731,32 @@ export default {
         headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
       });
 
+    if (u.pathname === '/portfolio-upload' && request.method === 'GET') {
+      const html = `<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BookRise Portfolio Image Upload</title><style>body{font:16px Arial,sans-serif;background:#f5f2eb;color:#12213a;margin:0;padding:24px}.wrap{max-width:650px;margin:30px auto;background:white;padding:28px;border-radius:16px;box-shadow:0 8px 32px #10203a18}h1{font-family:Georgia,serif}label{display:block;margin:18px 0 7px;font-weight:600}input{width:100%;box-sizing:border-box;padding:13px;border:1px solid #bbb;border-radius:8px}button{margin-top:22px;background:#10213d;color:#fff;padding:14px 22px;border:0;border-radius:8px;font-weight:700}#status{white-space:pre-wrap;margin-top:18px;line-height:1.5}.gold{color:#9a742d}</style><div class="wrap"><h1>BookRise Centre</h1><p class="gold">Secure portfolio image upload</p><p>Select the five book-cover images. Sign in with your existing BookRise admin passcode.</p><label>Admin passcode</label><input id="pass" type="password" autocomplete="current-password"><label>Portfolio images (select all five)</label><input id="files" type="file" accept="image/jpeg,image/png,image/webp" multiple><button id="go">Upload portfolio images</button><div id="status" role="status"></div></div><script>
+const status=document.getElementById('status');document.getElementById('go').onclick=async()=>{const pass=document.getElementById('pass').value;const files=[...document.getElementById('files').files];if(!pass){status.textContent='Enter your admin passcode.';return}if(!files.length){status.textContent='Choose the images first.';return}status.textContent='Signing in…';try{const lr=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({passcode:pass})});const ld=await lr.json();if(!lr.ok)throw Error(ld.error||'Sign-in failed');const token=ld.token;const allowed=[['the-executive-edge','executive'],['whispers-of-the-wind','whispers'],['lead-with-purpose','purpose'],['the-sacred-switch','sacred-switch'],['dancing-with-cinderella','dancing-cinderella']];let done=[];for(const file of files){const name=file.name.toLowerCase();let key=allowed.find(([slug])=>name.includes(slug));if(!key){const idx=done.length;key=allowed[idx]}if(!key)throw Error('More than five files selected.');status.textContent='Uploading '+file.name+'…';const r=await fetch('/api/portfolio-images/'+key[0],{method:'PUT',headers:{'Authorization':'Bearer '+token,'Content-Type':file.type},body:file});const d=await r.json();if(!r.ok)throw Error(d.error||'Upload failed for '+file.name);done.push(key[0]+' ('+d.size+' bytes)')}status.textContent='Upload complete.\\n'+done.join('\\n')+'\\nYou can close this page.'}catch(e){status.textContent='Upload stopped: '+e.message}}</script></html>`;
+      return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'}});
+    }
+
+    if (u.pathname.startsWith('/api/portfolio-images/')) {
+      if (request.method !== 'PUT') return json({error:'Method not allowed'},405);
+      if (!env.VIDEOS) return json({error:'Image storage unavailable'},503);
+      const state=await getAdminAuthState(env);
+      const auth=request.headers.get('Authorization')||'';
+      const provided=auth.startsWith('Bearer ')?auth.slice(7).trim():'';
+      if (!provided || !await verifyAdminToken(env,provided,state.mode)) return json({error:'Unauthorized or expired session'},401);
+      const slug=u.pathname.slice('/api/portfolio-images/'.length);
+      const keys={'the-executive-edge':'the-executive-edge.jpg','whispers-of-the-wind':'whispers-of-the-wind.jpg','lead-with-purpose':'lead-with-purpose.jpg','the-sacred-switch':'the-sacred-switch.jpg','dancing-with-cinderella':'dancing-with-cinderella.jpg'};
+      if (!keys[slug]) return json({error:'Unknown portfolio image'},404);
+      const type=request.headers.get('Content-Type')||'';
+      if (!['image/jpeg','image/png','image/webp'].includes(type)) return json({error:'Only JPG, PNG, and WebP images are accepted'},415);
+      const data=await request.arrayBuffer();
+      if (!data.byteLength || data.byteLength>12*1024*1024) return json({error:'Image is empty or exceeds 12 MB'},400);
+      const ext=type==='image/png'?'png':type==='image/webp'?'webp':'jpg';
+      const key='portfolio-images/'+slug+'.'+ext;
+      await env.VIDEOS.put(key,data,{httpMetadata:{contentType:type,cacheControl:'public, max-age=31536000, immutable'}});
+      return json({ok:true,key,size:data.byteLength},200);
+    }
+
     // Serve author videos through the Worker so browser-generated poster frames remain same-origin and canvas-readable.
     if (u.pathname.startsWith('/media/')) {
       const key = decodeURIComponent(u.pathname.slice('/media/'.length));
