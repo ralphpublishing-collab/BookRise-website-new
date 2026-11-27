@@ -1750,18 +1750,18 @@ const VIDEO_PROMO_SHOWCASE = `
       ['79ae6e68-079b-464d-adc8-517f9ff960e5.MP4','Author Spotlight'],
       ['fc532f53-9e7b-4467-b75d-04f85a78590a.MP4','Reader Reflection Film'],
       ['e79bc876-c36d-44ae-9222-9d879fc051a2.MP4','Story &amp; Ideas Film']
-    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" controls playsinline preload="auto" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
+    ].map(([file,title])=>`<article class="video-thumb-card"><video class="video-native" poster="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221280%22 height=%22720%22 viewBox=%220 0 1280 720%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%2307152f%22/%3E%3Cstop offset=%221%22 stop-color=%22%231b365b%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23f6e2a0%22/%3E%3Cstop offset=%221%22 stop-color=%22%23b18a2e%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221280%22 height=%22720%22 fill=%22url(%23b)%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22230%22 fill=%22none%22 stroke=%22url(%23g)%22 stroke-width=%223%22 opacity=%22.65%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22180%22 fill=%22none%22 stroke=%22%23d4af37%22 opacity=%22.3%22/%3E%3Cpath d=%22M0 620 Q400 500 800 720 L0 720Z%22 fill=%22%23d4af37%22 opacity=%22.08%22/%3E%3Ctext x=%2280%22 y=%22125%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2228%22 letter-spacing=%228%22%3EBOOKRISE CENTRE%3C/text%3E%3Cpath d=%22M80 155H340%22 stroke=%22%23d4af37%22 stroke-width=%223%22/%3E%3Ctext x=%2280%22 y=%22365%22 fill=%22white%22 font-family=%22Georgia%22 font-size=%2268%22%3EAUTHOR VIDEO%3C/text%3E%3Ctext x=%2284%22 y=%22425%22 fill=%22%23dce4ef%22 font-family=%22Arial%22 font-size=%2226%22 letter-spacing=%223%22%3EEDITORIAL FILM SHOWCASE%3C/text%3E%3Ctext x=%2280%22 y=%22650%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2220%22 letter-spacing=%226%22%3EDESIGN  •  CREATE  •  PUBLISH%3C/text%3E%3C/svg%3E" controls playsinline preload="metadata" aria-label="${title}" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/${file}" type="video/mp4"></video><h4>${title}</h4></article>`).join('')}
   </div>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Jeff Harlow · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Sacred Switch</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" poster="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221280%22 height=%22720%22 viewBox=%220 0 1280 720%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%2307152f%22/%3E%3Cstop offset=%221%22 stop-color=%22%231b365b%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23f6e2a0%22/%3E%3Cstop offset=%221%22 stop-color=%22%23b18a2e%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221280%22 height=%22720%22 fill=%22url(%23b)%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22230%22 fill=%22none%22 stroke=%22url(%23g)%22 stroke-width=%223%22 opacity=%22.65%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22180%22 fill=%22none%22 stroke=%22%23d4af37%22 opacity=%22.3%22/%3E%3Cpath d=%22M0 620 Q400 500 800 720 L0 720Z%22 fill=%22%23d4af37%22 opacity=%22.08%22/%3E%3Ctext x=%2280%22 y=%22125%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2228%22 letter-spacing=%228%22%3EBOOKRISE CENTRE%3C/text%3E%3Cpath d=%22M80 155H340%22 stroke=%22%23d4af37%22 stroke-width=%223%22/%3E%3Ctext x=%2280%22 y=%22365%22 fill=%22white%22 font-family=%22Georgia%22 font-size=%2268%22%3EAUTHOR VIDEO%3C/text%3E%3Ctext x=%2284%22 y=%22425%22 fill=%22%23dce4ef%22 font-family=%22Arial%22 font-size=%2226%22 letter-spacing=%223%22%3EEDITORIAL FILM SHOWCASE%3C/text%3E%3Ctext x=%2280%22 y=%22650%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2220%22 letter-spacing=%226%22%3EDESIGN  •  CREATE  •  PUBLISH%3C/text%3E%3C/svg%3E" controls playsinline preload="metadata" aria-label="The Sacred Switch author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/210915ff-a6dc-413d-a326-3764411c4c72.MP4" type="video/mp4"></video>
 </section>
 <section class="card video-showcase" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
   <div class="eyebrow">Geoffrey Waugh · Author Video Portfolio</div>
   <h3 style="margin-top:6px">The Life of Jesus</h3>
-  <video class="video-native video-feature" controls playsinline preload="auto" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
+  <video class="video-native video-feature" poster="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221280%22 height=%22720%22 viewBox=%220 0 1280 720%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%2307152f%22/%3E%3Cstop offset=%221%22 stop-color=%22%231b365b%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22g%22 x2=%221%22 y2=%221%22%3E%3Cstop stop-color=%22%23f6e2a0%22/%3E%3Cstop offset=%221%22 stop-color=%22%23b18a2e%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221280%22 height=%22720%22 fill=%22url(%23b)%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22230%22 fill=%22none%22 stroke=%22url(%23g)%22 stroke-width=%223%22 opacity=%22.65%22/%3E%3Ccircle cx=%22980%22 cy=%22350%22 r=%22180%22 fill=%22none%22 stroke=%22%23d4af37%22 opacity=%22.3%22/%3E%3Cpath d=%22M0 620 Q400 500 800 720 L0 720Z%22 fill=%22%23d4af37%22 opacity=%22.08%22/%3E%3Ctext x=%2280%22 y=%22125%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2228%22 letter-spacing=%228%22%3EBOOKRISE CENTRE%3C/text%3E%3Cpath d=%22M80 155H340%22 stroke=%22%23d4af37%22 stroke-width=%223%22/%3E%3Ctext x=%2280%22 y=%22365%22 fill=%22white%22 font-family=%22Georgia%22 font-size=%2268%22%3EAUTHOR VIDEO%3C/text%3E%3Ctext x=%2284%22 y=%22425%22 fill=%22%23dce4ef%22 font-family=%22Arial%22 font-size=%2226%22 letter-spacing=%223%22%3EEDITORIAL FILM SHOWCASE%3C/text%3E%3Ctext x=%2280%22 y=%22650%22 fill=%22%23d4af37%22 font-family=%22Arial%22 font-size=%2220%22 letter-spacing=%226%22%3EDESIGN  •  CREATE  •  PUBLISH%3C/text%3E%3C/svg%3E" controls playsinline preload="metadata" aria-label="The Life of Jesus by Geoffrey Waugh author video" onloadedmetadata="this.style.aspectRatio=this.videoWidth+'/'+this.videoHeight"><source src="/media/b14fbf4f-4043-4171-bff2-a908924dd9f7.MP4" type="video/mp4"></video>
 </section>
 `;
 
@@ -3012,33 +3012,6 @@ function renderShell(currentPath, title, desc, body) {
   <script>
     window.__BOOKRISE_CASES__ = ${JSON.stringify(PROJECTS)};
     window.__BOOKRISE_ADRIAN__ = ${JSON.stringify(ADRIAN_DELIVERABLES)};
-  </script>
-  <script>
-    (function () {
-      document.querySelectorAll("video.video-native").forEach(function (video) {
-        if (video.dataset.posterReady) return;
-        video.dataset.posterReady = "pending";
-        video.addEventListener("loadeddata", function () {
-          var capture = function () {
-            if (!video.videoWidth || !video.videoHeight) return;
-            try {
-              var canvas = document.createElement("canvas");
-              var width = Math.min(video.videoWidth, 960);
-              var height = Math.round(width * video.videoHeight / video.videoWidth);
-              canvas.width = width; canvas.height = height;
-              canvas.getContext("2d").drawImage(video, 0, 0, width, height);
-              video.setAttribute("poster", canvas.toDataURL("image/jpeg", 0.82));
-              video.dataset.posterReady = "true";
-            } catch (e) { video.dataset.posterReady = "failed"; }
-            video.removeEventListener("seeked", capture);
-            try { video.currentTime = 0; } catch (e) {}
-          };
-          if (video.currentTime > 0.15) capture();
-          else { video.addEventListener("seeked", capture, { once: true }); try { video.currentTime = Math.min(1, Math.max(0.2, (video.duration || 2) / 4)); } catch (e) { video.dataset.posterReady = "failed"; } }
-        }, { once: true });
-        video.addEventListener("error", function () { video.dataset.posterReady = "failed"; }, { once: true });
-      });
-    })();
   </script>
   <script>
     (function () {
