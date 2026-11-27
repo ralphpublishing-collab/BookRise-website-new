@@ -1750,8 +1750,17 @@ const VIDEO_PROMO_SHOWCASE = `
   <div class="eyebrow">Jeff Harlow · Additional Book Designs</div>
   <h3 style="margin-top:6px">The Sacred Switch &amp; Dancing with Cinderella</h3>
   <div class="grid-2" style="gap:18px">
-    <figure class="gallery-mat"><img src="/public/assets/bookrise-sacred-switch-wrap.svg" alt="The Sacred Switch book cover spread for Jeff Harlow and Jennifer Freeman" loading="lazy" decoding="async"></figure>
-    <figure class="gallery-mat"><img src="/public/assets/bookrise-dancing-cinderella-wrap.svg" alt="Dancing with Cinderella book cover spread by Jeff Harlow" loading="lazy" decoding="async"></figure>
+    <figure class="gallery-mat"><img src="/portfolio-image/the-sacred-switch" alt="The Sacred Switch book cover spread for Jeff Harlow and Jennifer Freeman" loading="lazy" decoding="async"></figure>
+    <figure class="gallery-mat"><img src="/portfolio-image/dancing-with-cinderella" alt="Dancing with Cinderella book cover spread by Jeff Harlow" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+<section class="card" style="margin-top:24px;padding:clamp(22px,4vw,34px)">
+  <div class="eyebrow">Featured Author Editions</div>
+  <h3 style="margin-top:6px">New Portfolio Covers</h3>
+  <div class="grid-3" style="gap:18px">
+    <figure class="gallery-mat"><img src="/portfolio-image/the-executive-edge" alt="The Executive Edge by James Sterling" loading="lazy" decoding="async"><figcaption> The Executive Edge · James Sterling</figcaption></figure>
+    <figure class="gallery-mat"><img src="/portfolio-image/whispers-of-the-wind" alt="Whispers of the Wind by Sarah Mitchell" loading="lazy" decoding="async"><figcaption>Whispers of the Wind · Sarah Mitchell</figcaption></figure>
+    <figure class="gallery-mat"><img src="/portfolio-image/lead-with-purpose" alt="Lead with Purpose by Robert Caldwell" loading="lazy" decoding="async"><figcaption>Lead with Purpose · Robert Caldwell</figcaption></figure>
   </div>
 </section>`;
 
